@@ -30,7 +30,7 @@
               outlined
               elevation="5"
               flat
-              max-width="2000"
+              max-width="1000"
               class="card-reserva"
             >
               <v-card-title>Faça sua reserva</v-card-title>

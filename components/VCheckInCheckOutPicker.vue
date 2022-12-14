@@ -1,62 +1,71 @@
 <template>
-  <v-menu
-    ref="menu"
-    :close-on-content-click="false"
-    transition="scale-transition"
-    offset-y
-    min-width="auto"
-    v-model="exibirMenu"
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-text-field
-        label="Data de check-in e check-out"
-        prepend-inner-icon="mdi-calendar"
-        outlined
-        readonly
-        v-bind="attrs"
-        v-on="on"
-        v-model="visualizacaoDatasSelecionadas"
-        @focus="exibirMenu = true"
-      />
-    </template>
-    <v-date-picker
-      v-model="datasSelecionadas"
-      range
-      scrollable
-      locale="pt-br"
-      selected-items-text=""
-      :min="new Date().toISOString().substring(0, 10)"
-      :allowed-dates="datasPermitidas"
+  <div>
+    <v-menu
+      ref="menu"
+      :close-on-content-click="false"
+      transition="scale-transition"
+      offset-y
+      min-width="auto"
+      v-model="exibirMenu"
     >
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        @click="cancelarSelecao"
+      <template v-slot:activator="{ on, attrs }">
+        <v-text-field
+          class="text-field-date-picker text-field-on-error"
+          :class="!temErro ? 'text-field-on-error' : ''"
+          label="Data de check-in e check-out"
+          prepend-inner-icon="mdi-calendar"
+          outlined
+          readonly
+          v-bind="attrs"
+          v-on="on"
+          v-model="visualizacaoDatasSelecionadas"
+          :color="temErro ? 'red' : 'primary'"
+          @focus="exibirMenu = true"
+          :persistent-hint="true"
+          :hint="temErro ? mensagemErro : ''"
+        />
+      </template>
+      <v-date-picker
+        v-model="datasSelecionadas"
+        range
+        scrollable
+        locale="pt-br"
+        selected-items-text=""
+        :min="new Date().toISOString().substring(0, 10)"
+        :allowed-dates="datasPermitidas"
       >
-        Cancelar
-      </v-btn>
-      <v-btn
-        text
-        @click="confirmarSelecao"
-      >
-        Ok
-      </v-btn>
-    </v-date-picker>
-  </v-menu>
+        <v-spacer></v-spacer>
+        <v-btn
+          text
+          @click="cancelarSelecao"
+        >
+          Cancelar
+        </v-btn>
+        <v-btn
+          text
+          @click="confirmarSelecao"
+        >
+          Ok
+        </v-btn>
+      </v-date-picker>
+    </v-menu>
+  </div>
 </template>
 
 <script lang="ts">
 
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue, Watch } from 'nuxt-property-decorator';
 
 @Component
 export default class VCheckInCheckOutPicker extends Vue {
 
   exibirMenu = false;
   datasSelecionadas: Array<Date> = [];
+  temErro = false;
+  mensagemErro = '';
 
   // TODO criar requisição falsa no fetch
-  diasNaoPermitidos: Array<string> = ['2022-12-20', '2022-12-21', '2022-12-22', '2022-12-23', '2022-12-24', '2022-12-25', '2022-12-27', '2023-01-01', '2023-01-02', '2023-01-03'];
+  diasNaoPermitidos: Array<Date> = [new Date('2022-12-20'), new Date('2022-12-21'), new Date('2022-12-22'), new Date('2022-12-23'), new Date('2022-12-24'), new Date('2022-12-25'), new Date('2022-12-27'), new Date('2023-01-01'), new Date('2023-01-02'), new Date('2023-01-03')];
 
   confirmarSelecao(): void {
     this.exibirMenu = false;
@@ -73,7 +82,21 @@ export default class VCheckInCheckOutPicker extends Vue {
   }
 
   datasPermitidas(data: string) {
-    return !this.diasNaoPermitidos.includes(data);
+    return !this.diasNaoPermitidos.map(val => val.toISOString()).includes(new Date(data).toISOString());
+  }
+
+  @Watch('datasSelecionadas', { deep: true })
+  validarData(): void {
+     if (this.datasSelecionadas.length == 2) {
+       this.diasNaoPermitidos.every(diaNaoPermitido => {
+         if (diaNaoPermitido.getTime() >= new Date(this.datasSelecionadas[0]).getTime() && diaNaoPermitido.getTime() <= new Date(this.datasSelecionadas[1]).getTime()) {
+           this.temErro = true;
+           this.mensagemErro = `Escolha um período com dias disponíveis.`;
+           this.exibirMenu = false;
+           return false;
+         } else this.temErro = false;
+       });
+     }
   }
 
   get visualizacaoDatasSelecionadas(): string {
@@ -94,6 +117,10 @@ export default class VCheckInCheckOutPicker extends Vue {
 
 </script>
 
-<style scoped>
+<style>
+
+.text-field-date-picker .v-messages__message {
+  color: red !important;
+}
 
 </style>
