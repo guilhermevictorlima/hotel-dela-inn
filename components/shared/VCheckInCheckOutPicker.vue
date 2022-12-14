@@ -31,7 +31,7 @@
         scrollable
         locale="pt-br"
         selected-items-text=""
-        :min="new Date().toISOString().substring(0, 10)"
+        :min="dataDeAmanha"
         :allowed-dates="datasPermitidas"
       >
         <v-spacer></v-spacer>
@@ -65,7 +65,7 @@ export default class VCheckInCheckOutPicker extends Vue {
   mensagemErro = '';
 
   // TODO criar requisição falsa no fetch
-  diasNaoPermitidos: Array<Date> = [new Date('2022-12-20'), new Date('2022-12-21'), new Date('2022-12-22'), new Date('2022-12-23'), new Date('2022-12-24'), new Date('2022-12-25'), new Date('2022-12-27'), new Date('2023-01-01'), new Date('2023-01-02'), new Date('2023-01-03')];
+  diasNaoPermitidos: Array<Date> = [new Date('2022-12-20'), new Date('2022-12-21'), new Date('2022-12-22')];
 
   confirmarSelecao(): void {
     this.exibirMenu = false;
@@ -89,25 +89,54 @@ export default class VCheckInCheckOutPicker extends Vue {
   validarData(): void {
      if (this.datasSelecionadas.length == 2) {
        this.diasNaoPermitidos.every(diaNaoPermitido => {
-         if (diaNaoPermitido.getTime() >= new Date(this.datasSelecionadas[0]).getTime() && diaNaoPermitido.getTime() <= new Date(this.datasSelecionadas[1]).getTime()) {
-           this.temErro = true;
-           this.mensagemErro = `Escolha um período com dias disponíveis.`;
-           this.exibirMenu = false;
+         const dataCheckin = this.datasSelecionadas[0];
+         const dataCheckout = this.datasSelecionadas[1];
+
+         if (diaNaoPermitido.getTime() >= new Date(dataCheckin).getTime() && diaNaoPermitido.getTime() <= new Date(dataCheckout).getTime()) {
+           this.lancarErro('Escolha um período com dias disponíveis.');
            return false;
-         } else this.temErro = false;
+         }
+
+         if (dataCheckin === dataCheckout) {
+           delete this.datasSelecionadas[1];
+           this.lancarErro('Escolha um dia de check-out diferente do dia de check-in.');
+           return false;
+         }
+
+         this.temErro = false;
+
        });
      }
+  }
+
+  lancarErro(mensagem: string): void {
+    this.temErro = true;
+    this.mensagemErro = mensagem;
+    this.exibirMenu = false;
+  }
+
+  get dataDeAmanha(): string {
+    return this.obterDiaSeguinte(new Date()).toISOString().substring(0, 10);
+  }
+
+  obterDiaSeguinte(data: Date): Date {
+    let diaSeguinte = data;
+    diaSeguinte.setDate(data.getDate() + 1);
+
+    return new Date(diaSeguinte);
   }
 
   get visualizacaoDatasSelecionadas(): string {
     let visualizacaoDatas = '';
 
-    if (this.datasSelecionadas[0]) {
-      visualizacaoDatas += `Check-in: ${this.formatarData(this.datasSelecionadas[0])}`;
-    }
+    if (this.datasSelecionadas[0] && !this.datasSelecionadas[1]) {
+      visualizacaoDatas = `Check-in: ${this.formatarData(this.datasSelecionadas[0])}`;
+    } else if (this.datasSelecionadas[0] && this.datasSelecionadas[1]) {
+      const dataCheckin = new Date(this.datasSelecionadas[0]).getTime() > new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
+      const dataCheckout = new Date(this.datasSelecionadas[0]).getTime() < new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
 
-    if (this.datasSelecionadas[1]) {
-      visualizacaoDatas += `, Check-out: ${this.formatarData(this.datasSelecionadas[1])}`;
+      visualizacaoDatas += `Check-in: ${this.formatarData(dataCheckin)}`;
+      visualizacaoDatas += `, Check-out: ${this.formatarData(dataCheckout)}`;
     }
 
     return visualizacaoDatas;
