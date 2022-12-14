@@ -38,7 +38,6 @@
               <v-check-in-check-out-picker />
               <v-text-field outlined />
               <v-text-field outlined />
-              <v-text-field outlined />
             </v-card>
           </v-col>
         </v-row>
@@ -76,7 +75,7 @@
 <script lang="ts">
 
 import { Component, Vue } from 'nuxt-property-decorator';
-import VCheckInCheckOutPicker from '~/components/VCheckInCheckOutPicker.vue';
+import VCheckInCheckOutPicker from '~/components/shared/VCheckInCheckOutPicker.vue';
 
 @Component({
   components: { VCheckInCheckOutPicker }
