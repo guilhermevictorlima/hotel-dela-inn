@@ -10,7 +10,7 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
-          class="text-field-date-picker text-field-on-error"
+          class="text-field-date-picker"
           :class="!temErro ? 'text-field-on-error' : ''"
           label="Data de check-in e check-out"
           prepend-inner-icon="mdi-calendar"
@@ -22,7 +22,7 @@
           :color="temErro ? 'red' : 'primary'"
           @focus="exibirMenu = true"
           :persistent-hint="true"
-          :hint="temErro ? mensagemErro : ''"
+          :hint="'Check-in às 14:00 horas e check-out às 12:00 horas'"
           color="primary"
         />
       </template>
@@ -59,6 +59,7 @@
 
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
 
+// TODO usar validator para os erros
 @Component
 export default class VCheckInCheckOutPicker extends Vue {
 
@@ -156,9 +157,5 @@ export default class VCheckInCheckOutPicker extends Vue {
 </script>
 
 <style>
-
-.text-field-date-picker .v-messages__message {
-  color: red !important;
-}
 
 </style>
