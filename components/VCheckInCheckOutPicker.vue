@@ -56,7 +56,7 @@ export default class VCheckInCheckOutPicker extends Vue {
   datasSelecionadas: Array<Date> = [];
 
   // TODO criar requisição falsa no fetch
-  diasNaoPermitidos: Array<string> = ['2022-12-15', '2022-12-17', '2022-12-20', '2022-12-27', '2023-01-01', '2023-01-02', '2023-01-03'];
+  diasNaoPermitidos: Array<string> = ['2022-12-20', '2022-12-21', '2022-12-22', '2022-12-23', '2022-12-24', '2022-12-25', '2022-12-27', '2023-01-01', '2023-01-02', '2023-01-03'];
 
   confirmarSelecao(): void {
     this.exibirMenu = false;
