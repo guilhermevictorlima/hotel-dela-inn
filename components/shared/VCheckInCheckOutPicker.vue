@@ -32,6 +32,7 @@
         locale="pt-br"
         selected-items-text=""
         :min="dataDeAmanha"
+        :max="periodoMaximo"
         :allowed-dates="datasPermitidas"
       >
         <v-spacer></v-spacer>
@@ -64,8 +65,11 @@ export default class VCheckInCheckOutPicker extends Vue {
   temErro = false;
   mensagemErro = '';
 
-  // TODO criar requisição falsa no fetch
-  diasNaoPermitidos: Array<Date> = [new Date('2022-12-20'), new Date('2022-12-21'), new Date('2022-12-22')];
+  // TODO criar fake request para receber dias indisponíveis
+  diasNaoPermitidos: Array<Date> = [new Date('2022-12-23'), new Date('2022-12-24'), new Date('2022-12-25'), new Date('2022-12-26'), new Date('2022-12-27'), new Date('2022-12-28'), new Date('2022-12-29'), new Date('2022-12-30'), new Date('2022-12-31')];
+
+  // TODO criar fake request para obter dia máximo disponível
+  dataMaximaDisponivel: Date = new Date('2023-02-15');
 
   confirmarSelecao(): void {
     this.exibirMenu = false;
@@ -117,6 +121,10 @@ export default class VCheckInCheckOutPicker extends Vue {
 
   get dataDeAmanha(): string {
     return this.obterDiaSeguinte(new Date()).toISOString().substring(0, 10);
+  }
+
+  get periodoMaximo(): string {
+    return new Date(this.dataMaximaDisponivel).toISOString().substring(0, 10);
   }
 
   obterDiaSeguinte(data: Date): Date {
