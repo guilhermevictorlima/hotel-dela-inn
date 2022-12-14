@@ -28,7 +28,7 @@
           >
             <v-card
               outlined
-              elevation="5"
+              elevation="24"
               flat
               max-width="1000"
               class="card-reserva"
@@ -36,8 +36,17 @@
               <v-card-title>Faça sua reserva</v-card-title>
 
               <v-check-in-check-out-picker />
-              <v-text-field outlined />
-              <v-text-field outlined />
+
+              <br />
+
+              <v-row align="center">
+                <v-col cols="5">
+                  <v-quantity-entry-input label="Adultos" />
+                </v-col>
+                <v-col cols="5">
+                  <v-quantity-entry-input label="Crianças" />
+                </v-col>
+              </v-row>
             </v-card>
           </v-col>
         </v-row>
@@ -76,9 +85,10 @@
 
 import { Component, Vue } from 'nuxt-property-decorator';
 import VCheckInCheckOutPicker from '~/components/shared/VCheckInCheckOutPicker.vue';
+import VQuantityEntryInput from '~/components/shared/VQuantityEntryInput.vue';
 
 @Component({
-  components: { VCheckInCheckOutPicker }
+  components: { VQuantityEntryInput, VCheckInCheckOutPicker }
 })
 export default class Index extends Vue {
 
