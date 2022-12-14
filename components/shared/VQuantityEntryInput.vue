@@ -14,7 +14,7 @@
       class="input-quantidade shrink text-center"
       type="number"
       v-model="valorQuantidade"
-
+      readonly
     />
     <v-btn
       class="ma-2"
