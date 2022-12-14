@@ -89,8 +89,8 @@ export default class VCheckInCheckOutPicker extends Vue {
   validarData(): void {
      if (this.datasSelecionadas.length == 2) {
        this.diasNaoPermitidos.every(diaNaoPermitido => {
-         const dataCheckin = this.datasSelecionadas[0];
-         const dataCheckout = this.datasSelecionadas[1];
+         const dataCheckin = new Date(this.datasSelecionadas[0]).getTime() > new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
+         const dataCheckout = new Date(this.datasSelecionadas[0]).getTime() < new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
 
          if (diaNaoPermitido.getTime() >= new Date(dataCheckin).getTime() && diaNaoPermitido.getTime() <= new Date(dataCheckout).getTime()) {
            this.lancarErro('Escolha um período com dias disponíveis.');
@@ -135,8 +135,7 @@ export default class VCheckInCheckOutPicker extends Vue {
       const dataCheckin = new Date(this.datasSelecionadas[0]).getTime() > new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
       const dataCheckout = new Date(this.datasSelecionadas[0]).getTime() < new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
 
-      visualizacaoDatas += `Check-in: ${this.formatarData(dataCheckin)}`;
-      visualizacaoDatas += `, Check-out: ${this.formatarData(dataCheckout)}`;
+      visualizacaoDatas += `Check-in: ${this.formatarData(dataCheckin)}, Check-out: ${this.formatarData(dataCheckout)}`;
     }
 
     return visualizacaoDatas;
