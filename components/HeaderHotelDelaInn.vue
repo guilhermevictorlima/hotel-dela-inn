@@ -2,6 +2,7 @@
   <v-app-bar class="default-layout__header"
              height="130"
              fixed
+             dark
   >
     <v-container>
       <v-row
@@ -18,22 +19,42 @@
           &nbsp;
           &nbsp;
           <v-item>
-            Hotel Dela Inn
+            <nuxt-link
+              to="/"
+              class="router-link"
+            >
+              Hotel Dela Inn
+            </nuxt-link>
           </v-item>
           &nbsp;
           &nbsp;
           <v-item>
-            Acomodações
+            <nuxt-link
+              to="/"
+              class="router-link"
+            >
+              Acomodações
+            </nuxt-link>
           </v-item>
           &nbsp;
           &nbsp;
           <v-item>
-            Galeria
+            <nuxt-link
+              to="/"
+              class="router-link"
+            >
+              Galeria
+            </nuxt-link>
           </v-item>
           &nbsp;
           &nbsp;
           <v-item>
-            Localização
+            <nuxt-link
+              to="/"
+              class="router-link"
+            >
+              Localização
+            </nuxt-link>
           </v-item>
         </v-item-group>
       </v-row>
@@ -49,8 +70,19 @@ export default {
 
 <style scoped>
 
+.router-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.router-link:hover {
+  color: #c9be89;
+
+  transition: all 0.3s;
+}
+
 .default-layout__header {
-  background-color: white !important;
+  background-color: #70364e !important;
 }
 
 .default-layout__header__links {

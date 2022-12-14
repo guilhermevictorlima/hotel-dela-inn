@@ -4,6 +4,7 @@
       class="ma-2"
       text
       icon
+      color="primary"
       @click="somar"
     >
       <v-icon>mdi-plus-thick</v-icon>
@@ -19,6 +20,7 @@
       class="ma-2"
       text
       icon
+      color="primary"
       @click="subtrair"
     >
       <v-icon>mdi-minus-thick</v-icon>

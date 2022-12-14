@@ -55,7 +55,7 @@
                 width="90%"
                 outlined
                 large
-                color="accent"
+                color="primary"
               >
                 Reservar
               </v-btn>

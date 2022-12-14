@@ -23,6 +23,7 @@
           @focus="exibirMenu = true"
           :persistent-hint="true"
           :hint="temErro ? mensagemErro : ''"
+          color="primary"
         />
       </template>
       <v-date-picker
