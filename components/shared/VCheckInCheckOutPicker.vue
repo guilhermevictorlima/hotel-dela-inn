@@ -34,6 +34,7 @@
         :min="dataDeAmanha"
         :max="periodoMaximo"
         :allowed-dates="datasPermitidas"
+        @input="datasSelecionadas.length === 2 ? exibirMenu = false : ''"
       >
         <v-spacer></v-spacer>
         <v-btn
