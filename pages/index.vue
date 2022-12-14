@@ -47,6 +47,18 @@
                   <v-quantity-entry-input label="Crianças" />
                 </v-col>
               </v-row>
+
+              <br />
+              <br />
+
+              <v-btn
+                width="90%"
+                outlined
+                large
+                color="accent"
+              >
+                Reservar
+              </v-btn>
             </v-card>
           </v-col>
         </v-row>
