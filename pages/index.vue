@@ -39,7 +39,6 @@
               <v-check-in-check-out-picker />
 
               <br />
-
               <v-row align="center">
                 <v-col cols="5">
                   <v-quantity-entry-input label="Adultos" />
@@ -155,41 +154,36 @@
       </v-row>
     </div>
 
-
     <br />
     <br />
     <br />
     <br />
     <br />
 
-    <v-container>
-      <v-row>
-        <v-img src="luxo-casal-1.jpg" max-width="800" />
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <v-content>
-          <h2>Teste</h2>
-        </v-content>
-      </v-row>
-      <br />
-      <br />
-      <br />
-      <v-row class="flex-row-reverse">
-        <v-img src="luxo-triplo-solteiro.jpg" max-width="800" />
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <v-content>
-          <h2>Teste</h2>
-        </v-content>
-      </v-row>
 
-      <br />
-      <br />
-      <br />
+    <v-container fluid>
+      <v-carousel
+        v-if="reviews.length"
+        :cycle="true"
+        hide-delimiter-background
+      >
+        <v-carousel-item
+          v-for="(review, key) in reviews" :key="key"
+        >
+          <v-quote :citacao="review.citacao" :autor="review.autor" />
+        </v-carousel-item>
+      </v-carousel>
     </v-container>
 
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 </template>
 
@@ -199,13 +193,32 @@ import { Component, Vue } from 'nuxt-property-decorator';
 import VCheckInCheckOutPicker from '~/components/shared/VCheckInCheckOutPicker.vue';
 import VQuantityEntryInput from '~/components/shared/VQuantityEntryInput.vue';
 import VStyledDivider from '~/components/shared/VStyledDivider.vue';
+import VQuote from "~/components/shared/VQuote.vue";
+import {ReviewCliente} from "~/model/types/ReviewCliente";
 
 @Component({
-  components: { VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker }
+  components: { VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker }
 })
 export default class Index extends Vue {
 
-  exibir = false;
+  reviews: Array<ReviewCliente> = [
+    {
+      citacao: 'Os quartos são ótimos, camas e chuveiros excelentes! Localização perfeita, central. O staff muito receptivo e simpático, chegamos mais cedo e fizeram nosso check-in na hora! O restaurante no 7° andar foi uma grata surpresa também: ótimo atendimento, chopp gelado e música boa. Foi uma estadia perfeita! Parabéns, super recomendo!',
+      autor: '- Lucia, via Booking'
+    },
+    {
+      citacao: 'Hotel digno de cinco estrelas, tudo muito limpo, café da manhã farto e funcionários muito prestativos, voltarei mais vezes.',
+      autor: '- Ana, via Google'
+    },
+    {
+      citacao: 'Quartos limpos, amplos, modernos e confortáveis. Excelente custo benefício. Todos os funcionários são muito solícitos e educados. o hotel é lindo, moderno e tudo é impecavelmente limpo. Café da manhã bem servido e com bastante variedade. Quarto possui sistema de iluminação indireta bem agradável e a roupa de cama é de ótima qualidade, com um edredom bem confortável para os dias frios.',
+      autor: '- Gabriel, via Booking'
+    },
+    {
+      citacao: 'Hotel novo com conceito de Restaurante no último andar 7, dando uma boa vista aos morros ao redor, Restaurante com ótimo preços e final de semana teve show ao vivo com artistas locais super agradável, volume e mix de músicas, otimo experiência!!!',
+      autor: '- Elias, via Google'
+    },
+  ];
 
 }
 
@@ -233,6 +246,10 @@ main {
 
 .parallax-meio-tela {
   width: 50vw !important;
+}
+
+.quote-icon {
+  width: 5rem;
 }
 
 </style>
