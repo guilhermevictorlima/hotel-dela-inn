@@ -36,7 +36,7 @@ import {Component, Prop, Vue, Watch} from 'nuxt-property-decorator';
 export default class VQuantityEntryInput extends Vue {
 
   @Prop({ required: true })
-  label: string;
+  label: string = '';
 
   valorQuantidade = 0;
 
