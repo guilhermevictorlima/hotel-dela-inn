@@ -20,7 +20,6 @@
           v-on="on"
           v-model="visualizacaoDatasSelecionadas"
           :color="temErro ? 'red' : 'primary'"
-          @focus="exibirMenu = true"
           :persistent-hint="true"
           :hint="'Check-in às 14:00 horas e check-out às 12:00 horas'"
           color="primary"
