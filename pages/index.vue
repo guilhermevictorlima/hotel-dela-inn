@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-parallax src="hotel-dela-inn-quarto-super-luxo.png" class="parallax elevation-10">
+    <v-parallax src="hotel-dela-inn-quarto-super-luxo.png" class="parallax-inicial elevation-24">
       <v-container style="display: flex">
         <v-row
           align="center"
@@ -65,83 +65,97 @@
         </v-row>
       </v-container>
     </v-parallax>
-
-
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <v-container class="text-center descricao-central-landing-page">
-      <v-styled-divider :h-level="4" />
+    <div>
+      <br />
       <br />
 
-      <h2 class="font-weight-light">Somos Referência em Hospedagem!</h2>
-
-      <div class="font-weight-light">
-        <br />
+      <v-container class="text-center descricao-central-landing-page">
+        <v-styled-divider :h-level="4" />
         <br />
 
-        Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender! <br /> <br />
+        <h2 class="font-weight-light">Somos Referência em Hospedagem!</h2>
 
-        Com excelente localização no centro da cidade, o Hotel dispõe de 132 novos apartamentos nas categorias Standard, Luxo e Super Luxo. <br /> <br />
+        <div class="font-weight-light">
+          <br />
+          <br />
 
-        Nos importamos com seu bem-estar e entretenimento! <br /> <br /> <br />
-      </div>
+          Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender! <br /> <br />
 
-      <v-list-item class="flex-row justify-center">
-        <v-spacer />
-        <v-item>
-          <div>
-            <v-icon color="#9c8f54">mdi-dumbbell</v-icon> <br /> <br />
-            <span>Academia</span>
-          </div>
-        </v-item>
-        <v-spacer />
-        <v-item>
-          <div>
-            <v-icon color="#9c8f54">mdi-glass-wine</v-icon> <br /> <br />
-            <span>Bar</span>
-          </div>
-        </v-item>
-        <v-spacer />
-        <v-item>
-          <div>
-            <v-icon color="#9c8f54">mdi-coffee-maker</v-icon> <br /> <br />
-            <span>Café da manhã</span>
-          </div>
-        </v-item>
-        <v-spacer />
-        <v-item>
-          <div>
-            <v-icon color="#9c8f54">mdi-wifi</v-icon> <br /> <br />
-            <span>Wi-Fi</span>
-          </div>
-        </v-item>
-        <v-spacer />
-        <v-item>
-          <div>
-            <v-icon color="#9c8f54">mdi-bed-king</v-icon> <br /> <br />
-            <span>Quartos de luxo</span>
-          </div>
-        </v-item>
-        <v-spacer />
-        <v-item>
-          <div>
-            <v-icon color="#9c8f54">mdi-car-arrow-left</v-icon> <br /> <br />
-            <span>Estacionamento</span>
-          </div>
-        </v-item>
-        <v-spacer />
-      </v-list-item>
+          Com excelente localização no centro da cidade, o Hotel dispõe de 132 novos apartamentos nas categorias Standard, Luxo e Super Luxo. <br /> <br />
+
+          Nos importamos com seu bem-estar e entretenimento! <br /> <br /> <br />
+        </div>
+
+        <v-list-item class="flex-row justify-center">
+          <v-spacer />
+          <v-item>
+            <div>
+              <v-icon color="#9c8f54">mdi-dumbbell</v-icon> <br /> <br />
+              <span>Academia</span>
+            </div>
+          </v-item>
+          <v-spacer />
+          <v-item>
+            <div>
+              <v-icon color="#9c8f54">mdi-glass-wine</v-icon> <br /> <br />
+              <span>Bar</span>
+            </div>
+          </v-item>
+          <v-spacer />
+          <v-item>
+            <div>
+              <v-icon color="#9c8f54">mdi-coffee-maker</v-icon> <br /> <br />
+              <span>Café da manhã</span>
+            </div>
+          </v-item>
+          <v-spacer />
+          <v-item>
+            <div>
+              <v-icon color="#9c8f54">mdi-wifi</v-icon> <br /> <br />
+              <span>Wi-Fi</span>
+            </div>
+          </v-item>
+          <v-spacer />
+          <v-item>
+            <div>
+              <v-icon color="#9c8f54">mdi-bed-king</v-icon> <br /> <br />
+              <span>Quartos de luxo</span>
+            </div>
+          </v-item>
+          <v-spacer />
+          <v-item>
+            <div>
+              <v-icon color="#9c8f54">mdi-car-arrow-left</v-icon> <br /> <br />
+              <span>Estacionamento</span>
+            </div>
+          </v-item>
+          <v-spacer />
+        </v-list-item>
+
+        <br />
+        <br />
+        <v-styled-divider :h-level="4" />
+      </v-container>
 
       <br />
       <br />
-      <v-styled-divider :h-level="4" />
-    </v-container>
+    </div>
+    <div class="elevation-24">
+      <v-row class="elevation-24">
+        <v-parallax src="luxo-triplo-solteiro.jpg" class="parallax-meio-tela elevation-10" />
+        <v-sheet elevation="5" width="50%" color="#4d2535">
+          &nbsp;
+        </v-sheet>
+      </v-row>
+      <v-row>
+        <v-sheet elevation="5" width="50%" color="#592e40">
+          &nbsp;
+        </v-sheet>
+        <v-parallax src="luxo-casal-1.jpg" class="parallax-meio-tela elevation-10" />
+      </v-row>
+    </div>
 
-    <br />
-    <br />
+
     <br />
     <br />
     <br />
@@ -187,9 +201,11 @@ import VQuantityEntryInput from '~/components/shared/VQuantityEntryInput.vue';
 import VStyledDivider from '~/components/shared/VStyledDivider.vue';
 
 @Component({
-  components: {VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker }
+  components: { VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker }
 })
 export default class Index extends Vue {
+
+  exibir = false;
 
 }
 
@@ -202,7 +218,7 @@ main {
   overflow: hidden;
 }
 
-.parallax {
+.parallax-inicial {
   width: 100vw !important;
   height: 100vh !important;
 }
@@ -213,6 +229,10 @@ main {
 
 .descricao-central-landing-page {
   font-size: 1.1rem;
+}
+
+.parallax-meio-tela {
+  width: 50vw !important;
 }
 
 </style>
