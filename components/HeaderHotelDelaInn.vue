@@ -1,5 +1,6 @@
 <template>
   <v-app-bar class="default-layout__header"
+             :app="app"
              height="130"
              fixed
              dark
@@ -62,10 +63,17 @@
   </v-app-bar>
 </template>
 
-<script>
-export default {
-  name: "HeaderHotelDelaInn"
+<script lang="ts">
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
+
+@Component
+export default class HeaderHotelDelaInn extends Vue {
+
+  @Prop({ required: false, default: true })
+  app!: boolean;
+
 }
+
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <v-app class="default-layout">
+  <v-app>
     <header-hotel-dela-inn />
     <v-main>
       <Nuxt />
