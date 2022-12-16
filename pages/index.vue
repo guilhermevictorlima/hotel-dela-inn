@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <v-carousel
       :cycle="true"
       hide-delimiter-background
@@ -216,6 +215,7 @@ import { ReviewCliente } from '~/model/types/ReviewCliente';
 import { Imagem } from '~/model/types/Imagem';
 
 @Component({
+  layout: 'absolute-header',
   components: { VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker }
 })
 export default class Index extends Vue {
