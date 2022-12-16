@@ -23,10 +23,10 @@ import { Component, Prop, Vue } from 'nuxt-property-decorator';
 export default class VQuote extends Vue {
 
   @Prop({ required: true })
-  citacao: string = '';
+  citacao!: string;
 
   @Prop({ required: true })
-  autor: string = '';
+  autor!: string;
 
 }
 

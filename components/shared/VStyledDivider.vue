@@ -10,10 +10,10 @@ import {Component, Prop, Vue} from 'nuxt-property-decorator';
 export default class VStyledDivider extends Vue {
 
   @Prop({ required: false, default: '#70364e' })
-  color: string = '#70364e';
+  color!: string;
 
   @Prop({ required: false, default: 5 })
-  hLevel: number = 5;
+  hLevel!: number;
 
   get cor(): string {
     return `color: ${this.color}`;

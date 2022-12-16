@@ -87,47 +87,35 @@
 
         <v-list-item class="flex-row justify-center">
           <v-spacer />
-          <v-item>
-            <div>
-              <v-icon color="#9c8f54">mdi-dumbbell</v-icon> <br /> <br />
-              <span>Academia</span>
-            </div>
-          </v-item>
-          <v-spacer />
-          <v-item>
-            <div>
-              <v-icon color="#9c8f54">mdi-glass-wine</v-icon> <br /> <br />
-              <span>Bar</span>
-            </div>
-          </v-item>
-          <v-spacer />
-          <v-item>
-            <div>
-              <v-icon color="#9c8f54">mdi-coffee-maker</v-icon> <br /> <br />
-              <span>Café da manhã</span>
-            </div>
-          </v-item>
-          <v-spacer />
-          <v-item>
-            <div>
-              <v-icon color="#9c8f54">mdi-wifi</v-icon> <br /> <br />
-              <span>Wi-Fi</span>
-            </div>
-          </v-item>
-          <v-spacer />
-          <v-item>
-            <div>
-              <v-icon color="#9c8f54">mdi-bed-king</v-icon> <br /> <br />
-              <span>Quartos de luxo</span>
-            </div>
-          </v-item>
-          <v-spacer />
-          <v-item>
-            <div>
-              <v-icon color="#9c8f54">mdi-car-arrow-left</v-icon> <br /> <br />
-              <span>Estacionamento</span>
-            </div>
-          </v-item>
+          <div>
+            <v-icon color="#9c8f54">mdi-dumbbell</v-icon> <br /> <br />
+            <span>Academia</span>
+          </div>
+        <v-spacer />
+          <div>
+            <v-icon color="#9c8f54">mdi-glass-wine</v-icon> <br /> <br />
+            <span>Bar</span>
+          </div>
+        <v-spacer />
+          <div>
+            <v-icon color="#9c8f54">mdi-coffee-maker</v-icon> <br /> <br />
+            <span>Café da manhã</span>
+          </div>
+        <v-spacer />
+          <div>
+            <v-icon color="#9c8f54">mdi-wifi</v-icon> <br /> <br />
+            <span>Wi-Fi</span>
+          </div>
+        <v-spacer />
+          <div>
+            <v-icon color="#9c8f54">mdi-bed-king</v-icon> <br /> <br />
+            <span>Quartos de luxo</span>
+          </div>
+        <v-spacer />
+          <div>
+            <v-icon color="#9c8f54">mdi-car-arrow-left</v-icon> <br /> <br />
+            <span>Estacionamento</span>
+          </div>
           <v-spacer />
         </v-list-item>
 
