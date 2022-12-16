@@ -10,7 +10,7 @@
         justify="center"
       >
         <nuxt-link to="/">
-          <v-img src="logo.svg" class="default-layout__header__logo" width="250"/>
+          <v-img :src="require('static/logo.svg')" class="default-layout__header__logo" width="250"/>
         </nuxt-link>
       </v-row>
       <v-row
