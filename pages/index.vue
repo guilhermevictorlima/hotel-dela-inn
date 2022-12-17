@@ -1,80 +1,81 @@
 <template>
   <div>
-    <v-carousel
-      :cycle="true"
-      hide-delimiter-background
-      :show-arrows="false"
-      height="100%"
-      class="elevation-24"
-    >
-      <v-carousel-item v-for="(imagem, key) in imagensCarrosselInicial" :key="key">
-        <v-parallax :src="imagem.url" :alt="imagem.alt" class="parallax-inicial elevation-24">
-          <v-container style="display: flex">
-            <v-row
-              align="center"
-              justify="center"
+    <div>
+      <v-carousel
+        :cycle="true"
+        hide-delimiter-background
+        :show-arrows="false"
+        height="100%"
+        class="elevation-24"
+      >
+        <v-carousel-item v-for="(imagem, key) in imagensCarrosselInicial" :key="key">
+          <v-parallax :src="imagem.url" :alt="imagem.alt" class="parallax-inicial elevation-24" />
+        </v-carousel-item>
+      </v-carousel>
+      <v-container style="display: flex; position: absolute; top: 6%; right: 15%; color: white">
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <v-col
+            class="text-center"
+            cols="12"
+          >
+            <h1 class="text-h4 mb-4">
+              Hotel Dela Inn
+            </h1>
+            <h4 class="subheading">
+              O Hotel Dela renova o conceito da hotelaria em Andradas - MG!
+            </h4>
+          </v-col>
+        </v-row>
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <v-col
+            class="text-center"
+            cols="12"
+          >
+            <v-card
+              outlined
+              elevation="24"
+              flat
+              max-width="1000"
+              height="380"
+              class="card-reserva"
             >
-              <v-col
-                class="text-center"
-                cols="12"
+              <v-card-title>Faça sua reserva</v-card-title>
+
+              <v-check-in-check-out-picker />
+
+              <br />
+              <v-row align="center">
+                <v-col cols="5">
+                  <v-quantity-entry-input label="Adultos" />
+                </v-col>
+                <v-col cols="5">
+                  <v-quantity-entry-input label="Crianças" />
+                </v-col>
+              </v-row>
+
+              <br />
+              <br />
+
+              <v-btn
+                width="90%"
+                outlined
+                large
+                color="primary"
+                @click="$router.push('/reserva/1/1/1/1')"
               >
-                <h1 class="text-h4 mb-4">
-                  Hotel Dela Inn
-                </h1>
-                <h4 class="subheading">
-                  O Hotel Dela renova o conceito da hotelaria em Andradas - MG!
-                </h4>
-              </v-col>
-            </v-row>
-            <v-row
-              align="center"
-              justify="center"
-            >
-              <v-col
-                class="text-center"
-                cols="12"
-              >
-                <v-card
-                  outlined
-                  elevation="24"
-                  flat
-                  max-width="1000"
-                  height="380"
-                  class="card-reserva"
-                >
-                  <v-card-title>Faça sua reserva</v-card-title>
-
-                  <v-check-in-check-out-picker />
-
-                  <br />
-                  <v-row align="center">
-                    <v-col cols="5">
-                      <v-quantity-entry-input label="Adultos" />
-                    </v-col>
-                    <v-col cols="5">
-                      <v-quantity-entry-input label="Crianças" />
-                    </v-col>
-                  </v-row>
-
-                  <br />
-                  <br />
-
-                  <v-btn
-                    width="90%"
-                    outlined
-                    large
-                    color="primary"
-                    @click="$router.push('/reserva/1/1/1/1')"
-                  >
-                    Reservar
-                  </v-btn>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-parallax>
-      </v-carousel-item>
-    </v-carousel>
+                Reservar
+              </v-btn>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
 
     <div>
       <br />
@@ -226,9 +227,6 @@ export default class Index extends Vue {
     },
     {
       url: 'standart-twin.jpg'
-    },
-    {
-      url: 'recepcao-hotel.jpg'
     },
     {
       url: 'standart-casal.jpg'

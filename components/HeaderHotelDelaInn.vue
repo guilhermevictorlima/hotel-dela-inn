@@ -67,7 +67,7 @@
                 to="/"
                 class="router-link"
               >
-                Galeria
+                Eventos
               </nuxt-link>
             </v-item>
             &nbsp;
@@ -77,7 +77,7 @@
                 to="/"
                 class="router-link"
               >
-                Localização
+                Galeria
               </nuxt-link>
             </v-item>
           </v-item-group>
@@ -124,7 +124,7 @@ a {
 }
 
 .router-link:hover {
-  color: #c9be89;
+  color: #d1bd5e;
 
   transition: all 0.3s;
 }
