@@ -34,7 +34,7 @@
         :min="dataDeAmanha"
         :max="periodoMaximo"
         :allowed-dates="datasPermitidas"
-        @input="datasSelecionadas.length === 2 ? exibirMenu = false : ''"
+        @input="validarData"
       >
         <v-spacer></v-spacer>
         <v-btn
@@ -56,11 +56,14 @@
 
 <script lang="ts">
 
-import { Component, Vue, Watch } from 'nuxt-property-decorator';
+import {Component, Prop, Vue, Watch} from 'nuxt-property-decorator';
 
 // TODO usar validator para os erros
 @Component
 export default class VCheckInCheckOutPicker extends Vue {
+
+  @Prop({ required: false })
+  datas?: Array<Date>;
 
   exibirMenu = false;
   datasSelecionadas: Array<Date> = [];
@@ -68,7 +71,8 @@ export default class VCheckInCheckOutPicker extends Vue {
   mensagemErro = '';
 
   // TODO criar fake request para receber dias indisponíveis
-  diasNaoPermitidos: Array<Date> = [new Date('2022-12-23'), new Date('2022-12-24'), new Date('2022-12-25'), new Date('2022-12-26'), new Date('2022-12-27'), new Date('2022-12-28'), new Date('2022-12-29'), new Date('2022-12-30'), new Date('2022-12-31')];
+  diasNaoPermitidos: Array<Date> = [];
+  //new Date('2022-12-23'), new Date('2022-12-24'), new Date('2022-12-25'), new Date('2022-12-26'), new Date('2022-12-27'), new Date('2022-12-28'), new Date('2022-12-29'), new Date('2022-12-30'), new Date('2022-12-31')
 
   // TODO criar fake request para obter dia máximo disponível
   dataMaximaDisponivel: Date = new Date('2023-02-15');
@@ -94,24 +98,23 @@ export default class VCheckInCheckOutPicker extends Vue {
   @Watch('datasSelecionadas', { deep: true })
   validarData(): void {
      if (this.datasSelecionadas.length == 2) {
-       this.diasNaoPermitidos.every(diaNaoPermitido => {
-         const dataCheckin = new Date(this.datasSelecionadas[0]).getTime() > new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
-         const dataCheckout = new Date(this.datasSelecionadas[0]).getTime() < new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
+       const dataCheckin = new Date(this.datasSelecionadas[0]).getTime() > new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
+       const dataCheckout = new Date(this.datasSelecionadas[0]).getTime() < new Date(this.datasSelecionadas[1]).getTime() ? this.datasSelecionadas[1] : this.datasSelecionadas[0];
 
+       this.diasNaoPermitidos.every(diaNaoPermitido => {
          if (diaNaoPermitido.getTime() >= new Date(dataCheckin).getTime() && diaNaoPermitido.getTime() <= new Date(dataCheckout).getTime()) {
            this.lancarErro('Escolha um período com dias disponíveis.');
            return false;
          }
 
+       });
+
          if (dataCheckin === dataCheckout) {
            delete this.datasSelecionadas[1];
            this.lancarErro('Escolha um dia de check-out diferente do dia de check-in.');
-           return false;
          }
 
          this.temErro = false;
-
-       });
      }
   }
 
@@ -119,6 +122,10 @@ export default class VCheckInCheckOutPicker extends Vue {
     this.temErro = true;
     this.mensagemErro = mensagem;
     this.exibirMenu = false;
+  }
+
+  get datasProp(): Array<Date> {
+    return this.datas || [];
   }
 
   get dataDeAmanha(): string {
@@ -149,6 +156,10 @@ export default class VCheckInCheckOutPicker extends Vue {
     }
 
     return visualizacaoDatas;
+  }
+
+  created(): void {
+    this.datasSelecionadas = this.datasProp;
   }
 
 }

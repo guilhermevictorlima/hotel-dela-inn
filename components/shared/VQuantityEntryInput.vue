@@ -30,13 +30,16 @@
 
 <script lang="ts">
 
-import {Component, Prop, Vue, Watch} from 'nuxt-property-decorator';
+import { Component, Prop, Vue, Watch } from 'nuxt-property-decorator';
 
 @Component
 export default class VQuantityEntryInput extends Vue {
 
   @Prop({ required: true })
   label!: string;
+
+  @Prop({ required: false, default: 0 })
+  value!: number;
 
   valorQuantidade = 0;
 
@@ -51,6 +54,10 @@ export default class VQuantityEntryInput extends Vue {
   @Watch('valorQuantidade')
   aoMudarValorQuantidade(): void {
     if (this.valorQuantidade < 0) this.valorQuantidade = 0;
+  }
+
+  created(): void {
+    this.valorQuantidade = this.value;
   }
 
 }

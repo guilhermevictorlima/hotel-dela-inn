@@ -5,6 +5,7 @@
       hide-delimiter-background
       :show-arrows="false"
       height="100%"
+      class="elevation-24"
     >
       <v-carousel-item v-for="(imagem, key) in imagensCarrosselInicial" :key="key">
         <v-parallax :src="imagem.url" :alt="imagem.alt" class="parallax-inicial elevation-24">
@@ -63,6 +64,7 @@
                     outlined
                     large
                     color="primary"
+                    @click="$router.push('/reserva/1/1/1/1')"
                   >
                     Reservar
                   </v-btn>
@@ -198,9 +200,7 @@
     </v-container>
     <br /> <br />
 
-    <v-container fluid>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1848.6880602049034!2d-46.57759907331751!3d-22.073448471806163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9bd61763916c5%3A0x2a4adaceafd56d28!2sHotel%20Dela%20Inn!5e0!3m2!1spt-BR!2sbr!4v1671078772754!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </v-container>
+      <iframe class="elevation-24" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1848.6880602049034!2d-46.57759907331751!3d-22.073448471806163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9bd61763916c5%3A0x2a4adaceafd56d28!2sHotel%20Dela%20Inn!5e0!3m2!1spt-BR!2sbr!4v1671078772754!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </template>
 
@@ -264,8 +264,13 @@ export default class Index extends Vue {
 
 <style>
 
+* {
+  --background-main: white;
+}
+
 main {
   overflow: hidden;
+  background-color: var(--background-main);
 }
 
 .parallax-inicial {

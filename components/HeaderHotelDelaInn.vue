@@ -10,7 +10,7 @@
         justify="center"
       >
         <nuxt-link to="/">
-          <v-img :src="require('static/logo.svg')" class="default-layout__header__logo" width="250"/>
+          <v-img :src="require('static/logo-horizontal.svg')" class="default-layout__header__logo" width="250"/>
         </nuxt-link>
       </v-row>
       <v-row
@@ -31,7 +31,7 @@
           &nbsp;
           <v-item>
             <nuxt-link
-              to="/"
+              to="/acomodacoes"
               class="router-link"
             >
               Acomodações
