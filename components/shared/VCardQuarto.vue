@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-dialog v-model="exibirDialogDescricao" width="600">
+    <v-dialog v-model="exibirDialogDescricao" width="600" style="z-index: 2000">
       <v-card>
         <v-card-title class="text-h5 lighten-2" style="background-color: #70364e; color: #dfddde">
           {{ quartoNome }}
