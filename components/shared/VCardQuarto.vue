@@ -8,7 +8,9 @@
         <br />
 
         <v-card-text>
-          <slot name="descricao-completa" />
+          <span v-for="(item, key) in itensDescricao" :key="key">
+            {{ item }} <br />
+          </span>
         </v-card-text>
 
         <v-divider></v-divider>
@@ -138,6 +140,10 @@ export default class VCardQuarto extends Vue {
 
   quartoPossuiVariasImagens(): boolean {
     return this.quartoTo.imagens.length > 1;
+  }
+
+  get itensDescricao(): Array<string> {
+    return this.quartoTo.descricao.split('\n');
   }
 
   get dataLimiteCancelamento(): string {

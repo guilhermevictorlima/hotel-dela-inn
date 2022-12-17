@@ -47,13 +47,7 @@
       <v-container>
         <v-row align="center" align-content="center">
           <v-col cols="15">
-            <v-card-quarto width="70%" :data-chegada="dataChegada" :quarto-to="quartoTo">
-              <template #descricao-completa>
-                <span v-for="(item, key) in itensDescricao" :key="key">
-                  {{ item }} <br />
-                </span>
-              </template>
-            </v-card-quarto>
+            <v-card-quarto width="70%" :data-chegada="dataChegada" :quarto-to="quartoTo" />
           </v-col>
           <v-col cols="15">
             <v-card-quarto width="70%" :data-chegada="dataChegada" :quarto-to="{...quartoTo, imagens: ['standart-twin.jpg', 'standart-casal.jpg'], maximoPessoas: 1}" />
@@ -97,10 +91,6 @@ export default class ReservaIndex extends Vue {
 
   get dataSaida(): Date {
     return new Date(this.$route.params.dataSaida);
-  }
-
-  get itensDescricao(): Array<string> {
-    return this.quartoTo.descricao.split('\n');
   }
 
   quartoTo: Quarto = {
