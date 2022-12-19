@@ -56,7 +56,7 @@
 
 <script lang="ts">
 
-import {Component, Prop, Vue, Watch} from 'nuxt-property-decorator';
+import { Component, Prop, Vue, Watch } from 'nuxt-property-decorator';
 
 // TODO usar validator para os erros
 @Component
@@ -129,18 +129,11 @@ export default class VCheckInCheckOutPicker extends Vue {
   }
 
   get dataDeAmanha(): string {
-    return this.obterDiaSeguinte(new Date()).toISOString().substring(0, 10);
+    return new Date().toISOString().substring(0, 10);
   }
 
   get periodoMaximo(): string {
     return new Date(this.dataMaximaDisponivel).toISOString().substring(0, 10);
-  }
-
-  obterDiaSeguinte(data: Date): Date {
-    let diaSeguinte = data;
-    diaSeguinte.setDate(data.getDate() + 1);
-
-    return new Date(diaSeguinte);
   }
 
   get visualizacaoDatasSelecionadas(): string {
