@@ -67,7 +67,6 @@
                 outlined
                 large
                 color="primary"
-                @click="$router.push('/reserva/1/1/1/1')"
               >
                 Reservar
               </v-btn>
