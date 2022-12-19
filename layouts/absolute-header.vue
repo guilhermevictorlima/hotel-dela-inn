@@ -4,7 +4,7 @@
     <v-main>
       <Nuxt />
     </v-main>
-    <header-hotel-dela-inn :app="false" :reverse="true" :exibir-links="false" :header="false" sub-header-height="150" />
+    <footer-hotel-dela-inn />
   </v-app>
 </template>
 

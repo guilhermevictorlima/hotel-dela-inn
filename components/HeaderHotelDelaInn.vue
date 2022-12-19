@@ -1,10 +1,13 @@
 <template>
-  <header :class="classe">
-    <v-toolbar class="default-layout__header elevation-24"
+  <header>
+    <v-app-bar class="default-layout__header elevation-24"
                height="100"
                dark
+               fixed
+               :extension-height="subHeaderHeight"
+               :app="app"
     >
-      <v-container fluid>
+      <v-container  >
         <v-row
           justify="center"
         >
@@ -15,102 +18,103 @@
           </div>
         </v-row>
       </v-container>
-      <v-divider />
-    </v-toolbar>
-    <v-toolbar
-      class="dela-inn-subheader"
-      :class="!reverse ? 'reverse-subheader elevation-24' : ''"
-      :height="subHeaderHeight"
-    >
-      <v-container fluid>
-        <v-row
-          justify="center"
+
+      <template #extension>
+        <v-app-bar
+          class="dela-inn-subheader elevation-24"
+          :height="subHeaderHeight"
         >
-          <v-item-group class="default-layout__header__links" v-if="exibirLinks">
-            &nbsp;
-            &nbsp;
-            <v-item>
-              <nuxt-link
-                to="/"
-                class="router-link"
-              >
-                Hotel Dela Inn
-              </nuxt-link>
-            </v-item>
-            &nbsp;
-            &nbsp;
-            <v-item>
-              <nuxt-link
-                to="/acomodacoes"
-                class="router-link"
-              >
-                Acomodações
-              </nuxt-link>
-            </v-item>
-            &nbsp;
-            &nbsp;
-            <v-item>
-              <nuxt-link
-                to="/"
-                class="router-link"
-              >
-                Ofertas Especiais
-              </nuxt-link>
-            </v-item>
-            &nbsp;
-            &nbsp;
-            <v-item>
-              <nuxt-link
-                to="/"
-                class="router-link"
-              >
-                Galeria
-              </nuxt-link>
-            </v-item>
-            &nbsp;
-            &nbsp;
-            <v-item>
-              <nuxt-link
-                to="/"
-                class="router-link"
-              >
-                Localização
-              </nuxt-link>
-            </v-item>
-          </v-item-group>
-        </v-row>
-        <v-row justify="center">
-          <nav class="nav-social-media text-center">
-            <span>
-              <a href="https://www.instagram.com/hoteldelainn/" target="_blank">
-                  <v-icon color="#dfddde">mdi-instagram</v-icon>
-              </a>
-              <a href="https://api.whatsapp.com/send/?phone=553537318400&text&type=phone_number&app_absent=0" target="_blank">
-                  <v-icon color="#dfddde">mdi-whatsapp</v-icon>
-              </a>
-              <a href="https://www.facebook.com/hoteldelainn" target="_blank">
-                  <v-icon color="#dfddde">mdi-facebook</v-icon>
-              </a>
-              <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
-                  <v-icon color="#dfddde">mdi-gmail</v-icon>
-              </a>
-            </span>
-            <span v-if="reverse" style="display: flex; flex-direction: column">
+          <v-container fluid>
+            <v-row
+              justify="center"
+            >
+              <v-item-group class="default-layout__header__links">
+                &nbsp;
+                &nbsp;
+                <v-item>
+                  <nuxt-link
+                    to="/"
+                    class="router-link"
+                  >
+                    Hotel Dela Inn
+                  </nuxt-link>
+                </v-item>
+                &nbsp;
+                &nbsp;
+                <v-item>
+                  <nuxt-link
+                    to="/acomodacoes"
+                    class="router-link"
+                  >
+                    Acomodações
+                  </nuxt-link>
+                </v-item>
+                &nbsp;
+                &nbsp;
+                <v-item>
+                  <nuxt-link
+                    to="/"
+                    class="router-link"
+                  >
+                    Ofertas Especiais
+                  </nuxt-link>
+                </v-item>
+                &nbsp;
+                &nbsp;
+                <v-item>
+                  <nuxt-link
+                    to="/"
+                    class="router-link"
+                  >
+                    Galeria
+                  </nuxt-link>
+                </v-item>
+                &nbsp;
+                &nbsp;
+                <v-item>
+                  <nuxt-link
+                    to="/localizacao"
+                    class="router-link"
+                  >
+                    Localização
+                  </nuxt-link>
+                </v-item>
+              </v-item-group>
+            </v-row>
+            <v-row justify="center">
+              <nav class="nav-social-media text-center">
+                <span>
+                  <a href="https://www.instagram.com/hoteldelainn/" target="_blank">
+                      <v-icon color="#dfddde">mdi-instagram</v-icon>
+                  </a>
+                  <a href="https://api.whatsapp.com/send/?phone=553537318400&text&type=phone_number&app_absent=0" target="_blank">
+                      <v-icon color="#dfddde">mdi-whatsapp</v-icon>
+                  </a>
+                  <a href="https://www.facebook.com/hoteldelainn" target="_blank">
+                      <v-icon color="#dfddde">mdi-facebook</v-icon>
+                  </a>
+                  <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
+                      <v-icon color="#dfddde">mdi-gmail</v-icon>
+                  </a>
+                </span>
+<!--                <span v-if="reverse" style="display: flex; flex-direction: column">-->
 
-              <span class="footer-info">
-                <v-icon color="#dfddde">mdi-google-maps</v-icon> &nbsp;
-                <span>R. Maj. Bonifácio, 670 - Andradas, MG</span>
-              </span>
+<!--                  <span class="footer-info">-->
+<!--                    <v-icon color="#dfddde">mdi-google-maps</v-icon> &nbsp;-->
+<!--                    <span>R. Maj. Bonifácio, 670 - Andradas, MG</span>-->
+<!--                  </span>-->
 
-              <span class="footer-info">
-                <v-icon color="#dfddde">mdi-phone</v-icon> &nbsp;
-                <a href="tel:3537318400" style="color: white; text-decoration: underline">(35) 3731-8400</a>
-              </span>
-            </span>
-          </nav>
-        </v-row>
-      </v-container>
-    </v-toolbar>
+<!--                  <span class="footer-info">-->
+<!--                    <v-icon color="#dfddde">mdi-phone</v-icon> &nbsp;-->
+<!--                    <a href="tel:3537318400" style="color: white; text-decoration: underline">(35) 3731-8400</a>-->
+<!--                  </span>-->
+<!--                </span>-->
+              </nav>
+            </v-row>
+          </v-container>
+        </v-app-bar>
+      </template>
+    </v-app-bar>
   </header>
 </template>
 
@@ -123,32 +127,22 @@ export default class HeaderHotelDelaInn extends Vue {
   @Prop({ required: false, default: true })
   app!: boolean;
 
-  @Prop({ required: false, default: true })
-  header!: boolean;
-
-  @Prop({ required: false, default: true })
-  exibirLinks!: boolean;
-
-  @Prop({ required: false, default: false })
-  reverse!: boolean;
-
   @Prop({ required: false, default: '90' })
   subHeaderHeight!: string;
-
-  get classe(): string {
-    let classe = '';
-
-    if (this.header) classe = classe.concat('abs-header');
-    if (this.reverse) classe = classe.concat(' reverse-header');
-
-    return classe;
-  }
 
 }
 
 </script>
 
 <style scoped>
+
+.v-toolbar__content, .v-toolbar__extension {
+  padding: 0;
+}
+
+.v-toolbar__extension {
+  width: 100% !important;
+}
 
 .abs-header {
   position: fixed;
@@ -188,7 +182,6 @@ a {
 }
 
 .dela-inn-subheader {
-  width: 100% !important;
   background-color: #70364e !important;
 }
 
