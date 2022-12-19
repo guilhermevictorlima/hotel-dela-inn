@@ -158,22 +158,32 @@
     <br />
 
     <v-container fluid>
+      <v-row align="center" justify="center">
+        <h1 class="text-center font-weight-light">Conheça nosso hotel</h1>
+        <br />
+        <br />
+      </v-row>
+      <v-row align="center" justify="center">
+        <v-col cols="6">
 
-      <h1 class="text-center font-weight-light">O que nossos clientes dizem:</h1>
-      <br />
-      <br />
-
-      <v-carousel
-        v-if="reviews.length"
-        :cycle="true"
-        hide-delimiter-background
-      >
-        <v-carousel-item
-          v-for="(review, key) in reviews" :key="key"
-        >
-          <v-quote :citacao="review.citacao" :autor="review.autor" />
-        </v-carousel-item>
-      </v-carousel>
+          <v-carousel
+            v-if="reviews.length"
+            :cycle="true"
+            :show-arrows="false"
+            hide-delimiter-background
+            interval="8000"
+          >
+            <v-carousel-item
+              v-for="(review, key) in reviews" :key="key"
+            >
+              <v-quote :citacao="review.citacao" :autor="review.autor" />
+            </v-carousel-item>
+          </v-carousel>
+          </v-col>
+          <v-col cols="5">
+            <iframe width="700" height="405" src="https://www.youtube-nocookie.com/embed/menra41-M4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </v-col>
+      </v-row>
     </v-container>
     <v-styled-divider />
 
