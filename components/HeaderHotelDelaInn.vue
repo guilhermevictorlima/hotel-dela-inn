@@ -28,6 +28,9 @@
               <a href="https://www.facebook.com/hoteldelainn" target="_blank">
                   <v-icon color="#4d2334">mdi-facebook</v-icon>
               </a>
+              <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
+                  <v-icon color="#4d2334">mdi-gmail</v-icon>
+              </a>
             </span>
           </nav>
         </v-row>
