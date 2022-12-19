@@ -2,6 +2,7 @@
   <div>
     <v-container class="text-center">
       &nbsp; &nbsp;
+      <v-styled-divider /> <br />
 
       <h1 class="font-weight-light">Nossa localização:</h1>
       <br />
@@ -21,8 +22,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
+import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
-@Component
+@Component({
+  components: { VStyledDivider }
+})
 export default class IndexLocalizacao extends Vue{
 
 }

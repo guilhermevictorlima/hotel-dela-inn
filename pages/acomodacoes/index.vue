@@ -18,6 +18,7 @@
           class="text-center"
           cols="12"
         >
+          <v-styled-divider /> <br />
           <h1 class="font-weight-light">
             Acomodações
           </h1>
@@ -40,9 +41,10 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import VCardQuarto from "~/components/shared/VCardQuarto.vue";
 import {Quarto} from "~/model/types/Quarto";
+import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
 @Component({
-  components: { VCardQuarto }
+  components: { VStyledDivider, VCardQuarto }
 })
 export default class IndexAcomodacoes extends Vue {
 

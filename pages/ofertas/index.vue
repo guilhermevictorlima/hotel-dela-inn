@@ -4,6 +4,8 @@
     <br />
 
     <v-container fluid>
+      <v-styled-divider /> <br />
+      
       <v-row justify="center" align="center">
         <h1 class="font-weight-light text-center">
           Ofertas Especiais
@@ -58,8 +60,11 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
 import { Imagem } from '~/model/types/Imagem';
+import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
-@Component
+@Component({
+  components: {VStyledDivider}
+})
 export default class IndexOfertas extends Vue {
 
   imagensOfertas: Array<Imagem> = [
