@@ -3,14 +3,12 @@
     <v-icon size="70">mdi-format-quote-open</v-icon>
     <br />
 
-    <h2 class="font-weight-light">
+    <h2 class="font-weight-light text-center">
       {{ citacao }}
-
-      <br />
+    </h2>
       <v-icon size="70">mdi-format-quote-close</v-icon>
       <br />
       <v-subheader style="font-size: 1.5rem">{{ autor }}</v-subheader>
-    </h2>
 
   </v-container>
 </template>
