@@ -54,7 +54,7 @@
                 &nbsp;
                 <v-item>
                   <nuxt-link
-                    to="/"
+                    to="/ofertas"
                     class="router-link"
                   >
                     Ofertas Especiais
