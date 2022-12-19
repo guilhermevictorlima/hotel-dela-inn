@@ -23,6 +23,7 @@
         <v-app-bar
           class="dela-inn-subheader elevation-24"
           :height="subHeaderHeight"
+          absolute
         >
           <v-container fluid>
             <v-row
