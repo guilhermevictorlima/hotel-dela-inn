@@ -29,20 +29,80 @@
     </v-dialog>
 
     &nbsp;
-    <v-card :width="width">
+    <v-card color="#e7e4de" :width="width" height="80%" style="padding: 2rem">
+      <v-col cols="5" v-if="rowReverse">
+        <v-container>
+          <v-row align="center">
+            <v-card-title>{{ quartoNome }}</v-card-title>
+            &nbsp;&nbsp;&nbsp;
+            <!--              <v-breadcrumbs-divider v-if="dataChegada" />-->
+            <!--              <v-btn-->
+            <!--                icon-->
+            <!--                v-if="dataChegada"-->
+            <!--                @click="exibirDialog = true"-->
+            <!--              >-->
+            <!--                <v-icon color=#4d2334>mdi-file-document-alert</v-icon>-->
+            <!--              </v-btn>-->
+          </v-row>
+        </v-container>
+        <v-container>
+          <v-card-subtitle>
+            <v-row align-content="center" align="center">
+            <span v-if="quartoMaximoPessoas">
+              <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
+              <span>Capacidade máxima: {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
+            </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <!--                <v-breadcrumbs-divider />-->
+              <span>
+              <v-icon color="#4d2334">mdi-wifi</v-icon>
+              <span>Acesso livre ao Wi-Fi</span>
+            </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <!--                <v-breadcrumbs-divider />-->
+              <span>
+              <v-icon color="#4d2334">mdi-smoking-off</v-icon>
+              <span>Proibido fumar</span>
+            </span>
+            </v-row>
+          </v-card-subtitle>
+        </v-container>
+        <v-container>
+          <v-divider />
+        </v-container>
+
+        <v-container>
+          <v-card-text>
+              <span>
+                {{ quartoDescricaoCurta }}
+                <span v-if="botaoVerMaisDescricao" class="ver-mais-link" @click="exibirDialogDescricao = true">
+                  Ver mais
+                </span>
+              </span>
+          </v-card-text>
+        </v-container>
+
+        <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
+          <v-btn color="primary" width="30%">Reservar</v-btn>
+          <!--            <span>-->
+          <!--              <strong>A partir de <v-dinheiro-formatado :valor="quartoValorNominal" /> por noite</strong>-->
+          <!--            </span/>-->
+        </v-container>
+        &nbsp;
+      </v-col>
       <v-row>
         <v-col cols="5">
           <div>
             <v-carousel height="100%" v-if="quartoPossuiVariasImagens()">
               <v-carousel-item v-for="(enderecoImagem, key) in quartoImagens" :key="key">
-                <v-img :src="require(`static/${enderecoImagem}`)" />
+                <v-img style="border-radius: 2%" :src="require(`static/${enderecoImagem}`)" />
               </v-carousel-item>
             </v-carousel>
 
-            <v-img v-else :src="require(`static/${quartoImagens[0]}`)" />
+            <v-img style="border-radius: 2%" v-else :src="require(`static/${quartoImagens[0]}`)" />
           </div>
         </v-col>
-        <v-col cols="5">
+        <v-col cols="5" v-if="!rowReverse">
           <v-container>
             <v-row align="center">
               <v-card-title>{{ quartoNome }}</v-card-title>
@@ -53,27 +113,27 @@
 <!--                v-if="dataChegada"-->
 <!--                @click="exibirDialog = true"-->
 <!--              >-->
-<!--                <v-icon>mdi-file-document-alert</v-icon>-->
+<!--                <v-icon color=#4d2334>mdi-file-document-alert</v-icon>-->
 <!--              </v-btn>-->
             </v-row>
           </v-container>
           <v-container>
             <v-card-subtitle>
               <v-row align-content="center" align="center">
-            <span>
-              <v-icon>{{ iconNumeroPessoas }}</v-icon>
+            <span v-if="quartoMaximoPessoas">
+              <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
               <span>Capacidade máxima: {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
             </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
 <!--                <v-breadcrumbs-divider />-->
                 <span>
-              <v-icon>mdi-wifi</v-icon>
+              <v-icon color="#4d2334">mdi-wifi</v-icon>
               <span>Acesso livre ao Wi-Fi</span>
             </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
 <!--                <v-breadcrumbs-divider />-->
                 <span>
-              <v-icon>mdi-smoking-off</v-icon>
+              <v-icon color="#4d2334">mdi-smoking-off</v-icon>
               <span>Proibido fumar</span>
             </span>
               </v-row>
@@ -96,11 +156,9 @@
 
           <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
             <v-btn color="primary" width="30%">Reservar</v-btn>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span>
-          <strong>A partir de <v-dinheiro-formatado :valor="quartoValorNominal" /> por noite</strong>
-
-        </span>
+<!--            <span>-->
+<!--              <strong>A partir de <v-dinheiro-formatado :valor="quartoValorNominal" /> por noite</strong>-->
+<!--            </span/>-->
           </v-container>
           &nbsp;
         </v-col>
@@ -138,6 +196,8 @@ export default class VCardQuarto extends Vue {
   botaoVerMaisDescricao = false;
   exibirDialogDescricao = false;
 
+  rowReverse = false;
+
   quartoPossuiVariasImagens(): boolean {
     return this.quartoTo.imagens.length > 1;
   }
@@ -165,10 +225,6 @@ export default class VCardQuarto extends Vue {
     }
   }
 
-  get quartoId(): number {
-    return this.quartoTo.id;
-  }
-
   get quartoNome(): string {
     return this.quartoTo.nomeQuarto;
   }
@@ -182,20 +238,12 @@ export default class VCardQuarto extends Vue {
     return this.quartoTo.descricao;
   }
 
-  get quartoDescricaoCompleta(): string {
-    return this.quartoTo.descricao;
-  }
-
   get quartoImagens(): string | Array<string> {
     return this.quartoTo.imagens;
   }
 
   get quartoMaximoPessoas(): number {
-    return this.quartoTo.maximoPessoas;
-  }
-
-  get quartoValorNominal(): number {
-    return this.quartoTo.valorNominal;
+    return this.quartoTo.maximoPessoas || 0;
   }
 
 }
