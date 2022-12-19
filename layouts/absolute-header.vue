@@ -1,9 +1,10 @@
 <template>
   <v-app>
-    <header-hotel-dela-inn :app="false" />
+    <header-hotel-dela-inn :app="false"  />
     <v-main>
       <Nuxt />
     </v-main>
+    <header-hotel-dela-inn :app="false" :reverse="true" :exibir-links="false" :header="false" sub-header-height="150" />
   </v-app>
 </template>
 

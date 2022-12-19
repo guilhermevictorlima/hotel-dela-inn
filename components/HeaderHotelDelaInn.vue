@@ -1,5 +1,5 @@
 <template>
-  <header class="abs-header">
+  <header :class="classe">
     <v-toolbar class="default-layout__header elevation-24"
                height="100"
                dark
@@ -17,12 +17,16 @@
       </v-container>
       <v-divider />
     </v-toolbar>
-    <v-toolbar class="dela-inn-subheader elevation-24" height="90">
+    <v-toolbar
+      class="dela-inn-subheader"
+      :class="!reverse ? 'reverse-subheader elevation-24' : ''"
+      :height="subHeaderHeight"
+    >
       <v-container fluid>
         <v-row
           justify="center"
         >
-          <v-item-group class="default-layout__header__links">
+          <v-item-group class="default-layout__header__links" v-if="exibirLinks">
             &nbsp;
             &nbsp;
             <v-item>
@@ -76,8 +80,8 @@
           </v-item-group>
         </v-row>
         <v-row justify="center">
-          <nav class="nav-social-media">
-            <span style="">
+          <nav class="nav-social-media text-center">
+            <span>
               <a href="https://www.instagram.com/hoteldelainn/" target="_blank">
                   <v-icon color="#dfddde">mdi-instagram</v-icon>
               </a>
@@ -90,6 +94,18 @@
               <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
                   <v-icon color="#dfddde">mdi-gmail</v-icon>
               </a>
+            </span>
+            <span v-if="reverse" style="display: flex; flex-direction: column">
+
+              <span class="footer-info">
+                <v-icon color="#dfddde">mdi-google-maps</v-icon> &nbsp;
+                <span>R. Maj. Bonifácio, 670 - Andradas, MG</span>
+              </span>
+
+              <span class="footer-info">
+                <v-icon color="#dfddde">mdi-phone</v-icon> &nbsp;
+                <a href="tel:3537318400" style="color: white; text-decoration: underline">(35) 3731-8400</a>
+              </span>
             </span>
           </nav>
         </v-row>
@@ -107,6 +123,27 @@ export default class HeaderHotelDelaInn extends Vue {
   @Prop({ required: false, default: true })
   app!: boolean;
 
+  @Prop({ required: false, default: true })
+  header!: boolean;
+
+  @Prop({ required: false, default: true })
+  exibirLinks!: boolean;
+
+  @Prop({ required: false, default: false })
+  reverse!: boolean;
+
+  @Prop({ required: false, default: '90' })
+  subHeaderHeight!: string;
+
+  get classe(): string {
+    let classe = '';
+
+    if (this.header) classe = classe.concat('abs-header');
+    if (this.reverse) classe = classe.concat(' reverse-header');
+
+    return classe;
+  }
+
 }
 
 </script>
@@ -118,6 +155,11 @@ export default class HeaderHotelDelaInn extends Vue {
   z-index: 1000;
   top: 0;
   width: 100%;
+}
+
+.reverse-header {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .nav-social-media {
@@ -156,6 +198,14 @@ a {
 
 .default-layout__header__links v-item:not(:first-child) {
   margin-left: 1rem;
+}
+
+.footer-info {
+  display: flex;
+  align-self: center;
+
+  padding-top: 1rem;
+  color: white;
 }
 
 </style>
