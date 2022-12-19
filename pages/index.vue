@@ -12,36 +12,35 @@
           <v-parallax :src="imagem.url" :alt="imagem.alt" class="parallax-inicial elevation-24" />
         </v-carousel-item>
       </v-carousel>
-      <v-container style="display: flex; position: absolute; top: 6%; right: 15%; color: white">
+      <v-container class="container-card-reserva">
         <v-row
           align="center"
           justify="center"
         >
           <v-col
             class="text-center"
-            cols="12"
+            cols="10"
           >
-            <h1 class="text-h4 mb-4">
-              Hotel Dela Inn
-            </h1>
-            <h4 class="subheading">
-              O Hotel Dela renova o conceito da hotelaria em Andradas - MG!
-            </h4>
-          </v-col>
-        </v-row>
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-col
-            class="text-center"
-            cols="12"
-          >
+            <v-card
+              outlined
+              flat
+              style="padding: 1rem; color: white; background-color: #70364e"
+              max-width="1000"
+              width="60%"
+            >
+              <h1 class="text-h5 mb-4">
+                Hotel Dela Inn
+              </h1>
+              <h5 class="subheading" style="margin-top: -1rem">
+                O Hotel Dela renova o conceito da hotelaria em Andradas - MG!
+              </h5>
+            </v-card>
             <v-card
               outlined
               elevation="24"
               flat
               max-width="1000"
+              width="60%"
               height="380"
               class="card-reserva"
             >
@@ -273,6 +272,14 @@ main {
 .parallax-inicial {
   width: 100vw !important;
   height: 100vh !important;
+}
+
+.container-card-reserva {
+  display: flex;
+  position: absolute;
+  top: 6%;
+  right: -20%;
+  color: white;
 }
 
 .card-reserva {
