@@ -27,10 +27,12 @@
         </v-col>
       </v-row>
     </v-container>
+    <br />
+    <br />
 
-    <v-container fluid>
+    <v-container>
       <v-row>
-        oi
+        <v-card-quarto :quarto-to="quartoTo" width="100%" />
       </v-row>
     </v-container>
 
@@ -63,10 +65,27 @@
 
 import { Component, Vue } from 'nuxt-property-decorator';
 import VCardQuarto from "~/components/shared/VCardQuarto.vue";
+import {Quarto} from "~/model/types/Quarto";
 
 @Component({
+  components: { VCardQuarto }
 })
 export default class IndexAcomodacoes extends Vue {
+
+  quartoTo: Quarto = {
+    nomeQuarto: 'Luxo Casal - 1 ou 2 Pessoas',
+    descricao: 'UMA CAMA CASAL \n' +
+      'AR CONDICIONADO\n' +
+      'FRIGOBAR\n' +
+      'TELEVISÃO 40 POLEGADAS\n' +
+      'SECADOR DE CABELO\n' +
+      'WI-FI\n' +
+      'VOLTAGEM 220V\n' +
+      'ESTACIONAMENTO \n' +
+      'Dimensão: 24 m²',
+    imagens: ['luxo-casal-1.jpg', 'luxo-casal-2.jpg'],
+    maximoPessoas: 2
+  };
 
 }
 
