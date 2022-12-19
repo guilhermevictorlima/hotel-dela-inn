@@ -262,8 +262,8 @@ main {
 .container-card-reserva {
   display: flex;
   position: absolute;
-  top: 6%;
-  right: -20%;
+  top: 9%;
+  right: -24%;
   color: white;
 }
 
