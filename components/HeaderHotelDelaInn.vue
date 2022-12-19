@@ -70,7 +70,7 @@
                 to="/"
                 class="router-link"
               >
-                Eventos
+                Ofertas Especiais
               </nuxt-link>
             </v-item>
             &nbsp;
@@ -81,6 +81,16 @@
                 class="router-link"
               >
                 Galeria
+              </nuxt-link>
+            </v-item>
+            &nbsp;
+            &nbsp;
+            <v-item>
+              <nuxt-link
+                to="/"
+                class="router-link"
+              >
+                Localização
               </nuxt-link>
             </v-item>
           </v-item-group>
