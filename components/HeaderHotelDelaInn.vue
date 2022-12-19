@@ -1,7 +1,7 @@
 <template>
   <header class="abs-header">
     <v-toolbar class="default-layout__header elevation-24"
-               height="120"
+               height="100"
                dark
     >
       <v-container fluid>
@@ -10,34 +10,14 @@
         >
           <div>
             <nuxt-link to="/">
-              <v-img :src="require('static/logo-horizontal.svg')" class="default-layout__header__logo" width="250"/>
+              <v-img :src="require('static/logo-horizontal.svg')" class="default-layout__header__logo" width="350"/>
             </nuxt-link>
           </div>
-        </v-row>
-        <v-row
-          justify="center"
-        >
-          <nav class="nav-social-media">
-            <span style="">
-              <a href="https://www.instagram.com/hoteldelainn/" target="_blank">
-                  <v-icon color="#4d2334">mdi-instagram</v-icon>
-              </a>
-              <a href="https://api.whatsapp.com/send/?phone=553537318400&text&type=phone_number&app_absent=0" target="_blank">
-                  <v-icon color="#4d2334">mdi-whatsapp</v-icon>
-              </a>
-              <a href="https://www.facebook.com/hoteldelainn" target="_blank">
-                  <v-icon color="#4d2334">mdi-facebook</v-icon>
-              </a>
-              <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
-                  <v-icon color="#4d2334">mdi-gmail</v-icon>
-              </a>
-            </span>
-          </nav>
         </v-row>
       </v-container>
       <v-divider />
     </v-toolbar>
-    <v-toolbar class="dela-inn-subheader elevation-24">
+    <v-toolbar class="dela-inn-subheader elevation-24" height="90">
       <v-container fluid>
         <v-row
           justify="center"
@@ -94,6 +74,24 @@
               </nuxt-link>
             </v-item>
           </v-item-group>
+        </v-row>
+        <v-row justify="center">
+          <nav class="nav-social-media">
+            <span style="">
+              <a href="https://www.instagram.com/hoteldelainn/" target="_blank">
+                  <v-icon color="#dfddde">mdi-instagram</v-icon>
+              </a>
+              <a href="https://api.whatsapp.com/send/?phone=553537318400&text&type=phone_number&app_absent=0" target="_blank">
+                  <v-icon color="#dfddde">mdi-whatsapp</v-icon>
+              </a>
+              <a href="https://www.facebook.com/hoteldelainn" target="_blank">
+                  <v-icon color="#dfddde">mdi-facebook</v-icon>
+              </a>
+              <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
+                  <v-icon color="#dfddde">mdi-gmail</v-icon>
+              </a>
+            </span>
+          </nav>
         </v-row>
       </v-container>
     </v-toolbar>
