@@ -1,95 +1,6 @@
 <template>
   <div>
-    <v-dialog v-model="exibirDialogDescricao" width="600" style="z-index: 2000">
-      <v-card>
-        <v-card-title class="text-h5 lighten-2" style="background-color: #70364e; color: #dfddde">
-          {{ quartoNome }}
-        </v-card-title>
-        <br />
-
-        <v-card-text>
-          <span v-for="(item, key) in itensDescricao" :key="key">
-            {{ item }} <br />
-          </span>
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            text
-            @click="exibirDialogDescricao = false"
-          >
-            Ok
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-
-    &nbsp;
-    <v-card color="#e7e4de" :width="width" height="80%" style="padding: 2rem">
-      <v-col cols="5" v-if="rowReverse">
-        <v-container>
-          <v-row align="center">
-            <v-card-title>{{ quartoNome }}</v-card-title>
-            &nbsp;&nbsp;&nbsp;
-            <!--              <v-breadcrumbs-divider v-if="dataChegada" />-->
-            <!--              <v-btn-->
-            <!--                icon-->
-            <!--                v-if="dataChegada"-->
-            <!--                @click="exibirDialog = true"-->
-            <!--              >-->
-            <!--                <v-icon color=#4d2334>mdi-file-document-alert</v-icon>-->
-            <!--              </v-btn>-->
-          </v-row>
-        </v-container>
-        <v-container>
-          <v-card-subtitle>
-            <v-row align-content="center" align="center">
-            <span v-if="quartoMaximoPessoas">
-              <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
-              <span>Capacidade máxima: {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
-            </span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <!--                <v-breadcrumbs-divider />-->
-              <span>
-              <v-icon color="#4d2334">mdi-wifi</v-icon>
-              <span>Acesso livre ao Wi-Fi</span>
-            </span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <!--                <v-breadcrumbs-divider />-->
-              <span>
-              <v-icon color="#4d2334">mdi-smoking-off</v-icon>
-              <span>Proibido fumar</span>
-            </span>
-            </v-row>
-          </v-card-subtitle>
-        </v-container>
-        <v-container>
-          <v-divider />
-        </v-container>
-
-        <v-container>
-          <v-card-text>
-              <span>
-                {{ quartoDescricaoCurta }}
-                <span v-if="botaoVerMaisDescricao" class="ver-mais-link" @click="exibirDialogDescricao = true">
-                  Ver mais
-                </span>
-              </span>
-          </v-card-text>
-        </v-container>
-
-        <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
-          <v-btn color="primary" width="30%">Reservar</v-btn>
-          <!--            <span>-->
-          <!--              <strong>A partir de <v-dinheiro-formatado :valor="quartoValorNominal" /> por noite</strong>-->
-          <!--            </span/>-->
-        </v-container>
-        &nbsp;
-      </v-col>
+    <v-card class="elevation-15" :width="width" :min-width="width" height="90%" style="padding: 2rem">
       <v-row>
         <v-col cols="5">
           <div>
@@ -100,65 +11,45 @@
             </v-carousel>
 
             <v-img style="border-radius: 2%" v-else :src="require(`static/${quartoImagens[0]}`)" />
-          </div>
-        </v-col>
-        <v-col cols="5" v-if="!rowReverse">
-          <v-container>
-            <v-row align="center">
-              <v-card-title>{{ quartoNome }}</v-card-title>
-              &nbsp;&nbsp;&nbsp;
-<!--              <v-breadcrumbs-divider v-if="dataChegada" />-->
-<!--              <v-btn-->
-<!--                icon-->
-<!--                v-if="dataChegada"-->
-<!--                @click="exibirDialog = true"-->
-<!--              >-->
-<!--                <v-icon color=#4d2334>mdi-file-document-alert</v-icon>-->
-<!--              </v-btn>-->
-            </v-row>
-          </v-container>
+          </div> <br />
+
           <v-container>
             <v-card-subtitle>
-              <v-row align-content="center" align="center">
-            <span v-if="quartoMaximoPessoas">
-              <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
-              <span>Capacidade máxima: {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
-            </span>
+              <v-row align-content="center" align="center" style="margin-top: -2rem">
+                <span v-if="quartoMaximoPessoas">
+                  <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
+                  <span>Capacidade máxima: {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
+                </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-<!--                <v-breadcrumbs-divider />-->
                 <span>
-              <v-icon color="#4d2334">mdi-wifi</v-icon>
-              <span>Acesso livre ao Wi-Fi</span>
-            </span>
+                  <v-icon color="#4d2334">mdi-wifi</v-icon>
+                  <span>Acesso livre ao Wi-Fi</span>
+                </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-<!--                <v-breadcrumbs-divider />-->
+                <v-breadcrumbs-divider />
                 <span>
-              <v-icon color="#4d2334">mdi-smoking-off</v-icon>
-              <span>Proibido fumar</span>
-            </span>
+                  <v-icon color="#4d2334">mdi-smoking-off</v-icon>
+                  <span>Proibido fumar</span>
+                </span>
               </v-row>
             </v-card-subtitle>
           </v-container>
+
+        </v-col>
+        <v-col cols="5">
           <v-container>
+            <v-row align="center">
+              <v-card-title>{{ quartoNome }}</v-card-title>
+            </v-row>
+          </v-container>
+          <v-container>
+            {{ quartoDescricao }}
+            <br />
+            <br />
             <v-divider />
           </v-container>
-
-          <v-container>
-            <v-card-text>
-              <span>
-                {{ quartoDescricaoCurta }}
-                <span v-if="botaoVerMaisDescricao" class="ver-mais-link" @click="exibirDialogDescricao = true">
-                  Ver mais
-                </span>
-              </span>
-            </v-card-text>
-          </v-container>
-
           <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
             <v-btn color="primary" width="30%">Reservar</v-btn>
-<!--            <span>-->
-<!--              <strong>A partir de <v-dinheiro-formatado :valor="quartoValorNominal" /> por noite</strong>-->
-<!--            </span/>-->
           </v-container>
           &nbsp;
         </v-col>
@@ -229,12 +120,7 @@ export default class VCardQuarto extends Vue {
     return this.quartoTo.nomeQuarto;
   }
 
-  get quartoDescricaoCurta(): string {
-    if (this.quartoTo.descricao.length > 80) {
-      this.botaoVerMaisDescricao = true;
-      return this.quartoTo.descricao.substring(0, 80).concat('...');
-    }
-
+  get quartoDescricao(): string {
     return this.quartoTo.descricao;
   }
 

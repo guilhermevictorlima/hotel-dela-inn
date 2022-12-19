@@ -18,12 +18,9 @@
           class="text-center"
           cols="12"
         >
-          <h1 class="text-h4 mb-4">
+          <h1 class="font-weight-light">
             Acomodações
           </h1>
-          <h4 class="subheading">
-            Hotel Dela Inn
-          </h4>
         </v-col>
       </v-row>
     </v-container>
@@ -31,33 +28,10 @@
     <br />
 
     <v-container>
-      <v-row>
-        <v-card-quarto :quarto-to="quartoTo" width="100%" />
+      <v-row v-for="(quartoTo, key) in quartosTos" :key="key">
+        <v-card-quarto :quarto-to="quartoTo" width="1000" />
       </v-row>
     </v-container>
-
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </div>
 </template>
 
@@ -72,20 +46,62 @@ import {Quarto} from "~/model/types/Quarto";
 })
 export default class IndexAcomodacoes extends Vue {
 
-  quartoTo: Quarto = {
-    nomeQuarto: 'Luxo Casal - 1 ou 2 Pessoas',
-    descricao: 'UMA CAMA CASAL \n' +
-      'AR CONDICIONADO\n' +
-      'FRIGOBAR\n' +
-      'TELEVISÃO 40 POLEGADAS\n' +
-      'SECADOR DE CABELO\n' +
-      'WI-FI\n' +
-      'VOLTAGEM 220V\n' +
-      'ESTACIONAMENTO \n' +
-      'Dimensão: 24 m²',
-    imagens: ['luxo-casal-1.jpg', 'luxo-casal-2.jpg'],
-    maximoPessoas: 2
-  };
+  quartosTos: Array<Quarto> = [
+    {
+      nomeQuarto: 'Luxo Casal',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['luxo-casal-1.jpg', 'luxo-casal-2.jpg'],
+      maximoPessoas: 2
+    },
+    {
+      nomeQuarto: 'Luxo Twin',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['luxo-twin.jpg'],
+      maximoPessoas: 2
+    },
+    {
+      nomeQuarto: 'Suíte Master Duplo',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['not-found.png'],
+      maximoPessoas: 2
+    },
+    {
+      nomeQuarto: 'Suíte Presidencial',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['suite-presidencial.webp', 'visao-banheira-suite-presidencial.jpg', 'banheira-suite-presidencial.jpg'],
+      maximoPessoas: 2
+    },
+    {
+      nomeQuarto: 'Luxo Triplo Casal',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['luxo-triplo-casal.jpg'],
+      maximoPessoas: 3
+    },
+    {
+      nomeQuarto: 'Luxo Triplo Solteiro',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['luxo-triplo-solteiro.jpg'],
+      maximoPessoas: 3
+    },
+    {
+      nomeQuarto: 'Standard Twin',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['standart-twin.jpg'],
+      maximoPessoas: 2
+    },
+    {
+      nomeQuarto: 'Standard Casal',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['standart-casal.jpg'],
+      maximoPessoas: 2
+    },
+    {
+      nomeQuarto: 'Super Luxo Casal',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['super-luxo-casal.jpg'],
+      maximoPessoas: 2
+    },
+  ];
 
 }
 
