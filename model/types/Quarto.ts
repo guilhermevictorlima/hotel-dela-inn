@@ -1,12 +1,12 @@
 export type Quarto = {
-  id: number;
+  id?: number;
   nomeQuarto: string;
   descricao: string;
   imagens: Array<string>;
-  valorNominal: number;
-  valorTotalTaxas: number;
-  tarifasPorNoite: Array<TarifaPorNoite>;
-  maximoPessoas: number;
+  valorNominal?: number;
+  valorTotalTaxas?: number;
+  tarifasPorNoite?: Array<TarifaPorNoite>;
+  maximoPessoas?: number;
 
 };
 
