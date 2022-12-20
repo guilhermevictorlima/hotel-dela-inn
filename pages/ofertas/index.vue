@@ -5,7 +5,7 @@
 
     <v-container fluid>
       <v-styled-divider /> <br />
-      
+
       <v-row justify="center" align="center">
         <h1 class="font-weight-light text-center">
           Ofertas Especiais
@@ -63,7 +63,15 @@ import { Imagem } from '~/model/types/Imagem';
 import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
 @Component({
-  components: {VStyledDivider}
+  components: { VStyledDivider },
+  head: {
+    title: 'Ofertas | Hotel Dela Inn',
+    titleTemplate: 'Ofertas | Hotel Dela Inn',
+    meta: [
+      { hid: 'description', name: 'description', content: 'Tipos de acomodações disponíveis no Hotel Dela Inn' },
+      { hid: 'robots', name: 'robots', content: 'index' }
+    ]
+  }
 })
 export default class IndexOfertas extends Vue {
 

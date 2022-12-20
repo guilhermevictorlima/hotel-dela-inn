@@ -44,7 +44,15 @@ import {Quarto} from "~/model/types/Quarto";
 import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
 @Component({
-  components: { VStyledDivider, VCardQuarto }
+  components: { VStyledDivider, VCardQuarto },
+  head: {
+    title: 'Acomodações | Hotel Dela Inn',
+    titleTemplate: 'Acomodações | Hotel Dela Inn',
+    meta: [
+      { hid: 'description', name: 'description', content: 'Acomodações Standart à Quartos de Luxo estão esperando você e sua família em Andradas!' },
+      { hid: 'robots', name: 'robots', content: 'index' }
+    ]
+  }
 })
 export default class IndexAcomodacoes extends Vue {
 

@@ -25,7 +25,15 @@ import { Component, Vue } from 'nuxt-property-decorator';
 import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
 @Component({
-  components: { VStyledDivider }
+  components: { VStyledDivider },
+  head: {
+    title: 'Localização | Hotel Dela Inn',
+    titleTemplate: 'Localização | Hotel Dela Inn',
+    meta: [
+      { hid: 'description', name: 'description', content: 'O Hotel Dela Inn' },
+      { hid: 'robots', name: 'robots', content: 'index' }
+    ]
+  }
 })
 export default class IndexLocalizacao extends Vue{
 

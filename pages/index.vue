@@ -200,7 +200,15 @@ import { Imagem } from '~/model/types/Imagem';
 
 @Component({
   layout: 'absolute-header',
-  components: { VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker }
+  components: { VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker },
+  head: {
+    title: 'Hotel Dela Inn',
+    titleTemplate: 'Hotel Dela Inn',
+    meta: [
+      { hid: 'description', name: 'description', content: 'O Hotel Dela renova o conceito da hotelaria em Andradas - MG! Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!' },
+      { hid: 'robots', name: 'robots', content: 'index, follow' }
+    ]
+  }
 })
 export default class Index extends Vue {
 

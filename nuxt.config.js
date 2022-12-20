@@ -6,19 +6,20 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - hotel-dela-inn',
-    title: 'hotel-dela-inn',
+    titleTemplate: 'Hotel Dela Inn',
+    title: 'Hotel Dela Inn',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'pt-br'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'Hotel Dela Inn - Andradas, MG' },
+      { hid: 'revisit-after', name: 'revisit-after', content: '1 month' },
+      { hid: 'language', name: 'language', content: 'Portuguese' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/tab-logo-icon.svg' }
     ]
   },
 
