@@ -8,7 +8,7 @@
           </v-carousel-item>
         </v-carousel>
 
-        <v-img v-else :src="require(`static/${src}`)" />
+        <v-img v-else :src="require(`static/${src}`)" @click="dialog = false" />
       </v-card>
     </v-dialog>
 
