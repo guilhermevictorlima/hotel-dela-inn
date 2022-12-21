@@ -66,6 +66,7 @@
                 outlined
                 large
                 color="primary"
+                @click="abrirReserva"
               >
                 Reservar
               </v-btn>
@@ -269,6 +270,10 @@ export default class Index extends Vue {
       autor: '- Elias, via Google'
     },
   ];
+
+  abrirReserva(): void {
+    window.open('https://reservas.desbravador.com.br/hotel-app/hotel-dela-inn', '_blank');
+  }
 
 }
 
