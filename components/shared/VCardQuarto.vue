@@ -25,7 +25,7 @@
       </v-card-text>
 
       <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
-        <v-btn color="primary" width="30%">Reservar</v-btn>
+        <v-btn color="primary" width="30%" @click="abrirReserva">Reservar</v-btn>
       </v-container>
     </v-card>
   </div>
@@ -74,6 +74,10 @@ export default class VCardQuarto extends Vue {
 
   get quartoMaximoPessoas(): number {
     return this.quartoTo.maximoPessoas || 0;
+  }
+
+  abrirReserva(): void {
+    window.open('https://reservas.desbravador.com.br/hotel-app/hotel-dela-inn', '_blank');
   }
 
 }
