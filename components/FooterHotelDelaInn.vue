@@ -1,7 +1,7 @@
 <template>
   <footer>
     <v-toolbar class="dela-inn-subheader" height="140">
-      <v-container fluid>
+      <v-container fluid class="texto-normal">
         <v-row justify="center">
           <nav class="nav-social-media text-center">
             <span>

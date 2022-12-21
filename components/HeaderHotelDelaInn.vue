@@ -98,18 +98,6 @@
                       <v-icon color="#dfddde">mdi-gmail</v-icon>
                   </a>
                 </span>
-<!--                <span v-if="reverse" style="display: flex; flex-direction: column">-->
-
-<!--                  <span class="footer-info">-->
-<!--                    <v-icon color="#dfddde">mdi-google-maps</v-icon> &nbsp;-->
-<!--                    <span>R. Maj. Bonifácio, 670 - Andradas, MG</span>-->
-<!--                  </span>-->
-
-<!--                  <span class="footer-info">-->
-<!--                    <v-icon color="#dfddde">mdi-phone</v-icon> &nbsp;-->
-<!--                    <a href="tel:3537318400" style="color: white; text-decoration: underline">(35) 3731-8400</a>-->
-<!--                  </span>-->
-<!--                </span>-->
               </nav>
             </v-row>
           </v-container>
@@ -169,10 +157,14 @@ a {
 .router-link {
   color: #ffffff;
   text-decoration: none;
+
+  font-family: now, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
 .router-link:hover {
-  color: #d1bd5e;
+  color: #e3cf6f;
 
   transition: all 0.3s;
 }
@@ -192,14 +184,6 @@ a {
 
 .default-layout__header__links v-item:not(:first-child) {
   margin-left: 1rem;
-}
-
-.footer-info {
-  display: flex;
-  align-self: center;
-
-  padding-top: 1rem;
-  color: white;
 }
 
 </style>

@@ -19,11 +19,11 @@
           cols="12"
         >
           <v-styled-divider /> <br />
-          <h1 class="font-weight-light">
+          <h1 class="font-weight-light titulo">
             Acomodações
           </h1>
 
-          <div class="font-weight-light">
+          <div class="font-weight-light texto-normal-ligth">
             <br />
 
             Você já teve uma experiência desagradável durante uma hospedagem? <br /> <br />
@@ -37,7 +37,7 @@
 
             <br />
 
-            <v-list-item class="flex-row justify-center">
+            <v-list-item class="flex-row justify-center texto-normal">
               &nbsp; &nbsp;
               <div class="valores-icons">
                 <v-icon size="32" color="#9c8f54">mdi-crown</v-icon> <br /> <br />
@@ -55,7 +55,7 @@
 
             <br /> <br />
 
-          <div class="font-weight-light">
+          <div class="font-weight-light texto-normal-ligth">
 
             Possuímos acomodações para todos os gostos sem deixar de proporcionar cada um de nossos valores! <br /> <br />
 
@@ -66,7 +66,7 @@
           <v-styled-divider />
           <br />
 
-          <h1 class="font-weight-light">
+          <h1 class="font-weight-light titulo">
             Tipos de <br /> Acomodações
           </h1>
 
@@ -83,26 +83,6 @@
         </v-col>
       </v-row>
     </v-container>
-
-        <!--        <v-col cols="6">-->
-<!--          <v-card class="elevation-15" width="40rem">-->
-<!--            <v-img :src="require('static/luxo-casal-1.jpg')" />-->
-
-<!--            <v-card-title>Luxo Casal</v-card-title>-->
-<!--            <v-card-subtitle>-->
-<!--              <v-row class="conteudo-card-acomodacao" align="center">-->
-<!--                <span class="caracteristica-acomodacao-icone">-->
-<!--                  <v-icon color="#4d2334">mdi-account-multiple</v-icon>-->
-<!--                  <span>Capacidade: 2 pessoas</span>-->
-<!--                </span>-->
-<!--              </v-row>-->
-<!--            </v-card-subtitle>-->
-
-<!--            <v-card-text>-->
-<!--              oi-->
-<!--            </v-card-text>-->
-<!--          </v-card>-->
-<!--        </v-col>-->
     <br /> <br />
   </div>
 </template>

@@ -12,7 +12,7 @@
           <v-parallax :src="imagem.url" :alt="imagem.alt" class="parallax-inicial elevation-24" />
         </v-carousel-item>
       </v-carousel>
-      <v-container class="container-card-reserva">
+      <v-container class="container-card-reserva texto-normal">
         <v-row
           align="center"
           justify="center"
@@ -83,9 +83,9 @@
         <v-styled-divider :h-level="4" />
         <br />
 
-        <h2 class="font-weight-light">Somos Referência em Hospedagem!</h2>
+        <h2 class="font-weight-light titulo">Somos Referência em Hospedagem!</h2>
 
-        <div class="font-weight-light">
+        <div class="font-weight-light texto-normal-ligth">
           <br />
           <br />
 
@@ -96,7 +96,7 @@
           Nos importamos com seu bem-estar e entretenimento! <br /> <br /> <br />
         </div>
 
-        <v-list-item class="flex-row justify-center">
+        <v-list-item class="flex-row justify-center texto-normal">
           <v-spacer />
           <div>
             <v-icon size="32" color="#9c8f54">mdi-dumbbell</v-icon> <br /> <br />
@@ -159,7 +159,7 @@
 
     <v-container fluid>
       <v-row align="center" justify="center">
-        <h1 class="text-center font-weight-light">Conheça nosso hotel</h1>
+        <h1 class="text-center font-weight-light titulo">Conheça nosso hotel</h1>
         <br />
         <br />
       </v-row>
@@ -252,6 +252,48 @@ export default class Index extends Vue {
 </script>
 
 <style>
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("../static/fonts/OpenSans/open-sans-regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'open-sans-ligth';
+  src: url("../static/fonts/OpenSans/static/OpenSans/OpenSans-Light.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'now';
+  src: url("../static/fonts/now/Now-Regular.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'moon-time';
+  src: url("../static/fonts/MoonTime-Regular/MoonTime-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'fahkwang';
+  src: url("../static/fonts/Fahkwang/Fahkwang-Regular.ttf") format('truetype');
+}
+
+.titulo {
+  font-family: now;
+}
+
+.texto-normal {
+  font-family: open-sans;
+}
+
+.texto-normal-ligth {
+  font-family: open-sans-ligth;
+}
+
+.texto-secundario {
+  font-family: sans-serif;
+}
+
 
 * {
   --background-main: white;

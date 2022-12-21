@@ -12,7 +12,7 @@
         cols="12"
       >
         <v-styled-divider /> <br />
-        <h1 class="font-weight-light">
+        <h1 class="font-weight-light titulo">
           Galeria
         </h1>
       </v-col>
@@ -26,7 +26,7 @@
       <v-col
         v-for="(grupoFotos, key) in gruposFotos"
         :key="key"
-        class="text-center"
+        class="text-center texto-normal"
         cols="3"
       >
         <div>
@@ -62,7 +62,7 @@ import {GrupoFotos} from "~/model/types/GrupoFotos";
 
 //TODO adicionar metatags
 @Component({
-  components: {VImagemContainer, VStyledDivider}
+  components: { VImagemContainer, VStyledDivider }
 })
 export default class GaleriaIndex extends Vue {
 
@@ -86,7 +86,6 @@ export default class GaleriaIndex extends Vue {
     'luxo-triplo-solteiro.jpg',
     'luxo-triplo-casal.jpg',
     'super-luxo-casal.jpg',
-    'not-found.png',
     'quarto-suite-presidencial.jpg',
     'visao-banheira-suite-presidencial.jpg',
     'banheira-suite-presidencial.jpg'

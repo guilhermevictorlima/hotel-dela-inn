@@ -5,17 +5,17 @@
         <v-imagem-container :src="quartoTo.imagens"  max-height="20rem" />
       </div>
 
-      <v-card-title>{{ quartoNome }}</v-card-title>
-      <v-card-subtitle>
+      <v-card-title class="texto-normal">{{ quartoNome }}</v-card-title>
+      <v-card-subtitle class="texto-normal">
         <v-row class="conteudo-card-acomodacao" align="center">
           <span>
             <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
-            <span>Capacidade máxima: {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
+            <span><b>Capacidade máxima:</b> {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
           </span>
           <span>
             &nbsp;&nbsp;&nbsp;
             <v-icon color="#4d2334">mdi-angle-right</v-icon>
-            <span>Dimensão: {{ quartoTo.dimensao }}</span>
+            <span><b>Dimensão:</b> {{ quartoTo.dimensao }}</span>
           </span>
         </v-row>
       </v-card-subtitle>

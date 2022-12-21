@@ -3,12 +3,12 @@
     <v-icon size="70">mdi-format-quote-open</v-icon>
     <br />
 
-    <h2 class="font-weight-light text-center">
+    <h2 class="font-weight-light text-center texto-normal-ligth">
       {{ citacao }}
     </h2>
       <v-icon size="70">mdi-format-quote-close</v-icon>
       <br />
-      <v-subheader style="font-size: 1.5rem">{{ autor }}</v-subheader>
+      <v-subheader style="font-size: 1.5rem" class="texto-normal">{{ autor }}</v-subheader>
 
   </v-container>
 </template>
@@ -30,6 +30,6 @@ export default class VQuote extends Vue {
 
 </script>
 
-<style scoped>
+<style>
 
 </style>
