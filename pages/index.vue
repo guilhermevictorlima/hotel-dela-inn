@@ -138,20 +138,20 @@
       <br />
       <br />
     </div>
-    <div class="elevation-24">
-      <v-row class="elevation-24">
-        <v-parallax src="luxo-triplo-solteiro.jpg" class="parallax-meio-tela elevation-10" />
-        <v-sheet elevation="5" width="50%" color="#4d2535">
-          &nbsp;
-        </v-sheet>
+
+    <v-container>
+      <v-row align="center" justify="center">
+        <v-col cols="4" v-for="(quarto, key) in quartosTos" :key="key">
+          <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" />
+        </v-col>
       </v-row>
-      <v-row>
-        <v-sheet elevation="5" width="50%" color="#592e40">
-          &nbsp;
-        </v-sheet>
-        <v-parallax src="luxo-casal-1.jpg" class="parallax-meio-tela elevation-10" />
-      </v-row>
-    </div>
+    </v-container>
+
+    <br />
+    <br />
+    <br />
+
+    <v-styled-divider :h-level="4" />
 
     <br />
     <br />
@@ -197,10 +197,12 @@ import VStyledDivider from '~/components/shared/VStyledDivider.vue';
 import VQuote from '~/components/shared/VQuote.vue';
 import { ReviewCliente } from '~/model/types/ReviewCliente';
 import { Imagem } from '~/model/types/Imagem';
+import VCardQuarto from "~/components/shared/VCardQuarto.vue";
+import {Quarto} from "~/model/types/Quarto";
 
 @Component({
   layout: 'absolute-header',
-  components: { VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker },
+  components: {VCardQuarto, VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker },
   head: {
     title: 'Hotel Dela Inn',
     titleTemplate: 'Hotel Dela Inn',
@@ -211,6 +213,30 @@ import { Imagem } from '~/model/types/Imagem';
   }
 })
 export default class Index extends Vue {
+
+  quartosTos: Array<Quarto> = [
+    {
+      nomeQuarto: 'Luxo Triplo Solteiro',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['luxo-triplo-solteiro.jpg'],
+      maximoPessoas: 3,
+      dimensao: '24 m²'
+    },
+    {
+      nomeQuarto: 'Luxo Triplo Casal',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['luxo-triplo-casal.jpg'],
+      maximoPessoas: 3,
+      dimensao: '24 m²'
+    },
+    {
+      nomeQuarto: 'Super Luxo Casal',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
+      imagens: ['super-luxo-casal.jpg'],
+      maximoPessoas: 2,
+      dimensao: '32 m²'
+    }
+  ];
 
   imagensCarrosselInicial: Array<Imagem> = [
     {

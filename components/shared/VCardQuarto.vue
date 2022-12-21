@@ -12,7 +12,7 @@
             <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
             <span><b>Capacidade máxima:</b> {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
           </span>
-          <span>
+          <span v-if="!simplificado">
             &nbsp;&nbsp;&nbsp;
             <v-icon color="#4d2334">mdi-angle-right</v-icon>
             <span><b>Dimensão:</b> {{ quartoTo.dimensao }}</span>
@@ -20,7 +20,7 @@
         </v-row>
       </v-card-subtitle>
 
-      <v-card-text>
+      <v-card-text v-if="!simplificado">
         {{ quartoDescricao }}
       </v-card-text>
 
@@ -52,6 +52,9 @@ export default class VCardQuarto extends Vue {
 
   @Prop({ required: false, default: '100%' })
   maxHeight!: string;
+
+  @Prop({ required: false, default: false })
+  simplificado!: boolean;
 
   get iconNumeroPessoas(): string {
     switch (this.quartoTo.maximoPessoas) {
