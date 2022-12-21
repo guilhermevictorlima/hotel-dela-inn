@@ -64,7 +64,7 @@
                 &nbsp;
                 <v-item>
                   <nuxt-link
-                    to="/"
+                    to="/galeria"
                     class="router-link"
                   >
                     Galeria

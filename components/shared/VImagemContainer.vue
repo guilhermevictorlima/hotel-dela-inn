@@ -12,7 +12,7 @@
       </v-card>
     </v-dialog>
 
-    <v-carousel height="auto" v-if="quartoPossuiVariasImagens()">
+    <v-carousel height="auto" v-if="quartoPossuiVariasImagens()" :hide-delimiters="hideDelimiters">
       <v-carousel-item v-for="(enderecoImagem, key) in src" :key="key">
         <v-img
           class="clickable"
@@ -46,6 +46,9 @@ export default class VImagemContainer extends Vue {
 
   @Prop({ required: false, default: 'auto' })
   maxHeight!: string;
+
+  @Prop({ required: false, default: false })
+  hideDelimiters!: boolean;
 
   dialog = false;
 
