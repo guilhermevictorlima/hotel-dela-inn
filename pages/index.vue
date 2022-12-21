@@ -154,8 +154,6 @@
     <v-styled-divider :h-level="4" />
 
     <br />
-    <br />
-    <br />
 
     <v-container fluid>
       <v-row align="center" justify="center">
@@ -202,7 +200,7 @@ import {Quarto} from "~/model/types/Quarto";
 
 @Component({
   layout: 'absolute-header',
-  components: {VCardQuarto, VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker },
+  components: { VCardQuarto, VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker },
   head: {
     title: 'Hotel Dela Inn',
     titleTemplate: 'Hotel Dela Inn',
