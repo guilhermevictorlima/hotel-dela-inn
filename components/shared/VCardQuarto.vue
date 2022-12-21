@@ -2,13 +2,7 @@
   <div>
     <v-card class="elevation-15" :width="width" :max-height="maxHeight">
       <div>
-        <v-carousel height="auto" v-if="quartoPossuiVariasImagens()" show-arrows-on-hover>
-          <v-carousel-item v-for="(enderecoImagem, key) in quartoImagens" :key="key">
-            <v-img max-height="20rem" :src="require(`static/${enderecoImagem}`)" />
-          </v-carousel-item>
-        </v-carousel>
-
-        <v-img :max-height="`${maxHeight / 2}rem`" v-else :src="require(`static/${quartoImagens[0]}`)" />
+        <v-imagem-container :src="quartoTo.imagens"  max-height="20rem" />
       </div>
 
       <v-card-title>{{ quartoNome }}</v-card-title>
@@ -42,10 +36,11 @@
 
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { Quarto } from '~/model/types/Quarto';
-import VDinheiroFormatado from "~/components/shared/VDinheiroFormatado.vue";
+import VDinheiroFormatado from '~/components/shared/VDinheiroFormatado.vue';
+import VImagemContainer from '~/components/shared/VImagemContainer.vue';
 
 @Component({
-  components: { VDinheiroFormatado }
+  components: { VImagemContainer, VDinheiroFormatado }
 })
 export default class VCardQuarto extends Vue {
 
@@ -57,31 +52,6 @@ export default class VCardQuarto extends Vue {
 
   @Prop({ required: false, default: '100%' })
   maxHeight!: string;
-
-  @Prop({ required: false })
-  dataChegada?: Date;
-
-  @Prop({ required: false, default: false })
-  horizontal!: boolean;
-
-  quartoPossuiVariasImagens(): boolean {
-    return this.quartoTo.imagens.length > 1;
-  }
-
-  get itensDescricao(): Array<string> {
-    return this.quartoTo.descricao.split('\n');
-  }
-
-  get dataLimiteCancelamento(): string {
-    if (this.dataChegada) {
-      return new Date(new Date(this.dataChegada!).setDate(this.dataChegada!.getDate() - 2))
-        .toISOString()
-        .substring(0, 10)
-        .split('-')
-        .reverse()
-        .join('/');
-    } else return '';
-  }
 
   get iconNumeroPessoas(): string {
     switch (this.quartoTo.maximoPessoas) {
@@ -97,10 +67,6 @@ export default class VCardQuarto extends Vue {
 
   get quartoDescricao(): string {
     return this.quartoTo.descricao;
-  }
-
-  get quartoImagens(): string | Array<string> {
-    return this.quartoTo.imagens;
   }
 
   get quartoMaximoPessoas(): number {
