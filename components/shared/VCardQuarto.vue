@@ -4,11 +4,11 @@
       <div>
         <v-carousel height="auto" v-if="quartoPossuiVariasImagens()" show-arrows-on-hover>
           <v-carousel-item v-for="(enderecoImagem, key) in quartoImagens" :key="key">
-            <v-img max-height="24rem" :src="require(`static/${enderecoImagem}`)" />
+            <v-img max-height="20rem" :src="require(`static/${enderecoImagem}`)" />
           </v-carousel-item>
         </v-carousel>
 
-        <v-img v-else :src="require(`static/${quartoImagens[0]}`)" />
+        <v-img :max-height="`${maxHeight / 2}rem`" v-else :src="require(`static/${quartoImagens[0]}`)" />
       </div>
 
       <v-card-title>{{ quartoNome }}</v-card-title>
@@ -20,7 +20,7 @@
           </span>
           <span>
             &nbsp;&nbsp;&nbsp;
-            <v-icon color="#4d2334">mdi-ruler-square</v-icon>
+            <v-icon color="#4d2334">mdi-angle-right</v-icon>
             <span>Dimensão: {{ quartoTo.dimensao }}</span>
           </span>
         </v-row>

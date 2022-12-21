@@ -38,12 +38,11 @@
             <br />
 
             <v-list-item class="flex-row justify-center">
-              &nbsp;
+              &nbsp; &nbsp;
               <div class="valores-icons">
-                <v-icon size="32" color="#9c8f54">mdi-sleep</v-icon> <br /> <br />
-                <span>Repouso</span>
+                <v-icon size="32" color="#9c8f54">mdi-crown</v-icon> <br /> <br />
+                <span>Requinte</span>
               </div>
-              &nbsp;
               <div class="valores-icons">
                 <v-icon size="32" color="#9c8f54">mdi-television</v-icon> <br /> <br />
                 <span>Conforto</span>
@@ -80,7 +79,7 @@
     <v-container>
       <v-row align="center" justify="center">
         <v-col cols="6" v-for="(quartoTo, key) in quartosTos" :key="key">
-          <v-card-quarto :quarto-to="quartoTo" width="40rem" maxHeight="42rem" />
+          <v-card-quarto :quarto-to="quartoTo" width="40rem" maxHeight="40rem" />
         </v-col>
       </v-row>
     </v-container>
