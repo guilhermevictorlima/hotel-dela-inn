@@ -214,7 +214,7 @@ export default class Index extends Vue {
 
   imagensCarrosselInicial: Array<Imagem> = [
     {
-      url: 'luxo-casal-2.jpg'
+      url: 'luxo-casal.jpg'
     },
     {
       url: 'standart-twin.jpg'
