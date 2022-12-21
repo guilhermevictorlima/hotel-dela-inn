@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <v-toolbar class="dela-inn-subheader" height="140">
+    <v-toolbar class="dela-inn-subheader" height="100">
       <v-container fluid class="texto-normal">
         <v-row justify="center">
           <nav class="nav-social-media text-center">
@@ -8,25 +8,23 @@
               <a href="https://www.instagram.com/hoteldelainn/" target="_blank">
                   <v-icon color="#dfddde">mdi-instagram</v-icon>
               </a>
+              &nbsp;&nbsp;
               <a href="https://api.whatsapp.com/send/?phone=553537318400&text&type=phone_number&app_absent=0" target="_blank">
                   <v-icon color="#dfddde">mdi-whatsapp</v-icon>
               </a>
+              &nbsp;&nbsp;
               <a href="https://www.facebook.com/hoteldelainn" target="_blank">
                   <v-icon color="#dfddde">mdi-facebook</v-icon>
               </a>
+              &nbsp;&nbsp;
               <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
                   <v-icon color="#dfddde">mdi-gmail</v-icon>
               </a>
             </span>
-            <span style="display: flex; flex-direction: column">
+            <span style="display: flex">
               <span class="footer-info">
                 <v-icon color="#dfddde">mdi-google-maps</v-icon> &nbsp;
                 <span>R. Maj. Bonifácio, 670 - Andradas, MG</span>
-              </span>
-
-              <span class="footer-info">
-                <v-icon color="#dfddde">mdi-phone</v-icon> &nbsp;
-                <a href="tel:3537318400" style="color: white; text-decoration: underline">(35) 3731-8400</a>
               </span>
             </span>
           </nav>

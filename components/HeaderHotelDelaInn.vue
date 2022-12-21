@@ -22,7 +22,7 @@
       <template #extension>
         <v-app-bar
           class="dela-inn-subheader elevation-24"
-          :height="subHeaderHeight"
+          height="100"
           absolute
         >
           <v-container fluid>
@@ -88,12 +88,15 @@
                   <a href="https://www.instagram.com/hoteldelainn/" target="_blank">
                       <v-icon color="#dfddde">mdi-instagram</v-icon>
                   </a>
+                  &nbsp;&nbsp;
                   <a href="https://api.whatsapp.com/send/?phone=553537318400&text&type=phone_number&app_absent=0" target="_blank">
                       <v-icon color="#dfddde">mdi-whatsapp</v-icon>
                   </a>
+                  &nbsp;&nbsp;
                   <a href="https://www.facebook.com/hoteldelainn" target="_blank">
                       <v-icon color="#dfddde">mdi-facebook</v-icon>
                   </a>
+                  &nbsp;&nbsp;
                   <a href="https://mail.google.com/mail/u/0/?fs=1&to=reservas@hoteldelainn.com.br&tf=cm" target="_blank">
                       <v-icon color="#dfddde">mdi-gmail</v-icon>
                   </a>
@@ -147,7 +150,7 @@ export default class HeaderHotelDelaInn extends Vue {
 
 .nav-social-media {
   color: black;
-  padding-top: 0.5rem;
+  padding-top: 0.6rem;
 }
 
 a {
