@@ -26,7 +26,7 @@
               flat
               style="padding: 1rem; color: white; background-color: #70364e"
               max-width="1000"
-              width="60%"
+              width="50%"
             >
               <h1 class="text-h5 mb-4">
                 Hotel Dela Inn
@@ -342,12 +342,13 @@ main {
   display: flex;
   position: absolute;
   top: 9%;
-  right: -24%;
+  right: -30%;
   color: white;
 }
 
 .card-reserva {
   padding: 1rem;
+  width: 50% !important;
 }
 
 .descricao-central-landing-page {
