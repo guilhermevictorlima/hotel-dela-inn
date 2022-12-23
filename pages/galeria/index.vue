@@ -18,6 +18,60 @@
       </v-col>
     </v-row>
     <br />
+    <br />
+
+    <div style="width: 100%; margin: auto">
+      <v-row
+        v-for="(destaque, key) in destaquesGalerias"
+        align="center"
+        justify="center"
+        class="mb-6"
+        :class="key % 2 !== 0 ? 'flex-row-reverse' : ''"
+      >
+        <v-col
+          cols="6"
+          class="text-center"
+        >
+          <v-imagem-container :src="destaque.fotos" width="45em" max-height="25em" style="margin: auto" />
+        </v-col>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <v-col
+          cols="5"
+          :class="key % 2 !== 0 ? 'text-right' : ''"
+        >
+          <h2 class="titulo">
+            {{ destaque.nomeGrupo }}
+            &nbsp;
+            <v-icon color="primary">{{ destaque.icon }}</v-icon>
+          </h2>
+          <br />
+          <h3 class="texto-normal font-weight-regular">{{ destaque.descricaoGrupo }}</h3>
+        </v-col>
+      </v-row>
+    </div>
+
+
+
+    <br />
+    <br />
+
+    <v-row
+      align="center"
+      justify="center"
+    >
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        <v-styled-divider /> <br />
+        <h2 class="font-weight-light titulo">
+          Veja mais fotos do Hotel
+        </h2>
+      </v-col>
+    </v-row>
+
+    <br />
+    <br />
 
     <v-row
       align="center"
@@ -60,11 +114,39 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 import VImagemContainer from "~/components/shared/VImagemContainer.vue";
 import {GrupoFotos} from "~/model/types/GrupoFotos";
 
-//TODO adicionar metatags
 @Component({
-  components: { VImagemContainer, VStyledDivider }
+  components: { VImagemContainer, VStyledDivider },
+  head: {
+    title: 'Galeria | Hotel Dela Inn',
+    titleTemplate: 'Galeria | Hotel Dela Inn',
+    meta: [
+      { hid: 'description', name: 'description', content: 'O Hotel Dela Inn' },
+      { hid: 'robots', name: 'robots', content: 'index' }
+    ]
+  }
 })
 export default class GaleriaIndex extends Vue {
+
+  destaquesGalerias: Array<GrupoFotos> = [
+    {
+      nomeGrupo: 'Não saia de sua rotina',
+      descricaoGrupo: 'Aqui você pode aproveitar nossa moderna área fitness para manter sua saúde em dia.',
+      icon: 'mdi-dumbbell',
+      fotos: ['academia.jpg']
+    },
+    {
+      nomeGrupo: 'Comece o dia com um café da manhã especial',
+      descricaoGrupo: 'Aqui no Dela Inn é tudo preparado com muito amor e carinho, especialmente pra você!',
+      icon: 'mdi-coffee',
+      fotos: ['cafe-da-manha.jpg']
+    },
+    {
+      nomeGrupo: 'Requinte, conforto e segurança',
+      descricaoGrupo: 'Aqui no Dela Inn temos diferentes opções de suítes. Mas, em todas elas, proporcionar requinte, conforto e segurança são as nossas prioridades.',
+      icon: 'mdi-key-chain-variant',
+      fotos: ['visao-banheira-suite-presidencial.jpg']
+    },
+  ];
 
   fotosHotel: Array<string> = [
     'corredor-quartos.jpg',
