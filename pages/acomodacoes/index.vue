@@ -160,14 +160,14 @@ export default class IndexAcomodacoes extends Vue {
     {
       nomeQuarto: 'Suíte Master Duplo',
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
-      imagens: ['not-found.png'],
+      imagens: ['quarto-suite-presidencial.jpg'],
       maximoPessoas: 2,
       dimensao: '42 m²'
     },
     {
       nomeQuarto: 'Suíte Presidencial',
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
-      imagens: ['quarto-suite-presidencial.jpg', 'visao-banheira-suite-presidencial.jpg', 'banheira-suite-presidencial.jpg'],
+      imagens: ['visao-banheira-suite-presidencial.jpg', 'banheira-suite-presidencial.jpg'],
       maximoPessoas: 2,
       dimensao: '48 m²'
     },

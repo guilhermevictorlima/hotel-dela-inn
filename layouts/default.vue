@@ -2,9 +2,9 @@
   <v-app>
     <header-hotel-dela-inn sub-header-height="100"  />
     <main>
-      <v-content>
+      <v-main>
         <Nuxt />
-      </v-content>
+      </v-main>
     </main>
     <footer-hotel-dela-inn />
   </v-app>
