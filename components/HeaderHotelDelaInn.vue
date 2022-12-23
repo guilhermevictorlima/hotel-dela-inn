@@ -54,16 +54,6 @@
                 &nbsp;
                 <v-item>
                   <nuxt-link
-                    to="/ofertas"
-                    class="router-link"
-                  >
-                    Ofertas Especiais
-                  </nuxt-link>
-                </v-item>
-                &nbsp;
-                &nbsp;
-                <v-item>
-                  <nuxt-link
                     to="/galeria"
                     class="router-link"
                   >
