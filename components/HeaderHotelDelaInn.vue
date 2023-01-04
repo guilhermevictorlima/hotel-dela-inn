@@ -4,7 +4,6 @@
                height="100"
                dark
                fixed
-               :extension-height="subHeaderHeight"
                :app="app"
     >
       <v-container  >
@@ -128,9 +127,6 @@ export default class HeaderHotelDelaInn extends Vue {
 
   @Prop({ required: false, default: true })
   app!: boolean;
-
-  @Prop({ required: false, default: '90' })
-  subHeaderHeight!: string;
 
   abrirReserva(): void {
     window.open('https://reservas.desbravador.com.br/hotel-app/hotel-dela-inn', '_blank');
