@@ -12,68 +12,6 @@
           <v-parallax :src="imagem.url" :alt="imagem.alt" class="parallax-inicial elevation-24" />
         </v-carousel-item>
       </v-carousel>
-      <v-container class="container-card-reserva texto-normal">
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-col
-            class="text-center"
-            cols="10"
-          >
-            <v-card
-              outlined
-              flat
-              style="padding: 1rem; color: white; background-color: #70364e"
-              max-width="1000"
-              width="50%"
-            >
-              <h1 class="text-h5 mb-4">
-                Hotel Dela Inn
-              </h1>
-              <h5 class="subheading" style="margin-top: -1rem">
-                O Hotel Dela renova o conceito da hotelaria em Andradas - MG!
-              </h5>
-            </v-card>
-            <v-card
-              outlined
-              elevation="24"
-              flat
-              max-width="1000"
-              width="60%"
-              height="380"
-              class="card-reserva"
-            >
-              <v-card-title>Faça sua reserva</v-card-title>
-
-              <v-check-in-check-out-picker />
-
-              <br />
-              <v-row align="center">
-                <v-col cols="5">
-                  <v-quantity-entry-input label="Adultos" />
-                </v-col>
-                <v-col cols="5">
-                  <v-quantity-entry-input label="Crianças" />
-                </v-col>
-              </v-row>
-
-              <br />
-              <br />
-
-              <v-btn
-                width="90%"
-                outlined
-                large
-                color="primary"
-                @click="abrirReserva"
-              >
-                Reservar
-              </v-btn>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
     </div>
 
     <div>
@@ -271,10 +209,6 @@ export default class Index extends Vue {
     },
   ];
 
-  abrirReserva(): void {
-    window.open('https://reservas.desbravador.com.br/hotel-app/hotel-dela-inn', '_blank');
-  }
-
 }
 
 
@@ -338,29 +272,8 @@ main {
   height: 100vh !important;
 }
 
-.container-card-reserva {
-  display: flex;
-  position: absolute;
-  top: 9%;
-  right: -30%;
-  color: white;
-}
-
-.card-reserva {
-  padding: 1rem;
-  width: 50% !important;
-}
-
 .descricao-central-landing-page {
   font-size: 1.1rem;
-}
-
-.parallax-meio-tela {
-  width: 50vw !important;
-}
-
-.quote-icon {
-  width: 5rem;
 }
 
 </style>

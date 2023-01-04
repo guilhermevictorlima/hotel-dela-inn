@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <header-hotel-dela-inn sub-header-height="100"  />
+    <header-hotel-dela-inn />
     <main>
       <v-main>
         <Nuxt />

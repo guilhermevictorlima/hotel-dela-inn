@@ -23,6 +23,7 @@
         <v-app-bar
           class="dela-inn-subheader elevation-24"
           height="100"
+          extension-height="75"
           absolute
         >
           <v-container fluid>
@@ -94,6 +95,25 @@
               </nav>
             </v-row>
           </v-container>
+
+          <template #extension>
+            <v-container fluid>
+              <v-row
+                justify="center"
+              >
+                <v-btn
+                  width="20%"
+                  outlined
+                  large
+                  style=""
+                  @click="abrirReserva"
+                >
+                  Reservar
+                </v-btn>
+              </v-row>
+            </v-container>
+          </template>
+
         </v-app-bar>
       </template>
     </v-app-bar>
@@ -111,6 +131,10 @@ export default class HeaderHotelDelaInn extends Vue {
 
   @Prop({ required: false, default: '90' })
   subHeaderHeight!: string;
+
+  abrirReserva(): void {
+    window.open('https://reservas.desbravador.com.br/hotel-app/hotel-dela-inn', '_blank');
+  }
 
 }
 
