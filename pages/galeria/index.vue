@@ -123,6 +123,16 @@ import {GrupoFotos} from "~/model/types/GrupoFotos";
       { hid: 'description', name: 'description', content: 'O Hotel Dela Inn' },
       { hid: 'robots', name: 'robots', content: 'index' }
     ]
+  },
+  i18n: {
+    messages: {
+      pt: {
+        test: 'Olá',
+      },
+      en: {
+        test: 'Hello',
+      }
+    }
   }
 })
 export default class GaleriaIndex extends Vue {

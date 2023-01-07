@@ -46,12 +46,24 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/i18n',
   ],
 
   i18n: {
-    locales: ['pt-br', 'en'],
-    defaultLocale: 'pt-br',
-    lazy: true,
+    parsePages: false,
+    pages: {
+      'galeria/index': {
+        en: '/galery',
+        pt: '/galeria'
+      }
+    },
+    locales: ['pt', 'en'],
+    defaultLocale: 'pt',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_dela_inn',
+      redirectOn: 'root'
+    }
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

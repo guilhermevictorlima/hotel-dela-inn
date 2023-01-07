@@ -2,7 +2,7 @@
   <div>
     <v-layout row wrap>
       <v-flex xs12 sm12>
-        <v-parallax src="recepcao-hotel.jpg" class="elevation-24" />
+        <v-parallax :src="require('@/static/recepcao-hotel.jpg')" class="elevation-24" />
       </v-flex>
     </v-layout>
     <br />

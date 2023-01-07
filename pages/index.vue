@@ -147,6 +147,21 @@ import {Quarto} from "~/model/types/Quarto";
       { hid: 'description', name: 'description', content: 'O Hotel Dela renova o conceito da hotelaria em Andradas - MG! Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!' },
       { hid: 'robots', name: 'robots', content: 'index, follow' }
     ]
+  },
+  nuxtI18n: {
+    paths: {
+      en: '/galery'
+    }
+  },
+  i18n: {
+    messages: {
+      pt: {
+        welcome: 'Olá',
+      },
+      en: {
+        welcome: 'Hello',
+      }
+    }
   }
 })
 export default class Index extends Vue {

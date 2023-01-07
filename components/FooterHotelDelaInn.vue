@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <v-toolbar class="dela-inn-subheader" height="100">
+    <v-toolbar class="dela-inn-subheader" height="175">
       <v-container fluid class="texto-normal">
         <v-row justify="center">
           <nav class="nav-social-media text-center">
@@ -28,6 +28,22 @@
               </span>
             </span>
           </nav>
+        </v-row>
+        <v-row
+        justify="center"
+        class="footer-info"
+        >
+          <nuxt-link class="router-link" :to="switchLocalePath('pt')">PT-BR</nuxt-link>
+
+          &nbsp;
+          &nbsp;
+
+          -
+
+          &nbsp;
+          &nbsp;
+
+          <nuxt-link class="router-link" :to="switchLocalePath('en')">EN-US</nuxt-link>
         </v-row>
       </v-container>
     </v-toolbar>
@@ -87,13 +103,7 @@ a {
 
 .router-link {
   color: #ffffff;
-  text-decoration: none;
-}
-
-.router-link:hover {
-  color: #d1bd5e;
-
-  transition: all 0.3s;
+  text-decoration: underline;
 }
 
 .default-layout__header {

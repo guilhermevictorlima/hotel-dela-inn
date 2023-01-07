@@ -34,7 +34,7 @@
                 &nbsp;
                 <v-item>
                   <nuxt-link
-                    to="/"
+                    :to="localePath('/')"
                     class="router-link"
                   >
                     Hotel Dela Inn
@@ -44,7 +44,7 @@
                 &nbsp;
                 <v-item>
                   <nuxt-link
-                    to="/acomodacoes"
+                    :to="localePath('/acomodacoes')"
                     class="router-link"
                   >
                     Acomodações
@@ -54,7 +54,7 @@
                 &nbsp;
                 <v-item>
                   <nuxt-link
-                    to="/galeria"
+                    :to="localePath('/galeria')"
                     class="router-link"
                   >
                     Galeria
@@ -64,7 +64,7 @@
                 &nbsp;
                 <v-item>
                   <nuxt-link
-                    to="/localizacao"
+                    :to="localePath('/localizacao')"
                     class="router-link"
                   >
                     Localização
@@ -104,7 +104,6 @@
                   width="20%"
                   outlined
                   large
-                  style=""
                   @click="abrirReserva"
                 >
                   Reservar
