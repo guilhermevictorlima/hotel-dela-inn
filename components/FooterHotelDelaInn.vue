@@ -33,7 +33,7 @@
         justify="center"
         class="footer-info"
         >
-          <nuxt-link class="router-link" :to="switchLocalePath('pt')">PT-BR</nuxt-link>
+          <nuxt-link class="router-link" :to="switchLocalePath('pt-BR')">PT-BR</nuxt-link>
 
           &nbsp;
           &nbsp;

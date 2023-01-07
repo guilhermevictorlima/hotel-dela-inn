@@ -119,7 +119,7 @@ import {Quarto} from "~/model/types/Quarto";
   components: { VCardQuarto, VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker },
   i18n: {
     messages: {
-      pt: {
+      'pt-BR': {
         metaTitle: 'Hotel Dela Inn',
         metaDescription: 'O Hotel Dela renova o conceito da hotelaria em Andradas - MG! Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!',
 

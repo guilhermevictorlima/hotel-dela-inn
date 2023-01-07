@@ -52,11 +52,11 @@ export default {
     pages: {
       'galeria/index': {
         en: '/galery',
-        pt: '/galeria'
+        'pt-BR': '/galeria'
       }
     },
-    locales: ['pt', 'en'],
-    defaultLocale: 'pt',
+    locales: ['pt-BR', 'en'],
+    defaultLocale: 'pt-BR',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_dela_inn',
