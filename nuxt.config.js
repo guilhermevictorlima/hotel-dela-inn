@@ -6,8 +6,6 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: 'Hotel Dela Inn',
-    title: 'Hotel Dela Inn',
     htmlAttrs: {
       lang: 'pt-br'
     },
