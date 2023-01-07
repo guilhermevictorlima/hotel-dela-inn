@@ -22,51 +22,28 @@
         <v-styled-divider :h-level="4" />
         <br />
 
-        <h2 class="font-weight-light titulo">Somos Referência em Hospedagem!</h2>
+        <h2 class="font-weight-light titulo">{{ this.$t('tituloLandingPage') }}</h2>
 
         <div class="font-weight-light texto-normal-ligth">
           <br />
           <br />
 
-          Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender! <br /> <br />
+          <p v-for="(texto, index) in $t('textoLandingPage')" :key="index">
+            {{ texto }}
+            <br />
+          </p>
 
-          Com excelente localização no centro da cidade, o Hotel dispõe de 132 novos apartamentos nas categorias Standard, Luxo e Super Luxo. <br /> <br />
-
-          Nos importamos com seu bem-estar e entretenimento! <br /> <br /> <br />
+          <br />
+          <br />
         </div>
 
         <v-list-item class="flex-row justify-center texto-normal">
-          <v-spacer />
-          <div>
-            <v-icon size="32" color="#9c8f54">mdi-dumbbell</v-icon> <br /> <br />
-            <span>Academia</span>
+          <div v-for="(icon, index) in iconsLandingPage" :key="index">
+            <div class="icon-landing-page">
+              <v-icon size="32" color="#9c8f54">{{ icon.url }}</v-icon> <br /> <br />
+              <span>{{ icon.alt }}</span>
+            </div>
           </div>
-        <v-spacer />
-          <div>
-            <v-icon size="32" color="#9c8f54">mdi-glass-wine</v-icon> <br /> <br />
-            <span>Bar</span>
-          </div>
-        <v-spacer />
-          <div>
-            <v-icon size="32" color="#9c8f54">mdi-coffee-maker</v-icon> <br /> <br />
-            <span>Café da manhã</span>
-          </div>
-        <v-spacer />
-          <div>
-            <v-icon size="32" color="#9c8f54">mdi-wifi</v-icon> <br /> <br />
-            <span>Wi-Fi</span>
-          </div>
-        <v-spacer />
-          <div>
-            <v-icon size="32" color="#9c8f54">mdi-bed-king</v-icon> <br /> <br />
-            <span>Quartos de luxo</span>
-          </div>
-        <v-spacer />
-          <div>
-            <v-icon size="32" color="#9c8f54">mdi-car-arrow-left</v-icon> <br /> <br />
-            <span>Estacionamento</span>
-          </div>
-          <v-spacer />
         </v-list-item>
 
         <br />
@@ -96,7 +73,7 @@
 
     <v-container fluid>
       <v-row align="center" justify="center">
-        <h1 class="text-center font-weight-light titulo">Conheça nosso hotel</h1>
+        <h1 class="text-center font-weight-light titulo">{{ $t('tituloReviews') }}</h1>
         <br />
         <br />
       </v-row>
@@ -140,26 +117,73 @@ import {Quarto} from "~/model/types/Quarto";
 @Component({
   layout: 'absolute-header',
   components: { VCardQuarto, VQuote, VStyledDivider, VQuantityEntryInput, VCheckInCheckOutPicker },
-  head: {
-    title: 'Hotel Dela Inn',
-    titleTemplate: 'Hotel Dela Inn',
-    meta: [
-      { hid: 'description', name: 'description', content: 'O Hotel Dela renova o conceito da hotelaria em Andradas - MG! Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!' },
-      { hid: 'robots', name: 'robots', content: 'index, follow' }
-    ]
-  },
-  nuxtI18n: {
-    paths: {
-      en: '/galery'
-    }
-  },
   i18n: {
     messages: {
       pt: {
-        welcome: 'Olá',
+        metaTitle: 'Hotel Dela Inn',
+        metaDescription: 'O Hotel Dela renova o conceito da hotelaria em Andradas - MG! Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!',
+
+        tituloLandingPage: 'Somos Referência em Hospedagem!',
+        textoLandingPage: [
+          'Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!',
+          'Com excelente localização no centro da cidade, o Hotel dispõe de 132 novos apartamentos nas categorias Standard, Luxo e Super Luxo.',
+          'Nos importamos com seu bem-estar e entretenimento!'
+        ],
+
+        academiaIconTitle: 'Academia',
+        barIconTitle: 'Bar',
+        cafeDaManhaIconTitle: 'Café da manhã',
+        wifiIconTitle: 'Wi-Fi',
+        quartosLuxoIconTitle: 'Quartos de luxo',
+        estacionamentoIconTitle: 'Estacionamento',
+
+        quartoLuxoTriploSolteiro: 'Luxo Triplo Solteiro',
+        quartoLuxoTriploCasal: 'Luxo Triplo Casal',
+        quartoSuperLuxoCasal: 'Super Luxo Casal',
+
+        tituloReviews: 'Conheça nosso hotel',
+
+        review1: 'Os quartos são ótimos, camas e chuveiros excelentes! Localização perfeita, central. O staff muito receptivo e simpático, chegamos mais cedo e fizeram nosso check-in na hora! O restaurante no 7° andar foi uma grata surpresa também: ótimo atendimento, chopp gelado e música boa. Foi uma estadia perfeita! Parabéns, super recomendo!',
+        autor1: '- Lucia, via Booking',
+        review2: 'Hotel digno de cinco estrelas, tudo muito limpo, café da manhã farto e funcionários muito prestativos, voltarei mais vezes.',
+        autor2: '- Ana, via Google',
+        review3: 'Quartos limpos, amplos, modernos e confortáveis. Excelente custo benefício. Todos os funcionários são muito solícitos e educados. o hotel é lindo, moderno e tudo é impecavelmente limpo. Café da manhã bem servido e com bastante variedade. Quarto possui sistema de iluminação indireta bem agradável e a roupa de cama é de ótima qualidade, com um edredom bem confortável para os dias frios.',
+        autor3: '- Gabriel, via Booking',
+        review4: 'Hotel novo com conceito de Restaurante no último andar 7, dando uma boa vista aos morros ao redor, Restaurante com ótimo preços e final de semana teve show ao vivo com artistas locais super agradável, volume e mix de músicas, otimo experiência!!!',
+        autor4: '- Elias, via Google',
       },
       en: {
-        welcome: 'Hello',
+        metaTitle: 'Dela Inn Hotel',
+        metaDescription: 'Dela Inn Hotel renews the concept of hospitality in Andradas - MG! For those looking for comfort and quality service, the Dela Inn is ready to serve you!',
+
+        tituloLandingPage: 'We are Hosting Reference!',
+        textoLandingPage: [
+          'For those looking for comfort and quality service, Dela Inn is ready to serve you!',
+          'With an excellent location in the city center, the Hotel has 132 new apartments in the Standard, Luxury and Super Luxury categories.',
+          'We care about your well-being and entertainment!'
+        ],
+
+        academiaIconTitle: 'Gym',
+        barIconTitle: 'Pub',
+        cafeDaManhaIconTitle: 'Breakfast',
+        wifiIconTitle: 'Wi-Fi',
+        quartosLuxoIconTitle: 'Luxury rooms',
+        estacionamentoIconTitle: 'Parking',
+
+        quartoLuxoTriploSolteiro: 'Single\'s Triple Luxury',
+        quartoLuxoTriploCasal: 'Couple\'s Triple Luxury',
+        quartoSuperLuxoCasal: 'Couple\'s Super Luxury',
+
+        tituloReviews: 'Discover Dela Inn',
+
+        review1: 'Rooms are great, beds and showers are excellent! Perfect location in downtown area. The staff were very welcoming and friendly, we arrived early and they checked-in us on time! The restaurant on the 7th floor was also a pleasant surprise: great service, cold draft beer and good music. It was a perfect stay! Congratulations, highly recommend!',
+        autor1: '- Lucia, from Booking review',
+        review2: 'Hotel worthy of five stars, everything very clean, hearty breakfast and very helpful staff, I will be back more often.',
+        autor2: '- Ana, from Google review',
+        review3: 'Clean, spacious, modern and comfortable rooms. Excellent cost benefit. All employees are very helpful and polite. The hotel is beautiful, modern and everything is spotlessly clean. Breakfast well served and with a lot of variety. Room has a very pleasant indirect lighting and the bedding is of great quality, with a very comfortable duvet for cold days.',
+        autor3: '- Gabriel, from Booking review',
+        review4: 'New hotel with the concept of restaurant on the 7th floor, giving a good view of the hills around. Restaurant with great prices. At weekend there was a live show with local artists, very nice, volume and mix of songs, great experience!!!',
+        autor4: '- Elias, from Google review',
       }
     }
   }
@@ -168,21 +192,21 @@ export default class Index extends Vue {
 
   quartosTos: Array<Quarto> = [
     {
-      nomeQuarto: 'Luxo Triplo Solteiro',
+      nomeQuarto: this.$t('quartoLuxoTriploSolteiro').toString(),
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
       imagens: ['luxo-triplo-solteiro.jpg'],
       maximoPessoas: 3,
       dimensao: '24 m²'
     },
     {
-      nomeQuarto: 'Luxo Triplo Casal',
+      nomeQuarto: this.$t('quartoLuxoTriploCasal').toString(),
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
       imagens: ['luxo-triplo-casal.jpg'],
       maximoPessoas: 3,
       dimensao: '24 m²'
     },
     {
-      nomeQuarto: 'Super Luxo Casal',
+      nomeQuarto: this.$t('quartoSuperLuxoCasal').toString(),
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
       imagens: ['super-luxo-casal.jpg'],
       maximoPessoas: 2,
@@ -207,22 +231,62 @@ export default class Index extends Vue {
 
   reviews: Array<ReviewCliente> = [
     {
-      citacao: 'Os quartos são ótimos, camas e chuveiros excelentes! Localização perfeita, central. O staff muito receptivo e simpático, chegamos mais cedo e fizeram nosso check-in na hora! O restaurante no 7° andar foi uma grata surpresa também: ótimo atendimento, chopp gelado e música boa. Foi uma estadia perfeita! Parabéns, super recomendo!',
-      autor: '- Lucia, via Booking'
+      citacao: this.$t('review1').toString(),
+      autor: this.$t('autor1').toString(),
     },
     {
-      citacao: 'Hotel digno de cinco estrelas, tudo muito limpo, café da manhã farto e funcionários muito prestativos, voltarei mais vezes.',
-      autor: '- Ana, via Google'
+      citacao: this.$t('review2').toString(),
+      autor: this.$t('autor2').toString(),
     },
     {
-      citacao: 'Quartos limpos, amplos, modernos e confortáveis. Excelente custo benefício. Todos os funcionários são muito solícitos e educados. o hotel é lindo, moderno e tudo é impecavelmente limpo. Café da manhã bem servido e com bastante variedade. Quarto possui sistema de iluminação indireta bem agradável e a roupa de cama é de ótima qualidade, com um edredom bem confortável para os dias frios.',
-      autor: '- Gabriel, via Booking'
+      citacao: this.$t('review3').toString(),
+      autor: this.$t('autor3').toString(),
     },
     {
-      citacao: 'Hotel novo com conceito de Restaurante no último andar 7, dando uma boa vista aos morros ao redor, Restaurante com ótimo preços e final de semana teve show ao vivo com artistas locais super agradável, volume e mix de músicas, otimo experiência!!!',
-      autor: '- Elias, via Google'
+      citacao: this.$t('review3').toString(),
+      autor: this.$t('autor3').toString(),
     },
   ];
+
+  get iconsLandingPage(): Array<Imagem> {
+    return [
+      {
+        url: 'mdi-dumbbell',
+        alt: this.$t('academiaIconTitle').toString()
+      },
+      {
+        url: 'mdi-glass-wine',
+        alt: this.$t('barIconTitle').toString()
+      },
+      {
+        url: 'mdi-coffee-maker',
+        alt: this.$t('cafeDaManhaIconTitle').toString()
+      },
+      {
+        url: 'mdi-wifi',
+        alt: this.$t('wifiIconTitle').toString()
+      },
+      {
+        url: 'mdi-bed-king',
+        alt: this.$t('quartosLuxoIconTitle').toString()
+      },
+      {
+        url: 'mdi-car-arrow-left',
+        alt: this.$t('estacionamentoIconTitle').toString()
+      },
+    ];
+  }
+
+  head() {
+    return {
+      title: this.$t('metaTitle'),
+      titleTemplate: this.$t('metaTitle'),
+      meta: [
+        { hid: 'description', name: 'description', content: this.$t('metaDescription') },
+        { hid: 'robots', name: 'robots', content: 'index, follow' }
+      ]
+    };
+  }
 
 }
 
@@ -289,6 +353,10 @@ main {
 
 .descricao-central-landing-page {
   font-size: 1.1rem;
+}
+
+.icon-landing-page {
+  margin: 0 2rem;
 }
 
 </style>
