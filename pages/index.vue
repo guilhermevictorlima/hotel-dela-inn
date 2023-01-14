@@ -72,11 +72,24 @@
     <br />
 
     <v-container fluid>
-      <v-row align="center" justify="center">
-        <h1 class="text-center font-weight-light titulo">{{ $t('tituloReviews') }}</h1>
+      <h1 class="text-center font-weight-light titulo">{{ $t('tituloConhecaNossoHotel') }}</h1>
+      <br />
+
+      <div class="text-center texto-normal font-weight-light">
+      <p>{{ $t('introducaoConhecaNossoHotel') }}</p>
         <br />
+
+        <p v-for="(texto, index) in $t('listaTextosConhecendoHotel')" :key="index">
+          {{ texto }}
+          <br />
+        </p>
+
         <br />
-      </v-row>
+        <p v-for="(texto, index) in $t('textoChamadaConhecendoHotel')" :key="index">
+          {{ texto }}
+          <br />
+        </p>
+      </div>
       <v-row align="center" justify="center">
         <v-col cols="6">
 
@@ -123,11 +136,11 @@ import {Quarto} from "~/model/types/Quarto";
         metaTitle: 'Hotel Dela Inn',
         metaDescription: 'O Hotel Dela renova o conceito da hotelaria em Andradas - MG! Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!',
 
-        tituloLandingPage: 'Somos Referência em Hospedagem!',
+        tituloLandingPage: 'Seja bem-vindo ao hotel Dela Inn!',
         textoLandingPage: [
-          'Para você que busca conforto e atendimento de qualidade, o Dela Inn está pronto para atender!',
-          'Com excelente localização no centro da cidade, o Hotel dispõe de 132 novos apartamentos nas categorias Standard, Luxo e Super Luxo.',
-          'Nos importamos com seu bem-estar e entretenimento!'
+          'Você merece todo o conforto e atendimento de qualidade pelo melhor custo benefício.',
+          'Com localização privilegiada, bem no centro de Andradas, o Dela Inn dispõe de 135 apartamentos nas categorias suíte máster, presidencial e os apartamentos stardard luxo, luxo triplo e super luxo que irão te proporcionar uma experiência única e inesquecível.',
+          'Tudo o que você precisa para uma estadia perfeita por um preço que cabe no seu bolso.'
         ],
 
         academiaIconTitle: 'Academia',
@@ -141,7 +154,21 @@ import {Quarto} from "~/model/types/Quarto";
         quartoLuxoTriploCasal: 'Luxo Triplo Casal',
         quartoSuperLuxoCasal: 'Super Luxo Casal',
 
-        tituloReviews: 'Conheça nosso hotel',
+        tituloConhecaNossoHotel: 'Conheça nosso hotel',
+        introducaoConhecaNossoHotel: 'O Dela Inn é a melhor opção para você em Andradas. Idealizado para oferecer uma estadia prazerosa com experiências inesquecíveis.',
+
+        listaTextosConhecendoHotel: [
+          'São 7 andares com apartamentos aconchegantes e confortáveis. No sétimo andar, temos a suíte master e presidencial e nos demais andares, os apartamentos stardard luxo, luxo triplo e super luxo.',
+          'Nosso hotel oferece academia para você manter a sua rotina de exercícios enquanto viaja.',
+          'Temos opção de restaurante e uma choperia para você desfrutar de momentos agradáveis com sua família e amigos.',
+          'Nossa recepção trabalha 24 horas para te atender com toda atenção e profissionalismo que você merece.',
+          'O Dela Inn também dispõe de dois estacionamentos: interno e externo.',
+        ],
+
+        textoChamadaConhecendoHotel: [
+          'Viu porque o hotel Dela Inn é a sua melhor opção em Andradas?',
+          'Venha se hospedar com a gente! Estamos esperado por você!'
+        ],
 
         review1: 'Os quartos são ótimos, camas e chuveiros excelentes! Localização perfeita, central. O staff muito receptivo e simpático, chegamos mais cedo e fizeram nosso check-in na hora! O restaurante no 7° andar foi uma grata surpresa também: ótimo atendimento, chopp gelado e música boa. Foi uma estadia perfeita! Parabéns, super recomendo!',
         autor1: '- Lucia, via Booking',
@@ -156,11 +183,11 @@ import {Quarto} from "~/model/types/Quarto";
         metaTitle: 'Dela Inn Hotel',
         metaDescription: 'Dela Inn Hotel renews the concept of hospitality in Andradas - MG! For those looking for comfort and quality service, the Dela Inn is ready to serve you!',
 
-        tituloLandingPage: 'We are Hosting Reference!',
+        tituloLandingPage: 'Welcome to the Dela Inn!',
         textoLandingPage: [
-          'For those looking for comfort and quality service, Dela Inn is ready to serve you!',
-          'With an excellent location in the city center, the Hotel has 132 new apartments in the Standard, Luxury and Super Luxury categories.',
-          'We care about your well-being and entertainment!'
+          'You deserve all the comfort and quality service at the best cost benefit.',
+          'With a privileged location in the downtown Andradas, Dela Inn has 135 apartments in the master suite, presidential suite and standard luxury, triple luxury and super luxury that will provide you with a unique and unforgettable experience.',
+          'Everything you need for a perfect stay at an affordable price.'
         ],
 
         academiaIconTitle: 'Gym',
@@ -174,7 +201,21 @@ import {Quarto} from "~/model/types/Quarto";
         quartoLuxoTriploCasal: 'Couple\'s Triple Luxury',
         quartoSuperLuxoCasal: 'Couple\'s Super Luxury',
 
-        tituloReviews: 'Discover Dela Inn',
+        tituloConhecaNossoHotel: 'Discover Dela Inn',
+        introducaoConhecaNossoHotel: 'Dela Inn is the best option for you in Andradas. Idealized to offer a pleasant stay with unforgettable experiences.',
+
+        listaTextosConhecendoHotel: [
+          'There are 7 floors with cozy and comfortable apartments. On the seventh floor, we have the master and presidential suite and on the other floors, the stardard luxury, triple luxury and super luxury apartments.',
+          'Our hotel offers a gym for you to maintain your exercise routine during your trip.',
+          'We have a restaurant and a beer garden where you can enjoy pleasant moments with your family and friends.',
+          'Our reception works 24 hours a day to serve you with all the attention and professionalism you deserve.',
+          'The Dela Inn also has two parking lots: internal and external.'
+        ],
+
+        textoChamadaConhecendoHotel: [
+          'Did you see why the Dela Inn hotel is your best option in Andradas?',
+          'Come stay with us! We\'re waiting for you!'
+        ],
 
         review1: 'Rooms are great, beds and showers are excellent! Perfect location in downtown area. The staff were very welcoming and friendly, we arrived early and they checked-in us on time! The restaurant on the 7th floor was also a pleasant surprise: great service, cold draft beer and good music. It was a perfect stay! Congratulations, highly recommend!',
         autor1: '- Lucia, from Booking review',
