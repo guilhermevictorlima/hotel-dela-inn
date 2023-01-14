@@ -1,10 +1,10 @@
 <template>
-  <p class="text-center" :class="nivelTitulo" :style="cor">•────•──────────•────•</p>
+  <p class="styled-divider text-center" :class="nivelTitulo" :style="cor">•────•──────────•────•</p>
 </template>
 
 <script lang="ts">
 
-import {Component, Prop, Vue} from 'nuxt-property-decorator';
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
 
 @Component
 export default class VStyledDivider extends Vue {
@@ -28,5 +28,11 @@ export default class VStyledDivider extends Vue {
 </script>
 
 <style scoped>
+
+@media (max-width: 414px) {
+  .styled-divider {
+    font-size: 1.5rem !important;
+  }
+}
 
 </style>
