@@ -1,34 +1,32 @@
 <template>
-  <div>
-    <v-card class="elevation-15" :width="width" :max-height="maxHeight">
-      <div>
-        <v-imagem-container :src="quartoTo.imagens"  max-height="20rem" />
-      </div>
+  <v-card class="elevation-15" :width="width" :max-height="maxHeight">
+    <div>
+      <v-imagem-container :src="quartoTo.imagens"  max-height="20rem" />
+    </div>
 
-      <v-card-title class="texto-normal">{{ quartoNome }}</v-card-title>
-      <v-card-subtitle class="texto-normal">
-        <v-row class="conteudo-card-acomodacao" align="center">
-          <span>
-            <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
-            <span><b>Capacidade máxima:</b> {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
-          </span>
-          <span v-if="!simplificado">
-            &nbsp;&nbsp;&nbsp;
-            <v-icon color="#4d2334">mdi-angle-right</v-icon>
-            <span><b>Dimensão:</b> {{ quartoTo.dimensao }}</span>
-          </span>
-        </v-row>
-      </v-card-subtitle>
+    <v-card-title class="texto-normal">{{ quartoNome }}</v-card-title>
+    <v-card-subtitle class="texto-normal">
+      <v-row class="conteudo-card-acomodacao" align="center">
+        <span>
+          <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
+          <span><b>Capacidade máxima:</b> {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
+        </span>
+        <span v-if="!simplificado">
+          &nbsp;&nbsp;&nbsp;
+          <v-icon color="#4d2334">mdi-angle-right</v-icon>
+          <span><b>Dimensão:</b> {{ quartoTo.dimensao }}</span>
+        </span>
+      </v-row>
+    </v-card-subtitle>
 
-      <v-card-text v-if="!simplificado">
-        {{ quartoDescricao }}
-      </v-card-text>
+    <v-card-text v-if="!simplificado">
+      {{ quartoDescricao }}
+    </v-card-text>
 
-      <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
-        <v-btn color="primary" width="30%" @click="abrirReserva">Reservar</v-btn>
-      </v-container>
-    </v-card>
-  </div>
+    <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
+      <v-btn color="primary" width="30%" @click="abrirReserva">Reservar</v-btn>
+    </v-container>
+  </v-card>
 </template>
 
 <script lang="ts">
