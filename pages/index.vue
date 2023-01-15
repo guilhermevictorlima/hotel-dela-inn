@@ -3,7 +3,7 @@
     <div>
       <v-carousel
         :cycle="true"
-        hide-delimiter-background
+        :hide-delimiter-background="!isMobile()"
         :show-arrows="false"
         height="100%"
         class="elevation-24"
@@ -32,12 +32,9 @@
             {{ texto }}
             <br />
           </p>
-
-          <br />
-          <br />
         </div>
 
-        <v-list-item class="flex-row justify-center texto-normal">
+        <v-list-item class="lista-icones-landing-page texto-normal">
           <div v-for="(icon, index) in iconsLandingPage" :key="index">
             <div class="icon-landing-page">
               <v-icon size="32" color="#9c8f54">{{ icon.url }}</v-icon> <br /> <br />
@@ -52,20 +49,31 @@
       </v-container>
 
       <br />
-      <br />
     </div>
 
-    <v-container>
-      <v-row align="center" justify="center">
-        <v-col cols="4" v-for="(quarto, key) in quartosTos" :key="key">
-          <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" />
-        </v-col>
-      </v-row>
-    </v-container>
+    <div class="container-quartos-landing-page">
+      <v-container>
+        <v-row class="lista-quartos-landing-page" align="center" justify="center">
+          <v-col cols="4" v-for="(quarto, key) in quartosTos" :key="key">
+            <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" />
+          </v-col>
+        </v-row>
 
-    <br />
-    <br />
-    <br />
+        <v-carousel
+          class="slide-quartos-landing-page"
+          :cycle="true"
+          :show-arrows="false"
+          hide-delimiters
+          hide-delimiter-background
+          height="420"
+          interval="3000"
+        >
+          <v-carousel-item v-for="(quarto, key) in quartosTos" :key="key">
+            <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" />
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>
+    </div>
 
     <v-styled-divider :h-level="4" />
 
@@ -90,13 +98,13 @@
           <br />
         </p>
       </div>
-      <v-row align="center" justify="center">
+      <v-row class="row-reviews-video" align="center" justify="center">
         <v-col cols="6">
-
           <v-carousel
             v-if="reviews.length"
             :cycle="true"
             :show-arrows="false"
+            hide-delimiters
             hide-delimiter-background
             interval="8000"
           >
@@ -111,6 +119,32 @@
             <iframe width="700" height="405" src="https://www.youtube-nocookie.com/embed/menra41-M4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </v-col>
       </v-row>
+
+      <v-container class="row-reviews-video__mobile" fluid>
+        <v-row align="center" justify="center">
+          <v-carousel
+            v-if="reviews.length"
+            :cycle="true"
+            :show-arrows="false"
+            hide-delimiters
+            hide-delimiter-background
+            interval="8000"
+            height="100%"
+          >
+            <v-carousel-item
+              v-for="(review, key) in reviews" :key="key"
+            >
+              <v-quote :citacao="review.citacao" :autor="review.autor" />
+            </v-carousel-item>
+          </v-carousel>
+        </v-row>
+        <br />
+        <br />
+        <v-row align="center" justify="center" class="video-hotel-mobile">
+          <iframe width="700" height="405" src="https://www.youtube-nocookie.com/embed/menra41-M4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </v-row>
+      </v-container>
+
     </v-container>
   </div>
 </template>
@@ -124,8 +158,9 @@ import VStyledDivider from '~/components/shared/VStyledDivider.vue';
 import VQuote from '~/components/shared/VQuote.vue';
 import { ReviewCliente } from '~/model/types/ReviewCliente';
 import { Imagem } from '~/model/types/Imagem';
-import VCardQuarto from "~/components/shared/VCardQuarto.vue";
-import {Quarto} from "~/model/types/Quarto";
+import VCardQuarto from '~/components/shared/VCardQuarto.vue';
+import { Quarto } from '~/model/types/Quarto';
+import BrowserService from '~/services/BrowserService';
 
 @Component({
   layout: 'absolute-header',
@@ -318,6 +353,10 @@ export default class Index extends Vue {
     ];
   }
 
+  isMobile(): boolean {
+    return BrowserService.isMobile();
+  }
+
   head() {
     return {
       title: this.$t('metaTitle'),
@@ -361,6 +400,43 @@ export default class Index extends Vue {
   src: url("../static/fonts/Fahkwang/Fahkwang-Regular.ttf") format('truetype');
 }
 
+@media (max-width: 414px) {
+
+  .lista-icones-landing-page {
+    margin-top: 2rem !important;
+    flex-wrap: wrap;
+  }
+
+  .lista-icones-landing-page div {
+    flex-basis: 33%;
+  }
+
+  .icon-landing-page {
+    margin: 1rem 0.6rem !important;
+  }
+
+  .lista-quartos-landing-page {
+    display: none !important;
+  }
+
+  .container-quartos-landing-page {
+    margin-bottom: 2rem !important;
+  }
+
+  .slide-quartos-landing-page {
+    display: inline-block !important;
+  }
+
+  .row-reviews-video {
+    display: none;
+  }
+
+  .row-reviews-video__mobile {
+    display: inline-block !important;
+  }
+
+}
+
 .titulo {
   font-family: now;
 }
@@ -396,8 +472,32 @@ main {
   font-size: 1.1rem;
 }
 
+.lista-icones-landing-page {
+  margin-top: 4rem;
+
+  display: flex;
+  justify-content: center;
+}
+
 .icon-landing-page {
   margin: 0 2rem;
 }
+
+.container-quartos-landing-page {
+  margin-bottom: 4rem;
+}
+
+.slide-quartos-landing-page {
+  display: none;
+}
+
+.row-reviews-video__mobile {
+  display: none;
+}
+
+.video-hotel-mobile {
+  padding: 0.5rem;
+}
+
 
 </style>
