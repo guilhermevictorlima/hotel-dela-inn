@@ -150,6 +150,7 @@
                   <nuxt-link
                     :to="localePath('/')"
                     class="router-link"
+                    @click="exibirDialogLinksMobile = false"
                   >
                     Hotel Dela Inn
                   </nuxt-link>
@@ -158,6 +159,7 @@
                   <nuxt-link
                     :to="localePath('/galeria')"
                     class="router-link"
+                    @click="exibirDialogLinksMobile = false"
                   >
                     Galeria
                   </nuxt-link>
@@ -166,6 +168,7 @@
                   <nuxt-link
                     :to="localePath('/acomodacoes')"
                     class="router-link"
+                    @click="exibirDialogLinksMobile = false"
                   >
                     Acomodações
                   </nuxt-link>
@@ -174,6 +177,7 @@
                   <nuxt-link
                     :to="localePath('/localizacao')"
                     class="router-link"
+                    @click="exibirDialogLinksMobile = false"
                   >
                     Localização
                   </nuxt-link>
