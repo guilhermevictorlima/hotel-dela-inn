@@ -78,9 +78,14 @@
 
     <v-container>
       <v-row align="center" justify="center">
-        <v-col cols="6" v-for="(quartoTo, key) in quartosTos" :key="key">
+        <v-col class="lista-acomodacoes" cols="6" v-for="(quartoTo, key) in quartosTos" :key="key">
           <v-card-quarto :quarto-to="quartoTo" width="40rem" maxHeight="40rem" />
         </v-col>
+
+        <div class="lista-acomodacoes__mobile" v-for="(quartoTo, key) in quartosTos" :key="key">
+          <v-card-quarto :quarto-to="quartoTo" width="25rem" maxHeight="40rem" />
+          <br />
+        </div>
       </v-row>
     </v-container>
     <br /> <br />
@@ -179,8 +184,24 @@ export default class IndexAcomodacoes extends Vue {
 
 <style scoped>
 
+@media (max-width: 414px) {
+
+  .lista-acomodacoes {
+    display: none;
+  }
+
+  .lista-acomodacoes__mobile {
+    display: inline-block !important;
+  }
+
+}
+
 .valores-icons:not(:first-child) {
   margin-left: 4rem;
+}
+
+.lista-acomodacoes__mobile {
+  display: none;
 }
 
 .conteudo-card-acomodacao {
