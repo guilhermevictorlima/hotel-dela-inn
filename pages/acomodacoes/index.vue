@@ -78,7 +78,7 @@
 
     <v-container>
       <v-row align="center" justify="center">
-        <v-col class="lista-acomodacoes" cols="6" v-for="(quartoTo, key) in quartosTos" :key="key">
+        <v-col class="lista-acomodacoes" cols="4" v-for="(quartoTo, key) in quartosTos" :key="key">
           <v-card-quarto :quarto-to="quartoTo" width="40rem" maxHeight="40rem" />
         </v-col>
 
