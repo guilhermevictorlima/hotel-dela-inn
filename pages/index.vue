@@ -54,7 +54,7 @@
     <div class="container-quartos-landing-page">
       <v-container>
         <v-row class="lista-quartos-landing-page" align="center" justify="center">
-          <v-col cols="4" v-for="(quarto, key) in quartosTos" :key="key">
+          <v-col cols="auto" v-for="(quarto, key) in quartosTos" :key="key">
             <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" />
           </v-col>
         </v-row>
