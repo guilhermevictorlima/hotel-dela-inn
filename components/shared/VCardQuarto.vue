@@ -11,8 +11,7 @@
           <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
           <span><b>Capacidade máxima:</b> {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
         </span>
-        <span v-if="!simplificado">
-          &nbsp;&nbsp;&nbsp;
+        <span v-if="!simplificado" class="dimensao">
           <v-icon color="#4d2334">mdi-angle-right</v-icon>
           <span><b>Dimensão:</b> {{ quartoTo.dimensao }}</span>
         </span>
@@ -84,6 +83,15 @@ export default class VCardQuarto extends Vue {
 
 <style scoped>
 
+@media (max-width: 414px) {
+
+  .dimensao {
+    margin-left: 0 !important;
+    margin-top: 0.5rem;
+  }
+
+}
+
 .ver-mais-link {
   color: #918237;
   cursor: pointer;
@@ -94,6 +102,10 @@ export default class VCardQuarto extends Vue {
 }
 
 .caracteristica-acomodacao-icone:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.dimensao {
   margin-left: 1rem;
 }
 
