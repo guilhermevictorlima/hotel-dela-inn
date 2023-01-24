@@ -9,11 +9,11 @@
       <v-row class="conteudo-card-acomodacao" align="center">
         <span>
           <v-icon color="#4d2334">{{ iconNumeroPessoas }}</v-icon>
-          <span><b>Capacidade máxima:</b> {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? 'pessoa' : 'pessoas'}` }}</span>
+          <span><b>{{ $t('capacidadeMaxima') }}</b> {{ `${quartoMaximoPessoas} ${quartoMaximoPessoas === 1 ? $t('pessoa') : $t('pessoas')}` }}</span>
         </span>
         <span v-if="!simplificado" class="dimensao">
           <v-icon color="#4d2334">mdi-angle-right</v-icon>
-          <span><b>Dimensão:</b> {{ quartoTo.dimensao }}</span>
+          <span><b>{{ $t('dimensao') }}</b> {{ quartoTo.dimensao }}</span>
         </span>
       </v-row>
     </v-card-subtitle>
@@ -37,7 +37,25 @@ import VDinheiroFormatado from '~/components/shared/VDinheiroFormatado.vue';
 import VImagemContainer from '~/components/shared/VImagemContainer.vue';
 
 @Component({
-  components: { VImagemContainer, VDinheiroFormatado }
+  components: { VImagemContainer, VDinheiroFormatado },
+  i18n: {
+    messages: {
+      'pt-BR': {
+        capacidadeMaxima: 'Capacidade máxima:',
+        dimensao: 'Dimensão:',
+
+        pessoa: 'pessoa',
+        pessoas: 'pessoas'
+      },
+      en: {
+        capacidadeMaxima: 'Maximum capacity:',
+        dimensao: 'Room size:',
+
+        pessoa: 'person',
+        pessoas: 'people'
+      }
+    }
+  }
 })
 export default class VCardQuarto extends Vue {
 
