@@ -23,7 +23,7 @@
     </v-card-text>
 
     <v-container style="display: flex !important; flex-direction: row-reverse !important; align-items: center">
-      <v-btn color="primary" width="30%" @click="abrirReserva">Reservar</v-btn>
+      <v-btn color="primary" width="30%" @click="abrirReserva">{{ $t('reservar') }}</v-btn>
     </v-container>
   </v-card>
 </template>
@@ -45,14 +45,16 @@ import VImagemContainer from '~/components/shared/VImagemContainer.vue';
         dimensao: 'Dimensão:',
 
         pessoa: 'pessoa',
-        pessoas: 'pessoas'
+        pessoas: 'pessoas',
+        reservar: 'Reservar'
       },
       en: {
         capacidadeMaxima: 'Maximum capacity:',
         dimensao: 'Room size:',
 
         pessoa: 'person',
-        pessoas: 'people'
+        pessoas: 'people',
+        reservar: 'Book'
       }
     }
   }
