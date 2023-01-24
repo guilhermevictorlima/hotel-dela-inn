@@ -52,13 +52,16 @@
     </div>
 
     <div class="container-quartos-landing-page">
-      <v-container>
-        <v-row class="lista-quartos-landing-page" align="center" justify="center">
-          <v-col cols="auto" v-for="(quarto, key) in quartosTos" :key="key">
-            <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" />
-          </v-col>
-        </v-row>
+      <v-container fluid class="lista-quartos-landing-page">
+          <v-card-quarto v-for="(quarto, key) in quartosTos" :key="key"
+                         class="lista-quartos-landing-page__quarto"
+                         :quarto-to="quarto"
+                         width="25rem"
+                         :simplificado="true"
+          />
+      </v-container>
 
+      <v-container>
         <v-carousel
           class="slide-quartos-landing-page"
           :cycle="true"
@@ -319,8 +322,8 @@ export default class Index extends Vue {
       autor: this.$t('autor3').toString(),
     },
     {
-      citacao: this.$t('review3').toString(),
-      autor: this.$t('autor3').toString(),
+      citacao: this.$t('review4').toString(),
+      autor: this.$t('autor4').toString(),
     },
   ];
 
@@ -481,6 +484,15 @@ main {
 
 .icon-landing-page {
   margin: 0 2rem;
+}
+
+.lista-quartos-landing-page {
+  display: flex;
+  justify-content: center;
+}
+
+.lista-quartos-landing-page__quarto {
+  margin: 1rem
 }
 
 .container-quartos-landing-page {
