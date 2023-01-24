@@ -68,17 +68,14 @@
     </v-container>
     <br />
 
-    <v-container>
-      <v-row align="center" justify="center">
-        <v-col class="lista-acomodacoes" cols="4" v-for="(quartoTo, index) in quartosTos" :key="quartoTo.descricao + index">
-          <v-card-quarto :quarto-to="quartoTo" width="40rem" maxHeight="40rem" />
-        </v-col>
-
-        <div class="lista-acomodacoes__mobile" v-for="(quartoTo, index) in quartosTos" :key="quartoTo.descricao + index + 'mobile'">
-          <v-card-quarto :quarto-to="quartoTo" width="25rem" />
-          <br />
-        </div>
-      </v-row>
+    <v-container fluid class="lista-acomodacoes">
+      <v-card-quarto v-for="(quartoTo, index) in quartosTos"
+                     :key="quartoTo.descricao + index"
+                     :quarto-to="quartoTo"
+                     width="40rem"
+                     maxHeight="40rem"
+                     class="lista-acomodacoes__quarto"
+      />
     </v-container>
     <br /> <br />
   </div>
@@ -136,7 +133,7 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
         descricaoQuartoLuxoTwin: 'Este aconchegante apartamento possui 24m², banheiro, duas camas de solteiro, ar condicionado, frigobar, televisão de 40 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e café da manhã.',
         descricaoQuartoLuxoCasal: 'Aproveite este apartamento confortável e aconchegante com seu amor. Ele possui 24m², banheiro, uma cama de casal, ar condicionado, frigobar, televisão de 40 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e café da manhã.',
         descricaoQuartoLuxoTriploSolteiro: 'Nosso apartamento luxo triplo solteiro, é ideal para você que vem para se hospedar com seus amigos e familiares. Ele possui 24m², banheiro, três camas de solteiro, ar condicionado, frigobar, televisão de 40 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e café da manhã.',
-        descricaoQuartoLuxoTriploCasal: 'Vai vir com sua família? Este apartamento tem dimensão de 24m², banheiro, uma cama de casal e uma de solteiro, ar condicionado, frigobar, televisão de 40 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e café da manhã',
+        descricaoQuartoLuxoTriploCasal: 'Você vai vir com sua família? Este apartamento tem dimensão de 24m², um banheiro, uma cama de casal e uma de solteiro, além de ar condicionado, frigobar, televisão de 40 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e café da manhã.',
         descricaoQuartoSuperLuxoCasal: 'Para você que vem com seu amor e procura um apartamento mais espaçoso, este possui 32m², banheiro, uma cama de casal, ar condicionado, frigobar, televisão de 40 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e um delicioso café da manhã.',
         descricaoQuartoSuiteMasterDuplo: 'Relaxe com quem você ama nesta suíte de 42m², banheiro, uma cama de casal, ar condicionado, frigobar, televisão de 50 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e um café da manhã completo e delicioso.',
         descricaoQuartoSuitePresidencial: 'Esta elegante e espaçosa suíte, possui 48m², oferece uma vista privilegiada da cidade, uma cama de casal, banheira, ar condicionado, frigobar, televisão de 50 polegadas com diversos canais, secador de cabelo, Wi-Fi, voltagem 220V, estacionamento e café da manhã completo. Você vai se apaixonar!',
@@ -177,7 +174,7 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
         descricaoQuartoStandartTwin: 'Enjoy this 193.7ft² apartment, bathroom, two single beds, air conditioning, minibar, 40-inch TV, hairdryer, Wi-Fi, 220V voltage, parking and breakfast.',
         descricaoQuartoStandartCasal: 'Relax with your loved ones in this cozy 193.7ft² apartment, bathroom, one double bed, air conditioning, minibar, 40-inch TV, hairdryer, Wi-Fi, 220V voltage, parking and breakfast.',
-        descricaoQuartoLuxoTwin: 'This cozy apartment has 258.3ft², bathroom, two single beds, air conditioning, minibar, 40-inch TV with several channels, hairdryer, Wi-Fi, 220V voltage, parking and breakfast.',
+        descricaoQuartoLuxoTwin: 'This beautiful and comfortable apartment has 258.3ft², bathroom, two single beds, air conditioning, minibar, 40-inch TV with several channels, hairdryer, Wi-Fi, 220V voltage, parking and breakfast.',
         descricaoQuartoLuxoCasal: 'Enjoy this comfortable and cozy apartment with your love. It has 258.3ft², bathroom, a double bed, air conditioning, minibar, 40-inch television with several channels, hairdryer, Wi-Fi, 220V voltage, parking and breakfast.',
         descricaoQuartoLuxoTriploSolteiro: 'Our single\'s triple luxury apartment is ideal for you who come to stay with your friends and family. It has 258.3ft², bathroom, three single beds, air conditioning, minibar, 40-inch television with several channels, hairdryer, Wi-Fi, 220V voltage, parking and breakfast.',
         descricaoQuartoLuxoTriploCasal: 'Will you come with your family? This apartment measures 258.3ft², bathroom, one double bed and one single bed, air conditioning, minibar, 40-inch TV with several channels, hairdryer, Wi-Fi, 220V voltage, parking and breakfast',
@@ -268,32 +265,19 @@ export default class IndexAcomodacoes extends Vue {
 
 <style scoped>
 
-@media (max-width: 414px) {
-
-  .lista-acomodacoes {
-    display: none;
-  }
-
-  .lista-acomodacoes__mobile {
-    display: inline-block !important;
-  }
-
-}
-
 .valores-icons:not(:first-child) {
   margin-left: 4rem;
 }
 
-.lista-acomodacoes__mobile {
-  display: none;
+.lista-acomodacoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ }
+
+.lista-acomodacoes__quarto {
+  margin: 1rem;
 }
 
-.conteudo-card-acomodacao {
-  padding: 1rem;
-}
-
-.caracteristica-acomodacao-icone:not(:first-child) {
-  margin-left: 1rem;
-}
 
 </style>
