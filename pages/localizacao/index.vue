@@ -1,22 +1,20 @@
 <template>
-  <div>
+  <v-container class="pagina-localizacao">
     <v-container class="text-center">
       &nbsp; &nbsp;
       <v-styled-divider /> <br />
 
-      <h1 class="font-weight-light titulo">Nossa localização:</h1>
+      <h1 class="font-weight-light titulo">{{ $t('nossaLocalizacao') }}</h1>
       <br />
 
-      <span class="texto-normal">Você pode acessar o nosso estacionamento através do Centro ou pelo bairro Jardim Mantiqueira, recomendável até às 19hrs.</span> <br /> <br />
-      <span class="texto-normal">O uso do estacionamento é gratuito, sujeito à disponibilidade de vagas.</span> <br />
+      <p class="texto-normal">{{ $t('textoLocalizacao') }}</p>
 
       <br />
-      <br />
 
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1x5S9RP3V2lnxJkRPT5weMHoIak1NUA8&ehbc=2E312F" width="640" height="480" style="width: 70rem" />
+      <iframe class="responsive-iframe" src="https://www.google.com/maps/d/u/0/embed?mid=1x5S9RP3V2lnxJkRPT5weMHoIak1NUA8&ehbc=2E312F" height="480" />
     </v-container>
-    <br /> <br />
-  </div>
+    <br />
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -32,6 +30,18 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
       { hid: 'description', name: 'description', content: 'O Hotel Dela Inn' },
       { hid: 'robots', name: 'robots', content: 'index' }
     ]
+  },
+  i18n: {
+    messages: {
+      'pt-BR': {
+        nossaLocalizacao: 'Nossa localização:',
+        textoLocalizacao: 'Com localização privilegiada, o Dela Inn está no centro de Andradas e você pode acessar nosso estacionamento pelo centro ou pelo bairro Jardim Mantiqueira.'
+      },
+      en: {
+        nossaLocalizacao: 'Our location:',
+        textoLocalizacao: 'With a privileged location, Dela Inn is in the Andradas downtown and you can access our parking lot through the downtown or through the Jardim Mantiqueira neighborhood.'
+      }
+    }
   }
 })
 export default class IndexLocalizacao extends Vue{
@@ -41,5 +51,13 @@ export default class IndexLocalizacao extends Vue{
 </script>
 
 <style scoped>
+
+.pagina-localizacao {
+  margin-top: 5rem;
+}
+
+.responsive-iframe {
+  width: 100%;
+}
 
 </style>
