@@ -34,6 +34,14 @@
           <v-container class="galeria-fotos-tab">
             <v-imagem-container class="galeria-fotos-tab__foto" v-for="foto in fotos" :key="foto" :src="foto" max-height="12em" />
           </v-container>
+          <v-carousel
+            class="galeria-fotos-tab--mobile"
+            height="100%"
+          >
+            <v-carousel-item v-for="foto in fotos" :key="foto">
+              <v-imagem-container class="galeria-fotos-tab__foto" :src="foto" />
+            </v-carousel-item>
+          </v-carousel>
         </v-tab-item>
       </v-tabs>
     </v-container>
@@ -171,11 +179,34 @@ export default class GaleriaIndex extends Vue {
 
 <style scoped>
 
+@media (max-width: 820px) {
+
+  .galeria-fotos-tab--mobile {
+    display: inline-block !important;
+    margin-top: 1rem;
+  }
+
+  .galeria-fotos-tab {
+    display: none !important;
+  }
+
+  .galeria-fotos-tab__foto {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+}
+
+
 .galeria-fotos-tab {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 1rem;
+}
+
+.galeria-fotos-tab--mobile {
+  display: none;
 }
 
 .galeria-fotos-tab__foto {
