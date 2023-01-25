@@ -27,6 +27,25 @@
   --background-main: white;
 }
 
+html::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4f2034;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #33101f;
+}
+
 main {
   overflow: hidden;
   background-color: var(--background-main);
