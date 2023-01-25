@@ -36,7 +36,7 @@
                     :to="localePath('/')"
                     class="router-link"
                   >
-                    Hotel Dela Inn
+                    {{ $t('hotelDelaInn') }}
                   </nuxt-link>
                 </v-item>
                 &nbsp;
@@ -46,7 +46,7 @@
                     :to="localePath('/acomodacoes')"
                     class="router-link"
                   >
-                    Acomodações
+                    {{ $t('acomodacoes') }}
                   </nuxt-link>
                 </v-item>
                 &nbsp;
@@ -56,7 +56,7 @@
                     :to="localePath('/galeria')"
                     class="router-link"
                   >
-                    Galeria
+                    {{ $t('galeria') }}
                   </nuxt-link>
                 </v-item>
                 &nbsp;
@@ -66,7 +66,7 @@
                     :to="localePath('/localizacao')"
                     class="router-link"
                   >
-                    Localização
+                    {{ $t('localizacao') }}
                   </nuxt-link>
                 </v-item>
               </v-item-group>
@@ -111,7 +111,7 @@
                     @click="abrirReserva"
                     class="botao-reservar-header"
                   >
-                    Reservar
+                    {{ $t('reservar') }}
                   </v-btn>
                 </v-row>
               </v-container>
@@ -152,16 +152,7 @@
                     class="router-link"
                     @click="exibirDialogLinksMobile = false"
                   >
-                    Hotel Dela Inn
-                  </nuxt-link>
-                </v-item>
-                <v-item>
-                  <nuxt-link
-                    :to="localePath('/galeria')"
-                    class="router-link"
-                    @click="exibirDialogLinksMobile = false"
-                  >
-                    Galeria
+                    {{ $t('hotelDelaInn') }}
                   </nuxt-link>
                 </v-item>
                 <v-item>
@@ -170,7 +161,16 @@
                     class="router-link"
                     @click="exibirDialogLinksMobile = false"
                   >
-                    Acomodações
+                    {{ $t('acomodacoes') }}
+                  </nuxt-link>
+                </v-item>
+                <v-item>
+                  <nuxt-link
+                    :to="localePath('/galeria')"
+                    class="router-link"
+                    @click="exibirDialogLinksMobile = false"
+                  >
+                    {{ $t('galeria') }}
                   </nuxt-link>
                 </v-item>
                 <v-item>
@@ -179,7 +179,7 @@
                     class="router-link"
                     @click="exibirDialogLinksMobile = false"
                   >
-                    Localização
+                    {{ $t('localizacao') }}
                   </nuxt-link>
                 </v-item>
               </v-item-group>
@@ -197,7 +197,25 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 import BrowserService from '~/services/BrowserService';
 
 @Component({
-  components: {VStyledDivider}
+  components: { VStyledDivider },
+  i18n: {
+    messages: {
+      'pt-BR': {
+        hotelDelaInn: 'Hotel Dela Inn',
+        acomodacoes: 'Acomodações',
+        galeria: 'Galeria',
+        localizacao: 'Localização',
+        reservar: 'Reservar'
+      },
+      en: {
+        hotelDelaInn: 'Dela Inn Hotel',
+        acomodacoes: 'Accommodations',
+        galeria: 'Gallery',
+        localizacao: 'Location',
+        reservar: 'Book'
+      }
+    }
+  }
 })
 export default class HeaderHotelDelaInn extends Vue {
 
