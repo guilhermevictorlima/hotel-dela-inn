@@ -90,13 +90,13 @@
       <p>{{ $t('introducaoConhecaNossoHotel') }}</p>
         <br />
 
-        <p v-for="(texto, index) in $t('listaTextosConhecendoHotel')" :key="index">
+        <p v-for="texto in $t('listaTextosConhecendoHotel')" :key="texto">
           {{ texto }}
           <br />
         </p>
 
         <br />
-        <p v-for="(texto, index) in $t('textoChamadaConhecendoHotel')" :key="index">
+        <p v-for="texto in $t('textoChamadaConhecendoHotel')" :key="texto">
           {{ texto }}
           <br />
         </p>
