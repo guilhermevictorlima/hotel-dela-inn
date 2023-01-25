@@ -1,5 +1,5 @@
 <template>
-  <v-card class="elevation-15" :width="width" :max-height="maxHeight">
+  <v-card :class="'elevation-' + elevation" :width="width" :max-height="maxHeight">
     <div>
       <v-imagem-container :src="quartoTo.imagens"  max-height="20rem" />
     </div>
@@ -70,6 +70,9 @@ export default class VCardQuarto extends Vue {
   @Prop({ required: false, default: '100%' })
   maxHeight!: string;
 
+  @Prop({ required: false, default: '15' })
+  elevation!: string;
+
   @Prop({ required: false, default: false })
   simplificado!: boolean;
 
@@ -103,7 +106,7 @@ export default class VCardQuarto extends Vue {
 
 <style scoped>
 
-@media (max-width: 480px) {
+@media (max-width: 820px) {
 
   .dimensao {
     margin-left: 0 !important;

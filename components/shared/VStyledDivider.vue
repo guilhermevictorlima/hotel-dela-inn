@@ -29,7 +29,7 @@ export default class VStyledDivider extends Vue {
 
 <style scoped>
 
-@media (max-width: 480px) {
+@media (max-width: 820px) {
   .styled-divider {
     font-size: 1.5rem !important;
   }

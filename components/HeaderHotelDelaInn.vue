@@ -221,7 +221,7 @@ export default class HeaderHotelDelaInn extends Vue {
 
 <style scoped>
 
-@media (max-width: 480px) {
+@media (max-width: 820px) {
 
   .icon-social-media {
     font-size: 1.8em;

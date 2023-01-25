@@ -61,7 +61,7 @@
           />
       </v-container>
 
-      <v-container>
+      <v-container fluid>
         <v-carousel
           class="slide-quartos-landing-page"
           :cycle="true"
@@ -72,7 +72,7 @@
           interval="3000"
         >
           <v-carousel-item v-for="(quarto, key) in quartosTos" :key="key">
-            <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" />
+            <v-card-quarto :quarto-to="quarto" width="25rem" :simplificado="true" elevation="5" />
           </v-carousel-item>
         </v-carousel>
       </v-container>
@@ -403,7 +403,7 @@ export default class Index extends Vue {
   src: url("../static/fonts/Fahkwang/Fahkwang-Regular.ttf") format('truetype');
 }
 
-@media (max-width: 480px) {
+@media (max-width: 820px) {
 
   .lista-icones-landing-page {
     margin-top: 2rem !important;
@@ -427,7 +427,9 @@ export default class Index extends Vue {
   }
 
   .slide-quartos-landing-page {
-    display: inline-block !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
   }
 
   .row-reviews-video {
