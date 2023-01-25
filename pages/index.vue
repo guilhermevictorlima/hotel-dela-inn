@@ -304,7 +304,7 @@ export default class Index extends Vue {
       url: 'recepcao-2-redimensionado.jpg'
     },
     {
-      url: 'quarto-suite-presidencial.jpg'
+      url: 'suite-presidencial-1.jpg'
     },
   ];
 
