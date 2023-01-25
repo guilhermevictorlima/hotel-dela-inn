@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-dialog v-model="dialog" width="80vw">
-      <v-card>
+    <v-dialog v-model="dialog" width="auto">
+      <v-card height="auto">
         <v-carousel height="auto" v-if="isSlideDeImagens()">
           <v-carousel-item v-for="(enderecoImagem, key) in src" :key="key">
             <v-img :src="require(`static/${enderecoImagem}`)" max-height="80vh" />
