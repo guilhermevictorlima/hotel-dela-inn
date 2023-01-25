@@ -90,17 +90,12 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
 
 @Component({
   components: { VStyledDivider, VCardQuarto },
-  head: {
-    title: 'Acomodações | Hotel Dela Inn',
-    titleTemplate: 'Acomodações | Hotel Dela Inn',
-    meta: [
-      { hid: 'description', name: 'description', content: 'Acomodações Standart à Quartos de Luxo estão esperando você e sua família em Andradas!' },
-      { hid: 'robots', name: 'robots', content: 'index' }
-    ]
-  },
   i18n: {
     messages: {
       'pt-BR': {
+
+        tituloHeader: 'Acomodações | Hotel Dela Inn',
+        metaDescricao: 'Acomodações Standart à Quartos de Luxo estão esperando você e sua família em Andradas!',
 
         tituloAcomodacoes: 'Acomodações',
 
@@ -145,6 +140,9 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
         dimensao48m: '48m²',
       },
       en: {
+
+        tituloHeader: 'Accommodations | Dela Inn Hotel',
+        metaDescricao: 'Standard Accommodations to Luxury Rooms are waiting for you and your family in Andradas!',
 
         tituloAcomodacoes: 'Accommodations',
 
@@ -258,6 +256,17 @@ export default class IndexAcomodacoes extends Vue {
       dimensao: this.$t('dimensao48m').toString()
     },
   ];
+
+  head() {
+    return {
+      title: this.$t('tituloHeader'),
+      titleTemplate: this.$t('tituloHeader'),
+      meta: [
+        { hid: 'description', name: 'description', content: this.$t('metaDescricao') },
+        { hid: 'robots', name: 'robots', content: 'index' }
+      ]
+    };
+  }
 
 }
 
