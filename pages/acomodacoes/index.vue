@@ -195,63 +195,63 @@ export default class IndexAcomodacoes extends Vue {
     {
       nomeQuarto: this.$t('tituloQuartoStandartTwin').toString(),
       descricao: this.$t('descricaoQuartoStandartTwin').toString(),
-      imagens: ['standart-twin.jpg'],
+      imagens: ['standart-twin-1.jpg', 'standart-twin-2.jpg', 'standart-twin-3.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao18m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoStandartCasal').toString(),
       descricao: this.$t('descricaoQuartoStandartCasal').toString(),
-      imagens: ['standart-casal.jpg'],
+      imagens: ['standart-casal-1.jpg', 'standart-casal-2.jpg', 'standart-casal-3.jpg', 'standart-casal-4.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao18m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoLuxoTwin').toString(),
       descricao: this.$t('descricaoQuartoLuxoTwin').toString(),
-      imagens: ['luxo-twin.jpg'],
+      imagens: ['luxo-twin-1.jpg', 'luxo-twin-2.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao24m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoLuxoCasal').toString(),
       descricao: this.$t('descricaoQuartoLuxoCasal').toString(),
-      imagens: ['luxo-casal.jpg'],
+      imagens: ['luxo-casal-1.jpg', 'luxo-casal-2.jpg', 'luxo-casal-3.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao24m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoLuxoTriploSolteiro').toString(),
       descricao: this.$t('descricaoQuartoLuxoTriploSolteiro').toString(),
-      imagens: ['luxo-triplo-solteiro.jpg'],
+      imagens: ['luxo-triplo-solteiro-1.jpg', 'luxo-triplo-solteiro-2.jpg', 'luxo-triplo-solteiro-3.jpg'],
       maximoPessoas: 3,
       dimensao: this.$t('dimensao24m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoLuxoTriploCasal').toString(),
       descricao: this.$t('descricaoQuartoLuxoTriploCasal').toString(),
-      imagens: ['luxo-triplo-casal.jpg'],
+      imagens: ['luxo-triplo-casal-1.jpg', 'luxo-triplo-casal-2.jpg', 'luxo-triplo-casal-3.jpg'],
       maximoPessoas: 3,
       dimensao: this.$t('dimensao24m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoSuperLuxoCasal').toString(),
       descricao: this.$t('descricaoQuartoSuperLuxoCasal').toString(),
-      imagens: ['super-luxo-casal.jpg'],
+      imagens: ['super-luxo-casal-1.jpg', 'super-luxo-casal-2.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao32m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoSuiteMasterDuplo').toString(),
       descricao: this.$t('descricaoQuartoSuiteMasterDuplo').toString(),
-      imagens: ['quarto-suite-presidencial.jpg'],
+      imagens: ['suite-master-duplo-1.jpg', 'suite-master-duplo-2.jpg', 'suite-master-duplo-6.jpg', 'suite-master-duplo-3.jpg', 'suite-master-duplo-4.jpg', 'suite-master-duplo-5.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao42m').toString()
     },
     {
       nomeQuarto: this.$t('tituloQuartoSuitePresidencial').toString(),
       descricao: this.$t('descricaoQuartoSuitePresidencial').toString(),
-      imagens: ['visao-banheira-suite-presidencial.jpg', 'banheira-suite-presidencial.jpg'],
+      imagens: ['suite-presidencial-1.jpg', 'suite-presidencial-2.jpg', 'suite-presidencial-3.jpg', 'suite-presidencial-4.jpg', 'suite-presidencial-5.jpg', 'suite-presidencial-8.jpg', 'suite-presidencial-9.jpg', 'suite-presidencial-6.jpg', 'visao-banheira-suite-presidencial.jpg', 'banheira-suite-presidencial.jpg', 'suite-presidencial-10.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao48m').toString()
     },

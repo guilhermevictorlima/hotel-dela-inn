@@ -273,21 +273,21 @@ export default class Index extends Vue {
     {
       nomeQuarto: this.$t('quartoLuxoTriploSolteiro').toString(),
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
-      imagens: ['luxo-triplo-solteiro.jpg'],
+      imagens: ['luxo-triplo-solteiro-1.jpg'],
       maximoPessoas: 3,
       dimensao: '24 m²'
     },
     {
       nomeQuarto: this.$t('quartoLuxoTriploCasal').toString(),
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
-      imagens: ['luxo-triplo-casal.jpg'],
+      imagens: ['luxo-triplo-casal-1.jpg'],
       maximoPessoas: 3,
       dimensao: '24 m²'
     },
     {
       nomeQuarto: this.$t('quartoSuperLuxoCasal').toString(),
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam ut venenatis tellus. Consequat mauris nunc congue nisi. Aliquam nulla facilisi cras fermentum. Volutpat commodo sed egestas egestas fringilla phasellus.',
-      imagens: ['super-luxo-casal.jpg'],
+      imagens: ['super-luxo-casal-1.jpg'],
       maximoPessoas: 2,
       dimensao: '32 m²'
     }
@@ -295,16 +295,16 @@ export default class Index extends Vue {
 
   imagensCarrosselInicial: Array<Imagem> = [
     {
-      url: 'luxo-casal.jpg'
+      url: 'luxo-casal-redimensionada.jpg'
     },
     {
-      url: 'standart-twin.jpg'
+      url: 'standart-twin-1-redimensionada.jpg'
     },
     {
-      url: 'standart-casal.jpg'
+      url: 'recepcao-2-redimensionado.jpg'
     },
     {
-      url: 'vista-hotel.jpg'
+      url: 'quarto-suite-presidencial.jpg'
     },
   ];
 

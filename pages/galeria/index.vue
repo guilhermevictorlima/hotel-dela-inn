@@ -37,6 +37,7 @@
           <v-carousel
             class="galeria-fotos-tab--mobile"
             height="100%"
+            hide-delimiters
           >
             <v-carousel-item v-for="foto in fotos" :key="foto">
               <v-imagem-container class="galeria-fotos-tab__foto" :src="foto" />
@@ -87,78 +88,99 @@ import { GrupoFotos } from '~/model/types/GrupoFotos';
 })
 export default class GaleriaIndex extends Vue {
 
-  destaquesGalerias: Array<GrupoFotos> = [
-    {
-      nomeGrupo: 'Não saia de sua rotina',
-      descricaoGrupo: 'Aqui você pode aproveitar nossa moderna área fitness para manter sua saúde em dia.',
-      icon: 'mdi-dumbbell',
-      fotos: ['academia.jpg']
-    },
-    {
-      nomeGrupo: 'Comece o dia com um café da manhã especial',
-      descricaoGrupo: 'Aqui no Dela Inn é tudo preparado com muito amor e carinho, especialmente pra você!',
-      icon: 'mdi-coffee',
-      fotos: ['cafe-da-manha.jpg']
-    },
-    {
-      nomeGrupo: 'Requinte, conforto e segurança',
-      descricaoGrupo: 'Aqui no Dela Inn temos diferentes opções de suítes. Mas, em todas elas, proporcionar requinte, conforto e segurança são as nossas prioridades.',
-      icon: 'mdi-key-chain-variant',
-      fotos: ['visao-banheira-suite-presidencial.jpg']
-    },
-  ];
-
   fotosHotel: Array<string> = [
     'corredor-quartos.jpg',
-    'recepcao-hotel.jpg',
-    'recepcao-hotel-2.jpg',
-    'recepcao-hotel-3.jpg',
-    'recepcao-hotel-4.jpg',
-    'academia.jpg',
+    'recepcao-4.jpg',
+    'recepcao-2.jpg',
+    'recepcao-3.jpg',
+    'recepcao-5.jpg',
+    'recepcao-6.jpg',
+    'recepcao-7.jpg',
+    'academia-1.jpg',
+    'academia-2.jpg',
+    'academia-5.jpg',
+    'academia-6.jpg',
+    'academia-7.jpg',
     'jardim-dela-inn.jpg',
+    'sala-1.jpg',
+    'sala-2.jpg',
     'sala-hotel.jpg',
     'hotel-por-fora.jpg'
   ];
 
   fotosQuartos: Array<string> = [
-    'standart-twin.jpg',
-    'standart-casal.jpg',
-    'luxo-twin.jpg',
-    'luxo-casal.jpg',
-    'luxo-triplo-solteiro.jpg',
-    'luxo-triplo-casal.jpg',
-    'super-luxo-casal.jpg',
-    'quarto-suite-presidencial.jpg',
+    'standart-twin-1.jpg',
+    'standart-twin-2.jpg',
+    'standart-twin-3.jpg',
+    'standart-casal-1.jpg',
+    'standart-casal-2.jpg',
+    'standart-casal-3.jpg',
+    'standart-casal-4.jpg',
+    'luxo-twin-1.jpg',
+    'luxo-twin-2.jpg',
+    'luxo-casal-1.jpg',
+    'luxo-casal-2.jpg',
+    'luxo-casal-3.jpg',
+    'luxo-triplo-solteiro-1.jpg',
+    'luxo-triplo-solteiro-2.jpg',
+    'luxo-triplo-solteiro-3.jpg',
+    'luxo-triplo-casal-1.jpg',
+    'luxo-triplo-casal-2.jpg',
+    'luxo-triplo-casal-3.jpg',
+    'super-luxo-casal-1.jpg',
+    'super-luxo-casal-2.jpg',
+    'suite-master-duplo-1.jpg',
+    'suite-master-duplo-2.jpg',
+    'suite-master-duplo-3.jpg',
+    'suite-master-duplo-4.jpg',
+    'suite-master-duplo-5.jpg',
+    'suite-master-duplo-6.jpg',
     'visao-banheira-suite-presidencial.jpg',
-    'banheira-suite-presidencial.jpg'
+    'banheira-suite-presidencial.jpg',
+    'interior-quarto-1.jpg',
+    'interior-quarto-2.jpg',
+    'interior-quarto-3.jpg',
+    'interior-quarto-4.jpg',
+    'interior-quarto-5.jpg',
+    'interior-quarto-6.jpg',
+    'interior-quarto-7.jpg',
+    'interior-quarto-8.jpg',
+    'interior-quarto-9.jpg',
+    'interior-quarto-10.jpg',
+    'interior-suite-master-1.jpg',
+    'interior-suite-master-2.jpg',
+    'entrada-suite-master.jpg',
+    'suite-presidencial-7.jpg',
   ];
 
   fotosRestaurante: Array<string> = [
     'bar-restaurante.jpg',
     'restaurante-e-bar.jpg',
     'cafe-da-manha.jpg',
-    'comida-restaurante.jpg',
+    'comida-restaurante-2.jpg',
+    'comida-restaurante-3.jpg',
+    'comida-restaurante-4.jpg',
+    'comida-restaurante-5.jpg',
+    'comida-restaurante-6.jpg',
+    'comida-restaurante-7.jpg',
+    'comida-restaurante-8.jpg',
+    'comida-restaurante-9.jpg',
+    'comida-restaurante-10.jpg',
+    'comida-restaurante-11.jpg',
+    'comida-restaurante-12.jpg',
+    'comida-restaurante-13.jpg',
+    'comida-restaurante-14.jpg',
+    'comida-restaurante-1.jpg',
+    'comida-restaurante-15.jpg',
+    'comida-restaurante-16.jpg',
+    'comida-restaurante-17.jpg',
+    'comida-restaurante-18.jpg',
+    'comida-restaurante-19.jpg',
+    'comida-restaurante-20.jpg',
     'chopp-dela-inn.jpg',
     'vista-hotel.jpg',
     'vista-hotel-2.jpg'
   ];
-
-  get gruposFotos(): Array<GrupoFotos> {
-    return [
-      {
-        nomeGrupo: 'Hotel',
-        fotos: this.fotosHotel
-      },
-      {
-        nomeGrupo: 'Quartos',
-        fotos: this.fotosQuartos
-      },
-      {
-        nomeGrupo: 'Restaurante',
-        fotos: this.fotosRestaurante
-      }
-    ];
-  }
 
   head() {
     return {
