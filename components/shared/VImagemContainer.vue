@@ -53,7 +53,7 @@ export default class VImagemContainer extends Vue {
   dialog = false;
 
   isSlideDeImagens(): boolean {
-    return this.src.length > 1;
+    return Array.isArray(this.src) && this.src.length > 1;
   }
 
 }
