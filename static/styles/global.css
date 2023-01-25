@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'open-sans';
+  src: url("@/static/fonts/OpenSans/open-sans-regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'open-sans-ligth';
+  src: url("@/static/fonts/OpenSans/static/OpenSans/OpenSans-Light.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'now';
+  src: url("@/static/fonts/now/Now-Regular.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'moon-time';
+  src: url("@/static/fonts/MoonTime-Regular/MoonTime-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'fahkwang';
+  src: url("@/static/fonts/Fahkwang/Fahkwang-Regular.ttf") format('truetype');
+}
+
+* {
+  --background-main: white;
+}
+
+main {
+  overflow: hidden;
+  background-color: var(--background-main);
+}
+
+.titulo {
+  font-family: now;
+}
+
+.texto-normal {
+  font-family: open-sans;
+}
+
+.texto-normal-ligth {
+  font-family: open-sans-ligth;
+}
+
+.texto-secundario {
+  font-family: sans-serif;
+}
