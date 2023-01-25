@@ -103,7 +103,7 @@ export default class VCardQuarto extends Vue {
 
 <style scoped>
 
-@media (max-width: 414px) {
+@media (max-width: 480px) {
 
   .dimensao {
     margin-left: 0 !important;

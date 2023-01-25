@@ -403,7 +403,7 @@ export default class Index extends Vue {
   src: url("../static/fonts/Fahkwang/Fahkwang-Regular.ttf") format('truetype');
 }
 
-@media (max-width: 414px) {
+@media (max-width: 480px) {
 
   .lista-icones-landing-page {
     margin-top: 2rem !important;
