@@ -52,7 +52,7 @@ export default {
     parsePages: false,
     pages: {
       'galeria/index': {
-        en: '/galery',
+        en: '/gallery',
         'pt-BR': '/galeria'
       }
     },
