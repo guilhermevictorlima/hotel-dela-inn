@@ -2,7 +2,7 @@
   <div>
     <v-dialog v-model="dialog" width="80vw">
       <v-card>
-        <v-carousel height="auto" v-if="quartoPossuiVariasImagens()">
+        <v-carousel height="auto" v-if="isSlideDeImagens()">
           <v-carousel-item v-for="(enderecoImagem, key) in src" :key="key">
             <v-img :src="require(`static/${enderecoImagem}`)" max-height="80vh" />
           </v-carousel-item>
@@ -12,7 +12,7 @@
       </v-card>
     </v-dialog>
 
-    <v-carousel height="auto" v-if="quartoPossuiVariasImagens()" :hide-delimiters="hideDelimiters">
+    <v-carousel height="auto" v-if="isSlideDeImagens()" :hide-delimiters="hideDelimiters">
       <v-carousel-item v-for="(enderecoImagem, key) in src" :key="key">
         <v-img
           class="clickable"
@@ -52,7 +52,7 @@ export default class VImagemContainer extends Vue {
 
   dialog = false;
 
-  quartoPossuiVariasImagens(): boolean {
+  isSlideDeImagens(): boolean {
     return this.src.length > 1;
   }
 
