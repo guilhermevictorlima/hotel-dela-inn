@@ -195,7 +195,7 @@ export default class IndexAcomodacoes extends Vue {
     {
       nomeQuarto: this.$t('tituloQuartoStandartTwin').toString(),
       descricao: this.$t('descricaoQuartoStandartTwin').toString(),
-      imagens: ['standart-twin-1.jpg', 'standart-twin-2.jpg', 'standart-twin-3.jpg'],
+      imagens: ['luxo-twin-1.jpg', 'luxo-twin-2.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao18m').toString()
     },
@@ -209,7 +209,7 @@ export default class IndexAcomodacoes extends Vue {
     {
       nomeQuarto: this.$t('tituloQuartoLuxoTwin').toString(),
       descricao: this.$t('descricaoQuartoLuxoTwin').toString(),
-      imagens: ['luxo-twin-1.jpg', 'luxo-twin-2.jpg'],
+      imagens: ['standart-twin-1.jpg', 'standart-twin-2.jpg', 'standart-twin-3.jpg'],
       maximoPessoas: 2,
       dimensao: this.$t('dimensao24m').toString()
     },
