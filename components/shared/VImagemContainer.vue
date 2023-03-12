@@ -4,11 +4,11 @@
       <v-card height="auto">
         <v-carousel height="auto" v-if="isSlideDeImagens()">
           <v-carousel-item v-for="(enderecoImagem, key) in src" :key="key" eager>
-            <v-img :src="require(`static/${enderecoImagem}`)" max-height="80vh" eager />
+            <v-img :src="require(`static/${enderecoImagem}`)" class="zoom-responsivo" eager />
           </v-carousel-item>
         </v-carousel>
 
-        <v-img v-else :src="require(`static/${src}`)" @click="dialog = false" />
+        <v-img v-else :src="require(`static/${src}`)" @click="dialog = false" class="zoom-responsivo" />
       </v-card>
     </v-dialog>
 
@@ -66,6 +66,11 @@ export default class VImagemContainer extends Vue {
 
 .clickable:hover {
   cursor: zoom-in;
+}
+
+.zoom-responsivo {
+  max-height: 50rem;
+  max-width: 80rem;
 }
 
 </style>
