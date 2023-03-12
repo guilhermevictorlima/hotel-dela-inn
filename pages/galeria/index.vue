@@ -187,8 +187,7 @@ export default class GaleriaIndex extends Vue {
       title: this.$t('tituloHeader'),
       titleTemplate: this.$t('tituloHeader'),
       meta: [
-        { hid: 'description', name: 'description', content: this.$t('descricaoHeader') },
-        { hid: 'robots', name: 'robots', content: 'index' }
+        { hid: 'description', name: 'description', content: this.$t('descricaoHeader') }
       ]
     };
   }
