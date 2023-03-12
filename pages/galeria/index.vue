@@ -30,7 +30,7 @@
         <v-tab>{{ $t('tabQuartos') }}</v-tab>
         <v-tab>{{ $t('tabRestaurante') }}</v-tab>
 
-        <v-tab-item v-for="fotos in [fotosHotel, fotosQuartos, fotosRestaurante]">
+        <v-tab-item v-for="fotos in [fotosHotel, fotosQuartos, fotosRestaurante]" eager>
           <v-container class="galeria-fotos-tab">
             <v-imagem-container class="galeria-fotos-tab__foto" v-for="foto in fotos" :key="foto" :src="foto" max-height="12em" />
           </v-container>
@@ -39,7 +39,7 @@
             height="100%"
             hide-delimiters
           >
-            <v-carousel-item v-for="foto in fotos" :key="foto">
+            <v-carousel-item v-for="foto in fotos" :key="foto" eager>
               <v-imagem-container class="galeria-fotos-tab__foto" :src="foto" />
             </v-carousel-item>
           </v-carousel>
