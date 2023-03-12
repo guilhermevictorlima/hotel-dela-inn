@@ -27,17 +27,18 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
     title: 'Localização | Hotel Dela Inn',
     titleTemplate: 'Localização | Hotel Dela Inn',
     meta: [
-      { hid: 'description', name: 'description', content: 'O Hotel Dela Inn' },
       { hid: 'robots', name: 'robots', content: 'index' }
     ]
   },
   i18n: {
     messages: {
       'pt-BR': {
+        tituloHeader: 'Localização | Hotel Dela Inn',
         nossaLocalizacao: 'Nossa localização:',
         textoLocalizacao: 'Com localização privilegiada, o Dela Inn está no centro de Andradas e você pode acessar nosso estacionamento pelo centro ou pelo bairro Jardim Mantiqueira.'
       },
       en: {
+        tituloHeader: 'Location | Dela Inn Hotel',
         nossaLocalizacao: 'Our location:',
         textoLocalizacao: 'With a privileged location, Dela Inn is in the Andradas downtown and you can access our parking lot through the downtown or through the Jardim Mantiqueira neighborhood.'
       }
@@ -45,6 +46,13 @@ import VStyledDivider from "~/components/shared/VStyledDivider.vue";
   }
 })
 export default class IndexLocalizacao extends Vue{
+
+  head() {
+    return {
+      title: this.$t('tituloHeader'),
+      titleTemplate: this.$t('tituloHeader')
+    };
+  }
 
 }
 
