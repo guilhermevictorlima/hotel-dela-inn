@@ -1,0 +1,7 @@
+User-agent: *
+Noindex: /galeria
+Noindex: /localizacao
+Noindex: /en
+Noindex: /en/acomodacoes
+Noindex: /en/gallery
+Noindex: /en/location
