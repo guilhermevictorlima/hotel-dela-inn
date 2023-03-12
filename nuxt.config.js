@@ -55,6 +55,14 @@ export default {
       'galeria/index': {
         en: '/gallery',
         'pt-BR': '/galeria'
+      },
+      'localizacao/index': {
+        en: '/location',
+        'pt-BR': '/localizacao'
+      },
+      'acomodacoes/index': {
+        en: '/accommodations',
+        'pt-BR': '/acomodacoes'
       }
     },
     locales: ['pt-BR', 'en'],
