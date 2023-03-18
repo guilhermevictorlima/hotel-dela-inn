@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <v-toolbar class="dela-inn-subheader" height="175">
+    <v-toolbar class="dela-inn-subheader" height="185">
       <v-container fluid class="texto-normal">
         <v-row justify="center">
           <nav class="nav-social-media text-center">
@@ -21,10 +21,22 @@
                   <v-icon color="#dfddde">mdi-gmail</v-icon>
               </a>
             </span>
-            <span style="display: flex">
+            <span style="display: flex; flex-direction: column">
               <span class="footer-info">
                 <v-icon color="#dfddde">mdi-google-maps</v-icon> &nbsp;
-                <span>R. Maj. Bonifácio, 670 - Andradas, MG</span>
+                <span>R. Maj. Bonifácio, 670, Centro - Andradas/MG</span>
+              </span>
+              <span class="footer-info">
+                <v-icon color="#dfddde">mdi-phone</v-icon> &nbsp;
+                <span>
+                  <a href="tel:3537318400" class="router-link">+55 (35) 3731-8400</a>
+                  &nbsp;
+                  &nbsp;
+                  |
+                  &nbsp;
+                  &nbsp;
+                  <a href="tel:3537318687" class="router-link">+55 (35) 3731-8687</a>
+                </span>
               </span>
             </span>
           </nav>
