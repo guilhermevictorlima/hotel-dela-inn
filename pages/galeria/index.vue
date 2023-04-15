@@ -34,15 +34,9 @@
           <v-container class="galeria-fotos-tab">
             <v-imagem-container class="galeria-fotos-tab__foto" v-for="foto in fotos" :key="foto" :src="foto" max-height="12em" />
           </v-container>
-          <v-carousel
-            class="galeria-fotos-tab--mobile"
-            height="100%"
-            hide-delimiters
-          >
-            <v-carousel-item v-for="foto in fotos" :key="foto" eager>
-              <v-imagem-container class="galeria-fotos-tab__foto" :src="foto" />
-            </v-carousel-item>
-          </v-carousel>
+          <v-container class="galeria-fotos-tab--mobile">
+            <v-imagem-container class="galeria-fotos-tab__foto" :src="fotos" max-height="auto" />
+          </v-container>
         </v-tab-item>
       </v-tabs>
     </v-container>
